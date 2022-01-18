@@ -1,0 +1,61 @@
+[{
+    "id": 1,
+    "gameName": "1848 - Australia",
+    "currency": {"sign": "$", "location": "left"},
+    "maxPlayer": 6,
+    "minPlayer": 3,
+    "corporations": [
+      {"name": "Queensland Government Railway", "color": "green", "text":"#ffffff" },
+      {"name": "Commonwealth Railways", "color": "#D2B48C", "text": "black" },
+      {"name": "Federal Territory Railway", "color": "#8AB7F8", "text":"black" },
+      {"name": "Victorian Railway", "color": "yellow" , "text":"black"},
+      {"name": "South Australian Railways", "color": "#640064" , "text":"#ffffff"},
+      {"name": "West Australian Railways", "color": "red" , "text":"#ffffff"},
+      {"name": "New South Wales Railways", "color": "#FBBF77" , "text":"black"},
+      {"name": "Central Australian Railways", "color": "black" , "text":"#ffffff"}
+  ]
+  }, {
+    "id": 2,
+    "gameName": "18Chesapeake",
+    "currency": {"sign": "$", "location": "left"},
+    "maxPlayer": 6,
+    "minPlayer": 2,
+    "corporations": [
+        {"name": "Baltimore & Ohio Railroad", "color": "#0189d1", "text":"#ffffff" },
+        {"name": "Camden & Amboy Railroad", "color": "#f48221", "text": "#ffffff" },
+        {"name": "Chesapeake & Ohio Railroad", "color": "#a2dced", "text":"black" },
+        {"name": "Lehigh Valley Railroad", "color": "#fff500" , "text":"black"},
+        {"name": "Norfolk & Western Railway", "color": "#7b352a" , "text":"#ffffff"},
+        {"name": "Pittsburgh and Lake Erie Railroad", "color": "black" , "text":"#ffffff"},
+        {"name": "Pennsylvania Railroad", "color": "#237333" , "text":"#ffffff"},
+        {"name": "Strasburg Rail Road", "color": "#d81e3e" , "text":"#ffffff"}
+    ]
+  }, {
+    "id": 3,
+    "gameName": "1849 - The Game Of Sicilian Railways",
+    "currency": {"sign": "₤", "location": "right"},
+    "maxPlayer": 5,
+    "minPlayer": 3,
+    "corporations": [
+      {"name": "Impresa Ferroviaria Trinacria", "color": "#0189d1", "text": "#ffffff" },
+      {"name": "Società Ferroviaria Akragas", "color": "pink", "text":"black" },
+      {"name": "Azienda Ferroviaria Garibaldi", "color": "#ff0000" , "text":"#ffffff"},
+      {"name": "Azienda Trasporti Archimede", "color": "green" , "text":"#ffffff"},
+      {"name": "Compagnia Trasporti Lilibeo", "color": "#f9b231" , "text":"black"},
+      {"name": "Rete Centrale Sicula", "color": "#f48221" , "text":"#ffffff"}
+    ]
+  },
+  {
+    "id": 4,
+    "gameName": "18MS - The Railroad Comes To Mississippi",
+    "currency": {"sign": "$", "location": "left"},
+    "maxPlayer": 4,
+    "minPlayer": 2,
+    "corporations": [
+      {"name": "Frisco", "color": "#ed1c24", "text": "#ffffff" },
+      {"name": "Gulf, Mobile and Ohio Railroad", "color": "black", "text":"#ffffff" },
+      {"name": "Illinois Central Railroad", "color": "#397641" , "text":"#ffffff"},
+      {"name": "Louisville and Nashville Railroad", "color": "#0d5ba5" , "text":"#ffffff"},
+      {"name": "Western Railway of Alabama", "color": "#c7c4e2" , "text":"black"}
+    ]
+  }]

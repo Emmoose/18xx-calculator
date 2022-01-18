@@ -1,0 +1,202 @@
+
+* {
+    box-sizing: border-box;;
+}
+
+body {
+    margin: 0px;
+}
+
+
+input {
+    border: none;
+    height: 34px;
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+button {
+    background-color: white;
+    height: 40px;
+    width: 40px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 0;
+}
+
+th {
+    padding: 8px;
+}
+
+td, th {
+    background-color: white;
+    height: 34px;
+    position: relative;
+    
+}
+
+select {
+    width: 300px;
+    height: 32px;
+    margin-bottom: 16px;
+    font-size: 16px;
+}
+
+label {
+    text-align: left;
+}
+  
+.app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-left: 24px;
+}
+
+.calculator {
+    display: inline-block;
+    background-color: #fff7ed;
+    padding: 24px;
+    border: 1px solid black;
+    margin: 24px;
+}
+
+.top-row {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.text {
+    text-align: left;
+}
+
+  .game-settings {
+    width: 400px;
+    padding: 16px;
+    background-color: #fff;
+    border: 1px solid black;
+
+    &__simulate-rounds-wrapper {
+          display: flex;
+          input {
+              border: 1px solid black;
+              width: 80px;
+              height: 40px;
+              margin: 0 8px;
+          }
+      }
+
+      
+        &__select-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+  }
+
+  .companyvalue-matrix { 
+    margin-left: 16px;
+
+    &__input {
+      height: 34px;
+      padding-left: 16px;
+    }
+}
+
+  .input-percentage {
+      position: absolute;
+      right: 20px;
+      top: 8px;
+  }
+
+  .currency-on-input {
+    position: absolute;
+    top: 8px;
+
+    &.right {
+        right: 20px
+    }
+
+    &.left {
+        left: 20px;
+    }
+}
+  
+  .corporation-cell {
+      height: 100%;
+      line-height: 34px;
+      padding: 0 8px;
+      white-space: nowrap;
+      font-weight: 500;
+  }
+
+
+  .wealth-table__total-row td {
+      background-color: #3cb371;
+  }
+
+  .bank-indication {
+    margin-top: 16px;
+    text-align: left;
+  }
+
+
+  // Media query mobile screen sizes
+@media only screen and (max-width: 991px) {
+    h2 {
+        margin: 8px;
+    }
+
+    .app {
+        margin: 0 8px;
+    }  
+
+    
+    
+    .calculator {
+        display: block;
+        
+        padding: 0;
+        border: 1px solid black;
+        margin: 0;
+
+    }
+
+    .top-row {
+        display: block;
+    }
+
+    .game-settings {
+        width: auto;
+        margin: 8px;
+    }
+
+    .companyvalue-matrix { 
+        margin-left: 8px;
+    
+    }
+
+    .companyvalue-matrix,
+    .corporation-ownership-matrix,
+    .wealth-table-matrix {
+      overflow-y: scroll;
+    }
+
+}
