@@ -58,4 +58,37 @@
       {"name": "Louisville and Nashville Railroad", "color": "#0d5ba5" , "text":"#ffffff"},
       {"name": "Western Railway of Alabama", "color": "#c7c4e2" , "text":"black"}
     ]
+  },
+  {
+    "id": 5,
+    "gameName": "1830 - The Railways and Robber Barons",
+    "currency": {"sign": "$", "location": "left"},
+    "maxPlayer": 7,
+    "minPlayer": 2,
+    "corporations": [
+      {"name": "Boston & Maine Railroad", "color": "#95c054", "text": "#ffffff" },
+      {"name": "Baltimore & Ohio Railroad", "color": "#025aaa", "text":"#ffffff" },
+      {"name": "Chesapeake & Ohio Railroad", "color": "#add8e6" , "text":"black"},
+      {"name": "Canadian Pacific Railroad", "color": "#d1232a" , "text":"#ffffff"},
+      {"name": "Erie Railroad", "color": "#fff500" , "text":"black"},
+      {"name": "New York Central Railroad", "color": "#474548" , "text":"#ffffff"},
+      {"name": "New York, New Haven & Hartford Railroad", "color": "#d88e39" , "text":"#ffffff"},
+      {"name": "Pennsylvania Railroad", "color": "#32763f" , "text":"#ffffff"}
+    ]
+  },
+  {
+    "id": 6,
+    "gameName": "1882 - Assiniboia",
+    "currency": {"sign": "$", "location": "left"},
+    "maxPlayer": 6,
+    "minPlayer": 2,
+    "corporations": [
+      {"name": "Canadian National", "color": "orange", "text": "black" },
+      {"name": "Canadian Northern", "color": "#237333", "text": "#ffffff" },
+      {"name": "Canadian Pacific Railway", "color": "#d81e3e", "text":"#ffffff" },
+      {"name": "Grand Trunk Pacific", "color": "black" , "text":"#ffffff"},
+      {"name": "Hudson Bay Railway", "color": "gold" , "text":"black"},
+      {"name": "Qu'Appelle, Long Lake Railroad Co.", "color": "purple" , "text":"#ffffff"},
+      {"name": "Saskatchewan Central Railroad", "color": "#0189d1" , "text":"#ffffff"}
+    ]
   }]

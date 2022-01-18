@@ -404,11 +404,13 @@ export default {
                 });
               }
             );
+
             this.players.push({
-              name: "player-" + this.players.length + index,
+              name: "player-" + Number(this.players.length + 1),
             });
+
             this.playersStockValue.push(0);
-            this.playersCash.push({ value: 0 });
+            this.playersCash.push({ value: null });
             this.playerSimulatedIncome.push(0);
           }
         }
