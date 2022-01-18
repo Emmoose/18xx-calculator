@@ -17,7 +17,7 @@
           v-bind:key="index"
         >
           <td
-            class="corporation-cell"
+            class="td-corporation"
             :style="{
               'background-color': corporation.information.color,
               color: corporation.information.text,
@@ -37,7 +37,6 @@
             <input
               placeholder="Stock value"
               type="number"
-              class="companyvalue-matrix__input"
               v-model.number="corporation.stockValue"
               @change="$emit('sharepart-changed')"
             />
@@ -54,7 +53,6 @@
             <input
               placeholder="Revenue"
               type="number"
-              class="companyvalue-matrix__input"
               v-model.number="corporation.revenue"
               @change="$emit('company-revenue-changed')"
             />

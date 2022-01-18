@@ -4,11 +4,11 @@
       <h2>Game: {{ selectedGame }}</h2>
       <div class="top-row">
         <div class="game-settings">
-          <div class="game-settings__select-wrapper">
-            <p class="text">
-              Simple app for calculating end game scoring and optionally to
-              simulate operating rounds with full payout.
-            </p>
+          <p class="info-text">
+            Simple app for calculating end game scoring and optionally to
+            simulate operating rounds with full payout.
+          </p>
+          <div class="flex-column">
             <label>Select Game</label>
             <select v-model="selectedGame" @change="setupGame">
               <option v-for="game in games" v-bind:key="game">
@@ -16,7 +16,7 @@
               </option>
             </select>
           </div>
-          <div class="game-settings__select-wrapper">
+          <div class="flex-column">
             <label>Select Player number</label>
             <select v-model.number="selectedPlayerCount">
               <option v-for="count in playerCounts" v-bind:key="count">
@@ -24,7 +24,7 @@
               </option>
             </select>
             <label>Simulated Rounds</label>
-            <div class="game-settings__simulate-rounds-wrapper">
+            <div class="simulate-rounds">
               <button
                 :disabled="simulatedRounds < 1"
                 v-on:click="changeNumberSimulationRounds(-1)"
@@ -69,7 +69,7 @@
             >
               <td v-for="cell in companyRow" v-bind:key="cell.key">
                 <div
-                  class="corporation-cell"
+                  class="td-corporation"
                   v-if="cell.name"
                   :style="{
                     'background-color': cell.color,
@@ -96,7 +96,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="wealth-table__stock-value-row">
+            <tr>
               <td
                 v-for="(playerStockValue, index) in playersStockValue"
                 v-bind:key="index"
@@ -150,7 +150,7 @@
               </td>
             </tr>
 
-            <tr class="wealth-table__total-row">
+            <tr class="wealth-table">
               <td v-for="(wealth, index) in totalWealth" v-bind:key="index">
                 <span
                   v-if="index != 0"
@@ -167,8 +167,8 @@
           </tbody>
         </table>
       </div>
-      <div class="bank-indication">
-        <span>Sum cash and simulated operation: {{ bankIndication }}</span>
+      <div class="bank-summation">
+        <span>Sum cash and simulated operation: {{ bankSummation }}</span>
       </div>
     </div>
   </div>
@@ -365,7 +365,7 @@ export default {
       return tempTotalWealth;
     },
 
-    bankIndication() {
+    bankSummation() {
       var cash = this.playersCash.reduce((acc, obj, currentIndex) => {
         if (currentIndex == 1) {
           return Number(obj.value);
