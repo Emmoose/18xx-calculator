@@ -132,7 +132,7 @@
                 />
               </td>
             </tr>
-            <tr class="wealth-table__simulation-row">
+            <tr>
               <td
                 v-for="(cash, index) in playerSimulatedIncome"
                 v-bind:key="index"
@@ -412,6 +412,16 @@ export default {
             this.playersStockValue.push(0);
             this.playersCash.push({ value: null });
             this.playerSimulatedIncome.push(0);
+          } else {
+            this.playerCorporationOwnership.forEach((corporation) => {
+              corporation.pop();
+            });
+
+            this.players.pop();
+
+            this.playersStockValue.pop();
+            this.playersCash.pop();
+            this.playerSimulatedIncome.pop();
           }
         }
       }

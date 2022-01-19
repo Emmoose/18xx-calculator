@@ -8,7 +8,7 @@
         <tr>
           <th>Corporations</th>
           <th>Stock Value</th>
-          <th>Revenue</th>
+          <th>Per Stock Revenue</th>
         </tr>
       </thead>
       <tbody>
