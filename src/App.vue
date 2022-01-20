@@ -49,7 +49,20 @@
         />
       </div>
 
-      <div class="corporation-ownership-matrix">
+      <div
+        class="corporation-ownership-matrix"
+        v-on:scroll="calulateIfCorpNameOutside"
+      >
+        <div
+          v-if="corporationTip && isCorpNameOutside"
+          class="corp-name-mobile main"
+          :style="{
+            'background-color': inputFocusedCorporation.color,
+            color: inputFocusedCorporation.text,
+          }"
+        >
+          {{ inputFocusedCorporation.name }}
+        </div>
         <table>
           <thead>
             <tr>
@@ -67,7 +80,11 @@
               v-for="(companyRow, index) in playerCorporationOwnership"
               v-bind:key="index"
             >
-              <td v-for="cell in companyRow" v-bind:key="cell.key">
+              <td
+                v-for="cell in companyRow"
+                v-bind:key="cell.key"
+                ref="corporationName"
+              >
                 <div
                   class="td-corporation"
                   v-if="cell.name"
@@ -86,6 +103,8 @@
                   v-model.number="cell.value"
                   v-bind:key="cell.key"
                   @change="proxyCalcOwnershipDep"
+                  @focus="showCorporationTip(index)"
+                  @blur="hideCorporationTip"
                 />
               </td>
             </tr>
@@ -204,6 +223,10 @@ export default {
         sign: "$",
         location: "left",
       },
+
+      corporationTip: false, // THIS 3 DUPLICATES - HOW TO IMPROVE?
+      isCorpNameOutside: false,
+      inputFocusedCorporation: { information: { color: null, text: null } },
     };
   },
 
@@ -347,6 +370,21 @@ export default {
     changeNumberSimulationRounds(change) {
       this.simulatedRounds = this.simulatedRounds + change;
       this.runSimulation();
+    },
+
+    // MOVE TO MIXIN
+    showCorporationTip(index) {
+      this.corporationTip = true;
+      this.inputFocusedCorporation = this.corporations[index];
+      console.log(this.corporations[index]);
+    },
+    hideCorporationTip() {
+      // this.corporationTip = false;
+    },
+    calulateIfCorpNameOutside() {
+      this.$refs.corporationName[0].getBoundingClientRect().x < -220
+        ? (this.isCorpNameOutside = true)
+        : (this.isCorpNameOutside = false);
     },
   },
 

@@ -69,7 +69,7 @@ label {
 
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid @color-border;
     border-collapse: collapse;
     padding: 0;
 }
@@ -92,6 +92,8 @@ td, th {
     padding: 0 8px;
     white-space: nowrap;
     font-weight: 500;
+
+    // position: absolute;
 }
 
 .flex-column {
@@ -115,6 +117,26 @@ td, th {
 
     &.left {
         left: 20px;
+    }
+}
+
+input:focus {
+    outline: none;
+}
+
+.corp-name-mobile {
+    display: none;
+    border: 1px solid @color-border;
+    position: absolute;
+    z-index: 1;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    left: 17px;
+    right: 8px;
+
+    &.main {
+        left: 8px;
     }
 }
 
@@ -149,7 +171,7 @@ td, th {
 .game-settings {
     width: 400px;
     padding: @indent__base;
-    background-color: @color-background;
+    background-color: @color-background-secondary;
     border: 1px solid @color-border;
 }
 
@@ -187,6 +209,13 @@ td, th {
         margin: @indent__s;
     }
 
+    table {
+        width: 100%;
+    }
+
+    .corp-name-mobile {
+        display: flex;
+    }
     .app {
         margin: 0 @indent__s;
     }  
