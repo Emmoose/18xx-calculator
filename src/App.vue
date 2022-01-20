@@ -40,22 +40,91 @@
             </div>
           </div>
         </div>
-
-        <CorporationWealth
-          v-bind:corporations-wealth="corporationsWealth"
-          v-bind:currency="currency"
-          v-on:sharepart-changed="calculatePlayerStockValue"
-          v-on:company-revenue-changed="runSimulation"
-        />
+        <div
+          class="companyvalue-matrix"
+          v-on:scroll="calulateIfCorpNameOutside('outsideCompanyValue')"
+        >
+          <table>
+            <thead>
+              <tr>
+                <th colspan="3">Corporation Wealth</th>
+              </tr>
+              <tr>
+                <th>Corporations</th>
+                <th>Stock Value</th>
+                <th>Per Stock Revenue</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="(corporation, index) in corporationsWealth"
+                v-bind:key="index"
+              >
+                <td
+                  ref="outsideCompanyValue"
+                  class="td-corporation"
+                  :style="{
+                    'background-color': corporation.information.color,
+                    color: corporation.information.text,
+                  }"
+                >
+                  {{ corporation.information.name }}
+                </td>
+                <td>
+                  <span
+                    class="currency-on-input"
+                    v-bind:class="{
+                      left: currency.location == 'left',
+                      right: currency.location == 'right',
+                    }"
+                    >{{ currency.sign }}</span
+                  >
+                  <input
+                    placeholder="Stock value"
+                    type="number"
+                    v-model.number="corporation.stockValue"
+                    @change="calculatePlayerStockValue"
+                    @focus="
+                      showCorporationTip(index, 'corporationTipCompanyValue')
+                    "
+                    @blur="hideCorporationTip('corporationTipCompanyValue')"
+                  />
+                </td>
+                <td>
+                  <span
+                    class="currency-on-input"
+                    v-bind:class="{
+                      left: currency.location == 'left',
+                      right: currency.location == 'right',
+                    }"
+                    >{{ currency.sign }}</span
+                  >
+                  <input
+                    placeholder="Revenue"
+                    type="number"
+                    v-model.number="corporation.revenue"
+                    @change="runSimulation"
+                    @focus="
+                      showCorporationTip(index, 'corporationTipCompanyValue')
+                    "
+                    @blur="hideCorporationTip('corporationTipCompanyValue')"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
-
       <div
         class="corporation-ownership-matrix"
-        v-on:scroll="calulateIfCorpNameOutside"
+        v-on:scroll="calulateIfCorpNameOutside('outsideCorporationOwnership')"
       >
         <div
-          v-if="corporationTip && isCorpNameOutside"
-          class="corp-name-mobile main"
+          v-if="
+            (outsideCompanyValue && corporationTipCompanyValue) ||
+            (outsideCorporationOwnership && corporationTipOwnership)
+          "
+          class="corp-name-mobile"
           :style="{
             'background-color': inputFocusedCorporation.color,
             color: inputFocusedCorporation.text,
@@ -83,7 +152,7 @@
               <td
                 v-for="cell in companyRow"
                 v-bind:key="cell.key"
-                ref="corporationName"
+                ref="outsideCorporationOwnership"
               >
                 <div
                   class="td-corporation"
@@ -103,8 +172,8 @@
                   v-model.number="cell.value"
                   v-bind:key="cell.key"
                   @change="proxyCalcOwnershipDep"
-                  @focus="showCorporationTip(index)"
-                  @blur="hideCorporationTip"
+                  @focus="showCorporationTip(index, 'corporationTipOwnership')"
+                  @blur="hideCorporationTip('corporationTipOwnership')"
                 />
               </td>
             </tr>
@@ -195,13 +264,9 @@
 
 <script>
 import gameData from "./assets/gameData.json";
-import CorporationWealth from "./components/CorporationWealth.vue";
 
 export default {
   name: "App",
-  components: {
-    CorporationWealth,
-  },
 
   data: function () {
     return {
@@ -224,8 +289,11 @@ export default {
         location: "left",
       },
 
-      corporationTip: false, // THIS 3 DUPLICATES - HOW TO IMPROVE?
-      isCorpNameOutside: false,
+      outsideCompanyValue: false,
+      outsideCorporationOwnership: false,
+      corporationTipCompanyValue: false,
+      corporationTipOwnership: false,
+
       inputFocusedCorporation: { information: { color: null, text: null } },
     };
   },
@@ -346,6 +414,11 @@ export default {
     },
 
     runSimulation() {
+      this.$gtag.event("testing-simulation", {
+        event_category: "testing",
+        event_label: "testing the simulation functionality",
+      });
+
       var tempStockValue = Array(this.selectedPlayerCount).fill(0);
       tempStockValue.unshift("Simulated OR's Value");
 
@@ -372,19 +445,21 @@ export default {
       this.runSimulation();
     },
 
-    // MOVE TO MIXIN
-    showCorporationTip(index) {
-      this.corporationTip = true;
+    showCorporationTip(index, table) {
+      this[table] = true;
       this.inputFocusedCorporation = this.corporations[index];
-      console.log(this.corporations[index]);
     },
-    hideCorporationTip() {
-      // this.corporationTip = false;
+
+    hideCorporationTip(table) {
+      this[table] = false;
     },
-    calulateIfCorpNameOutside() {
-      this.$refs.corporationName[0].getBoundingClientRect().x < -220
-        ? (this.isCorpNameOutside = true)
-        : (this.isCorpNameOutside = false);
+
+    calulateIfCorpNameOutside(element) {
+      console.log(element);
+      console.log(this.$refs[element][0].getBoundingClientRect().x);
+      this.$refs[element][0].getBoundingClientRect().x < -220
+        ? (this[element] = true)
+        : (this[element] = false);
     },
   },
 

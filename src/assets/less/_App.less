@@ -122,24 +122,21 @@ td, th {
 
 input:focus {
     outline: none;
+    background-color: #f6fef6;
 }
 
 .corp-name-mobile {
     display: none;
     border: 1px solid @color-border;
-    position: absolute;
+    position: fixed;
+    top: 0;
     z-index: 1;
     height: 40px;
     align-items: center;
     justify-content: center;
-    left: 17px;
+    left: 8px;
     right: 8px;
-
-    &.main {
-        left: 8px;
-    }
 }
-
 
 // App
 
@@ -236,11 +233,11 @@ input:focus {
         margin: @indent__s;
     }
 
-    .companyvalue-matrix { 
+    .companyvalue-matrix,
+    .corporation-ownership-matrix {
         margin-left: @indent__s;
-    
     }
-
+     
     .companyvalue-matrix,
     .corporation-ownership-matrix,
     .wealth-table-matrix {
