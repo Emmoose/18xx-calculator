@@ -13,5 +13,4 @@ var app = new Vue({
   render: (h) => h(App),
 });
 
-console.log(Vue.config);
 app.$mount("#app");

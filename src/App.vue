@@ -455,8 +455,6 @@ export default {
     },
 
     calulateIfCorpNameOutside(element) {
-      console.log(element);
-      console.log(this.$refs[element][0].getBoundingClientRect().x);
       this.$refs[element][0].getBoundingClientRect().x < -220
         ? (this[element] = true)
         : (this[element] = false);
