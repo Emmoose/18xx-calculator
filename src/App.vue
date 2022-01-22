@@ -18,7 +18,10 @@
           </div>
           <div class="flex-column">
             <label>Select Player number</label>
-            <select v-model.number="selectedPlayerCount">
+            <select
+              v-model.number="selectedPlayerCount"
+              @change="changePlayerCount"
+            >
               <option v-for="count in playerCounts" v-bind:key="count">
                 {{ count }}
               </option>
@@ -275,6 +278,7 @@ export default {
       selectedGame: "18Chesapeake",
       playerCounts: [],
       selectedPlayerCount: null,
+      oldSelectedPlayerCount: null,
       selectedGameData: {},
       players: [],
       corporations: [],
@@ -323,7 +327,8 @@ export default {
 
       this.playerCounts = tempPlayerCounts;
 
-      this.selectedPlayerCount = this.selectedGameData.minPlayer;
+      this.selectedPlayerCount = this.oldSelectedPlayerCount =
+        this.selectedGameData.minPlayer;
       this.setupPlayerData();
     },
 
@@ -459,6 +464,44 @@ export default {
         ? (this[element] = true)
         : (this[element] = false);
     },
+
+    changePlayerCount() {
+      var isPositiv =
+        this.selectedPlayerCount - this.oldSelectedPlayerCount > 0;
+      var diff = Math.abs(
+        this.selectedPlayerCount - this.oldSelectedPlayerCount
+      );
+      for (let index = 0; index < diff; index++) {
+        if (isPositiv) {
+          this.playerCorporationOwnership.forEach((corporation, indexInner) => {
+            corporation.push({
+              value: null,
+              key: indexInner + "#" + corporation.length,
+            });
+          });
+
+          this.players.push({
+            name: "player-" + Number(this.players.length + 1),
+          });
+
+          this.playersStockValue.push(0);
+          this.playersCash.push({ value: null });
+          this.playerSimulatedIncome.push(0);
+        } else {
+          this.playerCorporationOwnership.forEach((corporation) => {
+            corporation.pop();
+          });
+
+          this.players.pop();
+
+          this.playersStockValue.pop();
+          this.playersCash.pop();
+          this.playerSimulatedIncome.pop();
+        }
+      }
+
+      this.oldSelectedPlayerCount = this.selectedPlayerCount;
+    },
   },
 
   computed: {
@@ -496,46 +539,6 @@ export default {
           }
         ) + cash
       );
-    },
-  },
-
-  watch: {
-    selectedPlayerCount(newValue, oldValue) {
-      if (oldValue) {
-        var isPositiv = newValue - oldValue > 0;
-        var diff = Math.abs(newValue - oldValue);
-
-        for (let index = 0; index < diff; index++) {
-          if (isPositiv) {
-            this.playerCorporationOwnership.forEach(
-              (corporation, indexInner) => {
-                corporation.push({
-                  value: null,
-                  key: indexInner + "#" + corporation.length,
-                });
-              }
-            );
-
-            this.players.push({
-              name: "player-" + Number(this.players.length + 1),
-            });
-
-            this.playersStockValue.push(0);
-            this.playersCash.push({ value: null });
-            this.playerSimulatedIncome.push(0);
-          } else {
-            this.playerCorporationOwnership.forEach((corporation) => {
-              corporation.pop();
-            });
-
-            this.players.pop();
-
-            this.playersStockValue.pop();
-            this.playersCash.pop();
-            this.playerSimulatedIncome.pop();
-          }
-        }
-      }
     },
   },
 
