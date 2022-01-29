@@ -493,7 +493,6 @@ export default {
           });
 
           this.players.pop();
-
           this.playersStockValue.pop();
           this.playersCash.pop();
           this.playerSimulatedIncome.pop();
