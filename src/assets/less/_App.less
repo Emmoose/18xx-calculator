@@ -126,15 +126,17 @@ input:focus {
 }
 
 .corp-name-mobile {
+    transform: rotate(90deg);
     display: none;
     border: 1px solid @color-border;
     position: fixed;
-    top: 0;
+    top: 50%;
     z-index: 1;
     height: 40px;
     align-items: center;
     justify-content: center;
-    left: 8px;
+    width: 300px;
+    left: -112px;
     right: 8px;
 }
 
@@ -190,9 +192,16 @@ input:focus {
     }
 }
 
-.corporation-ownership-matrix input {
-    width: 100%;
-    min-width: 120px;
+.corporation-ownership-matrix {
+    input {
+        width: 100%;
+        min-width: 120px;
+        padding: 8px;
+    }
+
+    thead tr th {
+        padding: 0;
+    }
 }
 
 .wealth-table td {

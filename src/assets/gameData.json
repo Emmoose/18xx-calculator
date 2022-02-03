@@ -5,6 +5,7 @@
     "maxPlayer": 6,
     "minPlayer": 3,
     "corporations": [
+      {"name": "Bank Of England", "color": "#ffffff", "text":"black"},
       {"name": "Queensland Government Railway", "color": "green", "text":"#ffffff" },
       {"name": "Commonwealth Railways", "color": "#D2B48C", "text": "black" },
       {"name": "Federal Territory Railway", "color": "#8AB7F8", "text":"black" },
@@ -13,6 +14,7 @@
       {"name": "West Australian Railways", "color": "red" , "text":"#ffffff"},
       {"name": "New South Wales Railways", "color": "#FBBF77" , "text":"black"},
       {"name": "Central Australian Railways", "color": "black" , "text":"#ffffff"}
+      
   ]
   }, {
     "id": 2,

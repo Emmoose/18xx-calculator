@@ -10,7 +10,7 @@
           </p>
           <div class="flex-column">
             <label>Select Game</label>
-            <select v-model="selectedGame" @change="setupGame">
+            <select v-model="selectedGame" @change="setupGame(false)">
               <option v-for="game in games" v-bind:key="game">
                 {{ game }}
               </option>
@@ -67,11 +67,11 @@
                   ref="outsideCompanyValue"
                   class="td-corporation"
                   :style="{
-                    'background-color': corporation.information.color,
-                    color: corporation.information.text,
+                    'background-color': corporations[index].color,
+                    color: corporations[index].text,
                   }"
                 >
-                  {{ corporation.information.name }}
+                  {{ corporations[index].name }}
                 </td>
                 <td>
                   <span
@@ -143,7 +143,11 @@
             <tr>
               <th>Corporation</th>
               <th v-for="(player, index) in players" v-bind:key="index">
-                <input type="text" v-model.number="player.name" />
+                <input
+                  type="text"
+                  v-model.number="player.name"
+                  v-on:change="updateLocalStorage"
+                />
               </th>
             </tr>
           </thead>
@@ -152,6 +156,19 @@
               v-for="(companyRow, index) in playerCorporationOwnership"
               v-bind:key="index"
             >
+              <td ref="outsideCorporationOwnership">
+                <div
+                  class="td-corporation"
+                  v-if="corporations[index].name"
+                  :style="{
+                    'background-color': corporations[index].color,
+                    color: corporations[index].text,
+                  }"
+                >
+                  {{ corporations[index].name }}
+                </div>
+              </td>
+
               <td
                 v-for="cell in companyRow"
                 v-bind:key="cell.key"
@@ -188,6 +205,7 @@
           </thead>
           <tbody>
             <tr>
+              <td>Stock Value</td>
               <td
                 v-for="(playerStockValue, index) in playersStockValue"
                 v-bind:key="index"
@@ -205,9 +223,9 @@
               </td>
             </tr>
             <tr>
+              <td>Cash</td>
               <td v-for="(cash, index) in playersCash" v-bind:key="index">
                 <span
-                  v-if="index != 0"
                   class="currency-on-input"
                   v-bind:class="{
                     left: currency.location == 'left',
@@ -215,21 +233,16 @@
                   }"
                   >{{ currency.sign }}</span
                 >
-                <span v-if="index == 0">{{ cash }}</span>
-                <input
-                  v-if="index != 0"
-                  v-model.number="cash.value"
-                  placeholder="Cash"
-                />
+                <input v-model.number="cash.value" placeholder="Cash" />
               </td>
             </tr>
             <tr>
+              <td>Simulated OR's Value</td>
               <td
                 v-for="(cash, index) in playerSimulatedIncome"
                 v-bind:key="index"
               >
                 <span
-                  v-if="index != 0"
                   class="currency-on-input"
                   v-bind:class="{
                     left: currency.location == 'left',
@@ -242,9 +255,9 @@
             </tr>
 
             <tr class="wealth-table">
+              <td>Total Wealth</td>
               <td v-for="(wealth, index) in totalWealth" v-bind:key="index">
                 <span
-                  v-if="index != 0"
                   class="currency-on-input"
                   v-bind:class="{
                     left: currency.location == 'left',
@@ -303,7 +316,7 @@ export default {
   },
 
   methods: {
-    setupGame() {
+    setupGame(cachedSetup) {
       this.selectedGameData = gameData.filter(
         (game) => game.gameName == this.selectedGame
       )[0];
@@ -311,10 +324,10 @@ export default {
       this.corporations = this.selectedGameData.corporations;
       this.currency = this.selectedGameData.currency;
 
-      this.setupPlayerCountOptions();
+      this.setupPlayerCountOptions(cachedSetup);
     },
 
-    setupPlayerCountOptions() {
+    setupPlayerCountOptions(cachedSetup) {
       var tempPlayerCounts = [];
 
       for (
@@ -327,12 +340,17 @@ export default {
 
       this.playerCounts = tempPlayerCounts;
 
-      this.selectedPlayerCount = this.oldSelectedPlayerCount =
-        this.selectedGameData.minPlayer;
-      this.setupPlayerData();
+      if (!cachedSetup) {
+        this.selectedPlayerCount = this.oldSelectedPlayerCount =
+          this.selectedGameData.minPlayer;
+
+        this.setupPlayerData();
+      }
     },
 
     setupPlayerData() {
+      this.simulatedRounds = 0;
+
       // Players list
       this.players = Array.from(
         new Array(this.selectedPlayerCount),
@@ -344,8 +362,7 @@ export default {
       // Matrix for corporations earnings
       this.corporationsWealth = Array(this.corporations.length)
         .fill()
-        .map((data, index) => ({
-          information: this.corporations[index],
+        .map(() => ({
           revenue: null,
           stockValue: null,
         }));
@@ -362,8 +379,6 @@ export default {
       ) {
         var tempArray = [];
 
-        tempArray.push(this.corporations[outerIndex]);
-
         for (
           let innerIndex = 0;
           innerIndex < this.selectedPlayerCount;
@@ -376,7 +391,6 @@ export default {
 
       // List player stock value
       this.playersStockValue = Array(this.selectedPlayerCount).fill(0);
-      this.playersStockValue.unshift("Stock Value");
 
       // List player cash
       this.playersCash = Array(this.selectedPlayerCount)
@@ -385,10 +399,8 @@ export default {
           value: null,
         }));
 
-      this.playersCash.unshift("Cash");
-
       this.playerSimulatedIncome = Array(this.selectedPlayerCount).fill(0);
-      this.playerSimulatedIncome.unshift("Simulated OR's Value");
+      this.updateLocalStorage();
     },
 
     proxyCalcOwnershipDep() {
@@ -399,11 +411,10 @@ export default {
     //BAD IMPLEMENTATION LOOPING THROUGH ALL CAN IT BE DONE WITH COMPUTED OR SIMILAR?
     calculatePlayerStockValue() {
       var tempStockValue = Array(this.selectedPlayerCount).fill(0);
-      tempStockValue.unshift("Stock Value");
 
       this.corporationsWealth.forEach((value, index) => {
         for (
-          let innerIndex = 1;
+          let innerIndex = 0;
           innerIndex < this.playerCorporationOwnership[index].length;
           innerIndex++
         ) {
@@ -416,20 +427,15 @@ export default {
       });
 
       this.playersStockValue = tempStockValue;
+      this.updateLocalStorage();
     },
 
     runSimulation() {
-      this.$gtag.event("testing-simulation", {
-        event_category: "testing",
-        event_label: "testing the simulation functionality",
-      });
-
       var tempStockValue = Array(this.selectedPlayerCount).fill(0);
-      tempStockValue.unshift("Simulated OR's Value");
 
       this.corporationsWealth.forEach((value, index) => {
         for (
-          let innerIndex = 1;
+          let innerIndex = 0;
           innerIndex < this.playerCorporationOwnership[index].length;
           innerIndex++
         ) {
@@ -443,11 +449,13 @@ export default {
       });
 
       this.playerSimulatedIncome = tempStockValue;
+      this.updateLocalStorage();
     },
 
     changeNumberSimulationRounds(change) {
       this.simulatedRounds = this.simulatedRounds + change;
       this.runSimulation();
+      this.updateLocalStorage();
     },
 
     showCorporationTip(index, table) {
@@ -500,14 +508,31 @@ export default {
       }
 
       this.oldSelectedPlayerCount = this.selectedPlayerCount;
+      this.updateLocalStorage();
+    },
+
+    updateLocalStorage() {
+      var localStorageCopy = {
+        selectedGame: this.selectedGame,
+        selectedPlayerCount: this.selectedPlayerCount,
+        players: this.players,
+        playersCash: this.playersCash,
+        corporationsWealth: this.corporationsWealth,
+        playerCorporationOwnership: this.playerCorporationOwnership,
+        playersStockValue: this.playersStockValue,
+        playerSimulatedIncome: this.playerSimulatedIncome,
+        simulatedRounds: this.simulatedRounds,
+      };
+
+      localStorage.setItem("savedXXGame", JSON.stringify(localStorageCopy));
     },
   },
 
   computed: {
     totalWealth() {
-      var tempTotalWealth = ["Total Wealth"];
+      var tempTotalWealth = [];
 
-      for (let index = 1; index < this.playersStockValue.length; index++) {
+      for (let index = 0; index < this.playersStockValue.length; index++) {
         tempTotalWealth.push(
           this.playersStockValue[index] +
             Number(this.playersCash[index].value) +
@@ -519,32 +544,53 @@ export default {
     },
 
     bankSummation() {
-      var cash = this.playersCash.reduce((acc, obj, currentIndex) => {
-        if (currentIndex == 1) {
-          return Number(obj.value);
+      var cash = this.playersCash.reduce((acc, obj, index) => {
+        if (index == 1) {
+          return Number(acc.value) + Number(obj.value);
         } else {
           return Number(acc) + Number(obj.value);
         }
       });
 
       return (
-        this.playerSimulatedIncome.reduce(
-          (previousValue, currentValue, currentIndex) => {
-            if (currentIndex == 1) {
-              return currentValue;
-            } else {
-              return previousValue + currentValue;
-            }
-          }
-        ) + cash
+        this.playerSimulatedIncome.reduce((previousValue, currentValue) => {
+          return previousValue + currentValue;
+        }) + cash
       );
     },
   },
 
   created: function () {
     this.games = gameData.map((game) => game.gameName); // Create select options
-    this.setupGame();
-    this.setupPlayerData();
+
+    var savedXXGame = JSON.parse(window.localStorage.getItem("savedXXGame"));
+
+    if (savedXXGame) {
+      this.selectedGame = savedXXGame.selectedGame;
+      this.selectedPlayerCount = savedXXGame.selectedPlayerCount;
+      this.oldSelectedPlayerCount = savedXXGame.selectedPlayerCount;
+      this.corporationsWealth = JSON.parse(
+        JSON.stringify(savedXXGame.corporationsWealth)
+      );
+      this.playerCorporationOwnership = JSON.parse(
+        JSON.stringify(savedXXGame.playerCorporationOwnership)
+      );
+      this.playerSimulatedIncome = JSON.parse(
+        JSON.stringify(savedXXGame.playerSimulatedIncome)
+      );
+      this.players = JSON.parse(JSON.stringify(savedXXGame.players));
+      this.playersCash = JSON.parse(JSON.stringify(savedXXGame.playersCash));
+      this.playersStockValue = JSON.parse(
+        JSON.stringify(savedXXGame.playersStockValue)
+      );
+      this.simulatedRounds = JSON.parse(
+        JSON.stringify(savedXXGame.simulatedRounds)
+      );
+      this.setupGame(true);
+    } else {
+      this.setupGame(false);
+    }
+
     this.runSimulation();
   },
 };
