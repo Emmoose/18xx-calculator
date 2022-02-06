@@ -10,7 +10,7 @@
           </p>
           <div class="flex-column">
             <label>Select Game</label>
-            <select v-model="selectedGame" @change="setupGame(false)">
+            <select v-model="selectedGame" @change="setupNewGame()">
               <option v-for="game in games" v-bind:key="game">
                 {{ game }}
               </option>
@@ -30,7 +30,7 @@
             <div class="simulate-rounds">
               <button
                 :disabled="simulatedRounds < 1"
-                v-on:click="changeNumberSimulationRounds(-1)"
+                v-on:click="simulatedRounds--"
               >
                 -1
               </button>
@@ -39,7 +39,7 @@
                 v-model.number="simulatedRounds"
                 @change="runSimulation"
               />
-              <button v-on:click="changeNumberSimulationRounds(1)">+1</button>
+              <button v-on:click="simulatedRounds++">+1</button>
             </div>
           </div>
         </div>
@@ -146,6 +146,7 @@
                 <input
                   type="text"
                   v-model.number="player.name"
+                  v-on:focus="player.name = null"
                   v-on:change="updateLocalStorage"
                 />
               </th>
@@ -156,42 +157,27 @@
               v-for="(companyRow, index) in playerCorporationOwnership"
               v-bind:key="index"
             >
-              <td ref="outsideCorporationOwnership">
-                <div
-                  class="td-corporation"
-                  v-if="corporations[index].name"
-                  :style="{
-                    'background-color': corporations[index].color,
-                    color: corporations[index].text,
-                  }"
-                >
-                  {{ corporations[index].name }}
-                </div>
+              <td
+                ref="outsideCorporationOwnership"
+                class="td-corporation"
+                :style="{
+                  'background-color': corporations[index].color,
+                  color: corporations[index].text,
+                }"
+              >
+                {{ corporations[index].name }}
               </td>
-
               <td
                 v-for="cell in companyRow"
                 v-bind:key="cell.key"
                 ref="outsideCorporationOwnership"
               >
-                <div
-                  class="td-corporation"
-                  v-if="cell.name"
-                  :style="{
-                    'background-color': cell.color,
-                    color: cell.text,
-                  }"
-                >
-                  {{ cell.name }}
-                </div>
-                <span class="input-percentage" v-show="!cell.name">%</span>
+                <span class="input-percentage">%</span>
                 <input
                   placeholder="Share"
-                  v-show="!cell.name"
                   type="number"
                   v-model.number="cell.value"
                   v-bind:key="cell.key"
-                  @change="proxyCalcOwnershipDep"
                   @focus="showCorporationTip(index, 'corporationTipOwnership')"
                   @blur="hideCorporationTip('corporationTipOwnership')"
                 />
@@ -211,7 +197,6 @@
                 v-bind:key="index"
               >
                 <span
-                  v-if="index != 0"
                   class="currency-on-input"
                   v-bind:class="{
                     left: currency.location == 'left',
@@ -316,18 +301,48 @@ export default {
   },
 
   methods: {
-    setupGame(cachedSetup) {
+    setupCachedGame(savedXXGame) {
+      this.setupSelectedGameData();
+      this.setupPlayerCountOptions();
+
+      this.selectedGame = savedXXGame.selectedGame;
+      this.selectedPlayerCount = this.oldSelectedPlayerCount =
+        savedXXGame.players.length;
+      this.corporationsWealth = JSON.parse(
+        JSON.stringify(savedXXGame.corporationsWealth)
+      );
+      this.playerCorporationOwnership = JSON.parse(
+        JSON.stringify(savedXXGame.playerCorporationOwnership)
+      );
+      this.players = JSON.parse(JSON.stringify(savedXXGame.players));
+      this.playersCash = JSON.parse(JSON.stringify(savedXXGame.playersCash));
+      this.simulatedRounds = savedXXGame.simulatedRounds;
+
+      this.setupPlayersTotals();
+    },
+
+    setupNewGame() {
+      this.setupSelectedGameData();
+      this.setupPlayerCountOptions();
+
+      this.selectedPlayerCount = this.oldSelectedPlayerCount =
+        this.selectedGameData.minPlayer;
+
+      this.setupMatrixes();
+      this.setupPlayersTotals();
+      this.updateLocalStorage();
+    },
+
+    setupSelectedGameData() {
       this.selectedGameData = gameData.filter(
         (game) => game.gameName == this.selectedGame
       )[0];
 
       this.corporations = this.selectedGameData.corporations;
       this.currency = this.selectedGameData.currency;
-
-      this.setupPlayerCountOptions(cachedSetup);
     },
 
-    setupPlayerCountOptions(cachedSetup) {
+    setupPlayerCountOptions() {
       var tempPlayerCounts = [];
 
       for (
@@ -339,16 +354,9 @@ export default {
       }
 
       this.playerCounts = tempPlayerCounts;
-
-      if (!cachedSetup) {
-        this.selectedPlayerCount = this.oldSelectedPlayerCount =
-          this.selectedGameData.minPlayer;
-
-        this.setupPlayerData();
-      }
     },
 
-    setupPlayerData() {
+    setupMatrixes() {
       this.simulatedRounds = 0;
 
       // Players list
@@ -388,7 +396,9 @@ export default {
         }
         this.playerCorporationOwnership[outerIndex] = tempArray;
       }
+    },
 
+    setupPlayersTotals() {
       // List player stock value
       this.playersStockValue = Array(this.selectedPlayerCount).fill(0);
 
@@ -400,12 +410,6 @@ export default {
         }));
 
       this.playerSimulatedIncome = Array(this.selectedPlayerCount).fill(0);
-      this.updateLocalStorage();
-    },
-
-    proxyCalcOwnershipDep() {
-      this.calculatePlayerStockValue();
-      this.runSimulation();
     },
 
     //BAD IMPLEMENTATION LOOPING THROUGH ALL CAN IT BE DONE WITH COMPUTED OR SIMILAR?
@@ -449,13 +453,6 @@ export default {
       });
 
       this.playerSimulatedIncome = tempStockValue;
-      this.updateLocalStorage();
-    },
-
-    changeNumberSimulationRounds(change) {
-      this.simulatedRounds = this.simulatedRounds + change;
-      this.runSimulation();
-      this.updateLocalStorage();
     },
 
     showCorporationTip(index, table) {
@@ -513,17 +510,13 @@ export default {
 
     updateLocalStorage() {
       var localStorageCopy = {
-        selectedGame: this.selectedGame,
-        selectedPlayerCount: this.selectedPlayerCount,
         players: this.players,
         playersCash: this.playersCash,
+        selectedGame: this.selectedGame,
         corporationsWealth: this.corporationsWealth,
         playerCorporationOwnership: this.playerCorporationOwnership,
-        playersStockValue: this.playersStockValue,
-        playerSimulatedIncome: this.playerSimulatedIncome,
         simulatedRounds: this.simulatedRounds,
       };
-
       localStorage.setItem("savedXXGame", JSON.stringify(localStorageCopy));
     },
   },
@@ -560,36 +553,25 @@ export default {
     },
   },
 
+  watch: {
+    playerCorporationOwnership: {
+      handler() {
+        this.runSimulation();
+        this.calculatePlayerStockValue();
+      },
+      deep: true,
+    },
+
+    simulatedRounds() {
+      this.runSimulation();
+      this.updateLocalStorage();
+    },
+  },
+
   created: function () {
     this.games = gameData.map((game) => game.gameName); // Create select options
-
     var savedXXGame = JSON.parse(window.localStorage.getItem("savedXXGame"));
-
-    if (savedXXGame) {
-      this.selectedGame = savedXXGame.selectedGame;
-      this.selectedPlayerCount = savedXXGame.selectedPlayerCount;
-      this.oldSelectedPlayerCount = savedXXGame.selectedPlayerCount;
-      this.corporationsWealth = JSON.parse(
-        JSON.stringify(savedXXGame.corporationsWealth)
-      );
-      this.playerCorporationOwnership = JSON.parse(
-        JSON.stringify(savedXXGame.playerCorporationOwnership)
-      );
-      this.playerSimulatedIncome = JSON.parse(
-        JSON.stringify(savedXXGame.playerSimulatedIncome)
-      );
-      this.players = JSON.parse(JSON.stringify(savedXXGame.players));
-      this.playersCash = JSON.parse(JSON.stringify(savedXXGame.playersCash));
-      this.playersStockValue = JSON.parse(
-        JSON.stringify(savedXXGame.playersStockValue)
-      );
-      this.simulatedRounds = JSON.parse(
-        JSON.stringify(savedXXGame.simulatedRounds)
-      );
-      this.setupGame(true);
-    } else {
-      this.setupGame(false);
-    }
+    savedXXGame ? this.setupCachedGame(savedXXGame) : this.setupNewGame();
 
     this.runSimulation();
   },
