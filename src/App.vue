@@ -241,7 +241,7 @@
 
             <tr class="wealth-table">
               <td>Total Wealth</td>
-              <td v-for="(wealth, index) in totalWealth" v-bind:key="index">
+              <td v-for="(score, index) in playersScore" v-bind:key="index">
                 <span
                   class="currency-on-input"
                   v-bind:class="{
@@ -250,7 +250,13 @@
                   }"
                   >{{ currency.sign }}</span
                 >
-                {{ wealth }}
+                {{ score.totalWealth }}
+              </td>
+            </tr>
+            <tr>
+              <td>Ranking</td>
+              <td v-for="(score, index) in playersScore" v-bind:key="index">
+                {{ score.ranking }}
               </td>
             </tr>
           </tbody>
@@ -522,18 +528,32 @@ export default {
   },
 
   computed: {
-    totalWealth() {
-      var tempTotalWealth = [];
+    playersScore() {
+      var playersScore = [];
 
       for (let index = 0; index < this.playersStockValue.length; index++) {
-        tempTotalWealth.push(
+        var totalWealth =
           this.playersStockValue[index] +
-            Number(this.playersCash[index].value) +
-            this.playerSimulatedIncome[index]
-        );
+          Number(this.playersCash[index].value) +
+          this.playerSimulatedIncome[index];
+
+        playersScore.push({ totalWealth });
       }
 
-      return tempTotalWealth;
+      for (let index = 0; index < playersScore.length; index++) {
+        playersScore[index].ranking = 1;
+
+        for (let inIndex = 0; inIndex < playersScore.length; inIndex++) {
+          if (
+            index != inIndex &&
+            playersScore[index].totalWealth < playersScore[inIndex].totalWealth
+          ) {
+            playersScore[index].ranking++;
+          }
+        }
+      }
+
+      return playersScore;
     },
 
     bankSummation() {
