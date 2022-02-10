@@ -74,14 +74,7 @@
                   {{ corporations[index].name }}
                 </td>
                 <td>
-                  <span
-                    class="currency-on-input"
-                    v-bind:class="{
-                      left: currency.location == 'left',
-                      right: currency.location == 'right',
-                    }"
-                    >{{ currency.sign }}</span
-                  >
+                  <TableDataCurrency :currency="currency" />
                   <input
                     placeholder="Stock value"
                     type="number"
@@ -94,14 +87,7 @@
                   />
                 </td>
                 <td>
-                  <span
-                    class="currency-on-input"
-                    v-bind:class="{
-                      left: currency.location == 'left',
-                      right: currency.location == 'right',
-                    }"
-                    >{{ currency.sign }}</span
-                  >
+                  <TableDataCurrency :currency="currency" />
                   <input
                     placeholder="Revenue"
                     type="number"
@@ -196,29 +182,19 @@
                 v-for="(playerStockValue, index) in playersStockValue"
                 v-bind:key="index"
               >
-                <span
-                  class="currency-on-input"
-                  v-bind:class="{
-                    left: currency.location == 'left',
-                    right: currency.location == 'right',
-                  }"
-                  >{{ currency.sign }}</span
-                >
+                <TableDataCurrency :currency="currency" />
                 {{ playerStockValue }}
               </td>
             </tr>
             <tr>
               <td>Cash</td>
               <td v-for="(cash, index) in playersCash" v-bind:key="index">
-                <span
-                  class="currency-on-input"
-                  v-bind:class="{
-                    left: currency.location == 'left',
-                    right: currency.location == 'right',
-                  }"
-                  >{{ currency.sign }}</span
-                >
-                <input v-model.number="cash.value" placeholder="Cash" />
+                <TableDataCurrency :currency="currency" />
+                <input
+                  type="number"
+                  v-model.number="cash.value"
+                  placeholder="Cash"
+                />
               </td>
             </tr>
             <tr>
@@ -227,29 +203,15 @@
                 v-for="(cash, index) in playerSimulatedIncome"
                 v-bind:key="index"
               >
-                <span
-                  class="currency-on-input"
-                  v-bind:class="{
-                    left: currency.location == 'left',
-                    right: currency.location == 'right',
-                  }"
-                  >{{ currency.sign }}</span
-                >
-                <span>{{ cash }}</span>
+                <TableDataCurrency :currency="currency" />
+                {{ cash }}
               </td>
             </tr>
 
             <tr class="wealth-table">
               <td>Total Wealth</td>
               <td v-for="(score, index) in playersScore" v-bind:key="index">
-                <span
-                  class="currency-on-input"
-                  v-bind:class="{
-                    left: currency.location == 'left',
-                    right: currency.location == 'right',
-                  }"
-                  >{{ currency.sign }}</span
-                >
+                <TableDataCurrency :currency="currency" />
                 {{ score.totalWealth }}
               </td>
             </tr>
@@ -271,9 +233,13 @@
 
 <script>
 import gameData from "./assets/gameData.json";
+import TableDataCurrency from "./components/TableDataCurrency";
 
 export default {
   name: "App",
+  components: {
+    TableDataCurrency,
+  },
 
   data: function () {
     return {

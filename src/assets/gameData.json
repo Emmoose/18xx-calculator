@@ -93,4 +93,24 @@
       {"name": "Qu'Appelle, Long Lake Railroad Co.", "color": "purple" , "text":"#ffffff"},
       {"name": "Saskatchewan Central Railroad", "color": "#0189d1" , "text":"#ffffff"}
     ]
+  },
+  {
+    "id": 6,
+    "gameName": "Generic Game",
+    "currency": {"sign": "$", "location": "left"},
+    "maxPlayer": 10,
+    "minPlayer": 2,
+    "corporations": [
+      {"name": "Company1", "color": "black", "text": "white" },
+      {"name": "Company1", "color": "black", "text": "white" },
+      {"name": "Company1", "color": "black", "text": "white" },
+      {"name": "Company1", "color": "black", "text": "white" },
+      {"name": "Company1", "color": "black", "text": "white" },
+      {"name": "Company1", "color": "black", "text": "white" },
+      {"name": "Company1", "color": "black", "text": "white" },
+      {"name": "Company1", "color": "black", "text": "white" },
+      {"name": "Company1", "color": "black", "text": "white" },
+      {"name": "Company1", "color": "black", "text": "white" },
+      {"name": "Company1", "color": "black", "text": "white" }
+    ]
   }]
