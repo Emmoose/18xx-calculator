@@ -100,7 +100,6 @@ export default {
       this.runSimulation();
     },
 
-
     toggleCorpHint(boolean, index, table) {
       if (boolean) {
         this[table] = true;

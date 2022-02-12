@@ -1,0 +1,31 @@
+@import "./_variables";
+
+.info-text {
+    text-align: left;
+}
+
+.game-settings {
+    width: 400px;
+    padding: @indent__base;
+    background-color: @color-background-secondary;
+    border: 1px solid @color-border;
+}
+
+.simulate-rounds {
+    display: flex;
+
+    input {
+        border: 1px solid @color-border;
+        width: 80px;
+        height: 40px;
+        margin: 0 @indent__s;
+    }
+}
+
+// Media query mobile screen sizes
+@media only screen and (max-width: @screen__m) {
+    .game-settings {
+        width: auto;
+        margin: @indent__s;
+    }
+}
