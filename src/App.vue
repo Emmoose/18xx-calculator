@@ -3,250 +3,74 @@
     <div class="calculator">
       <h2>Game: {{ selectedGame }}</h2>
       <div class="top-row">
-        <div class="game-settings">
-          <p class="info-text">
-            Simple app for calculating end game scoring and optionally to
-            simulate operating rounds with full payout.
-          </p>
-          <div class="flex-column">
-            <label>Select Game</label>
-            <select v-model="selectedGame" @change="setupNewGame()">
-              <option v-for="game in games" v-bind:key="game">
-                {{ game }}
-              </option>
-            </select>
-          </div>
-          <div class="flex-column">
-            <label>Select Player number</label>
-            <select
-              v-model.number="selectedPlayerCount"
-              @change="changePlayerCount"
-            >
-              <option v-for="count in playerCounts" v-bind:key="count">
-                {{ count }}
-              </option>
-            </select>
-            <label>Simulated Rounds</label>
-            <div class="simulate-rounds">
-              <button
-                :disabled="simulatedRounds < 1"
-                v-on:click="simulatedRounds--"
-              >
-                -1
-              </button>
-              <input
-                type="number"
-                v-model.number="simulatedRounds"
-                @change="runSimulation"
-              />
-              <button v-on:click="simulatedRounds++">+1</button>
-            </div>
-          </div>
-        </div>
-        <div
-          class="companyvalue-matrix"
-          v-on:scroll="calulateIfCorpNameOutside('outsideCompanyValue')"
-        >
-          <table>
-            <thead>
-              <tr>
-                <th colspan="3">Corporation Wealth</th>
-              </tr>
-              <tr>
-                <th>Corporations</th>
-                <th>Stock Value</th>
-                <th>Per Stock Revenue</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr
-                v-for="(corporation, index) in corporationsWealth"
-                v-bind:key="index"
-              >
-                <td
-                  ref="outsideCompanyValue"
-                  class="td-corporation"
-                  :style="{
-                    'background-color': corporations[index].color,
-                    color: corporations[index].text,
-                  }"
-                >
-                  {{ corporations[index].name }}
-                </td>
-                <td>
-                  <TableDataCurrency :currency="currency" />
-                  <input
-                    placeholder="Stock value"
-                    type="number"
-                    v-model.number="corporation.stockValue"
-                    @change="calculatePlayerStockValue"
-                    @focus="
-                      showCorporationTip(index, 'corporationTipCompanyValue')
-                    "
-                    @blur="hideCorporationTip('corporationTipCompanyValue')"
-                  />
-                </td>
-                <td>
-                  <TableDataCurrency :currency="currency" />
-                  <input
-                    placeholder="Revenue"
-                    type="number"
-                    v-model.number="corporation.revenue"
-                    @change="runSimulation"
-                    @focus="
-                      showCorporationTip(index, 'corporationTipCompanyValue')
-                    "
-                    @blur="hideCorporationTip('corporationTipCompanyValue')"
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <GameSettings
+          :games="games"
+          :selected-game="selectedGame"
+          :selected-player-count="selectedPlayerCount"
+          :max-player="selectedGameData.maxPlayer"
+          :min-player="selectedGameData.minPlayer"
+          v-bind:simulated-rounds="simulatedRounds"
+          v-on:change-game="setupNewGame"
+          v-on:change-player-count="changePlayerCount"
+          v-on:change-simulated-rounds="changeSimulatedRounds"
+        />
+        <CorporationHintMobile
+          :input-focused-corporation="inputFocusedCorporation"
+          :show-hint-wealth-table="showHintWealthTable"
+          :show-hint-ownership-table="showHintOwnershipTable"
+        />
+        <CorporationWealthTable
+          :corporations="corporations"
+          :corporations-wealth="corporationsWealth"
+          :currency="currency"
+          v-on:calculate-player-stock-value="calculatePlayerStockValue"
+          v-on:run-simulator="runSimulation"
+          v-on:toggle-corp-hint="toggleCorpHint"
+        />
       </div>
-      <div
-        class="corporation-ownership-matrix"
-        v-on:scroll="calulateIfCorpNameOutside('outsideCorporationOwnership')"
-      >
-        <div
-          v-if="
-            (outsideCompanyValue && corporationTipCompanyValue) ||
-            (outsideCorporationOwnership && corporationTipOwnership)
-          "
-          class="corp-name-mobile"
-          :style="{
-            'background-color': inputFocusedCorporation.color,
-            color: inputFocusedCorporation.text,
-          }"
-        >
-          {{ inputFocusedCorporation.name }}
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th :colspan="players.length + 1">Corporations Ownership</th>
-            </tr>
-            <tr>
-              <th>Corporation</th>
-              <th v-for="(player, index) in players" v-bind:key="index">
-                <input
-                  type="text"
-                  v-model.number="player.name"
-                  v-on:focus="player.name = null"
-                  v-on:change="updateLocalStorage"
-                />
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr
-              v-for="(companyRow, index) in playerCorporationOwnership"
-              v-bind:key="index"
-            >
-              <td
-                ref="outsideCorporationOwnership"
-                class="td-corporation"
-                :style="{
-                  'background-color': corporations[index].color,
-                  color: corporations[index].text,
-                }"
-              >
-                {{ corporations[index].name }}
-              </td>
-              <td
-                v-for="cell in companyRow"
-                v-bind:key="cell.key"
-                ref="outsideCorporationOwnership"
-              >
-                <span class="input-percentage">%</span>
-                <input
-                  placeholder="Share"
-                  type="number"
-                  v-model.number="cell.value"
-                  v-bind:key="cell.key"
-                  @focus="showCorporationTip(index, 'corporationTipOwnership')"
-                  @blur="hideCorporationTip('corporationTipOwnership')"
-                />
-              </td>
-            </tr>
-          </tbody>
-          <thead>
-            <tr>
-              <th :colspan="players.length + 1">Player Wealth</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Stock Value</td>
-              <td
-                v-for="(playerStockValue, index) in playersStockValue"
-                v-bind:key="index"
-              >
-                <TableDataCurrency :currency="currency" />
-                {{ playerStockValue }}
-              </td>
-            </tr>
-            <tr>
-              <td>Cash</td>
-              <td v-for="(cash, index) in playersCash" v-bind:key="index">
-                <TableDataCurrency :currency="currency" />
-                <input
-                  type="number"
-                  v-model.number="cash.value"
-                  placeholder="Cash"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>Simulated OR's Value</td>
-              <td
-                v-for="(cash, index) in playerSimulatedIncome"
-                v-bind:key="index"
-              >
-                <TableDataCurrency :currency="currency" />
-                {{ cash }}
-              </td>
-            </tr>
-
-            <tr class="wealth-table">
-              <td>Total Wealth</td>
-              <td v-for="(score, index) in playersScore" v-bind:key="index">
-                <TableDataCurrency :currency="currency" />
-                {{ score.totalWealth }}
-              </td>
-            </tr>
-            <tr>
-              <td>Ranking</td>
-              <td v-for="(score, index) in playersScore" v-bind:key="index">
-                {{ score.ranking }}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="bank-summation">
-        <span>Sum cash and simulated operation: {{ bankSummation }}</span>
-      </div>
+      <CorporationOwnershipTable
+        :corporations="corporations"
+        :currency="currency"
+        :players="players"
+        :player-corporation-ownership="playerCorporationOwnership"
+        :players-stock-value="playersStockValue"
+        :player-simulated-income="playerSimulatedIncome"
+        v-bind:players-cash="playersCash"
+        v-on:update-local-storage="updateLocalStorage"
+        v-on:toggle-corp-hint="toggleCorpHint"
+      />
+      <BankSummary
+        :players-cash="playersCash"
+        :player-simulated-income="playerSimulatedIncome"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import gameData from "./assets/gameData.json";
-import TableDataCurrency from "./components/TableDataCurrency";
+import GameSettings from "./components/GameSettings";
+import BankSummary from "./components/BankSummary";
+import CorporationHintMobile from "./components/CorporationHintMobile";
+import CorporationWealthTable from "./components/CorporationWealthTable";
+import CorporationOwnershipTable from "./components/CorporationOwnershipTable";
 
 export default {
   name: "App",
   components: {
-    TableDataCurrency,
+    BankSummary,
+    CorporationHintMobile,
+    CorporationWealthTable,
+    GameSettings,
+    CorporationOwnershipTable,
   },
 
   data: function () {
     return {
+      STORAGE_VERSION: 1,
       games: [],
       initialGameSetup: true,
       selectedGame: "18Chesapeake",
-      playerCounts: [],
       selectedPlayerCount: null,
       oldSelectedPlayerCount: null,
       selectedGameData: {},
@@ -263,21 +87,34 @@ export default {
         location: "left",
       },
 
-      outsideCompanyValue: false,
-      outsideCorporationOwnership: false,
-      corporationTipCompanyValue: false,
-      corporationTipOwnership: false,
+      showHintWealthTable: false,
+      showHintOwnershipTable: false,
 
       inputFocusedCorporation: { information: { color: null, text: null } },
     };
   },
 
   methods: {
-    setupCachedGame(savedXXGame) {
-      this.setupSelectedGameData();
-      this.setupPlayerCountOptions();
+    changeSimulatedRounds(numberRounds) {
+      this.simulatedRounds = numberRounds;
+      this.runSimulation();
+    },
 
+
+    toggleCorpHint(boolean, index, table) {
+      if (boolean) {
+        this[table] = true;
+        this.inputFocusedCorporation = this.corporations[index];
+      } else {
+        this[table] = false;
+      }
+    },
+
+    setupCachedGame(savedXXGame) {
       this.selectedGame = savedXXGame.selectedGame;
+
+      this.setupSelectedGameData();
+
       this.selectedPlayerCount = this.oldSelectedPlayerCount =
         savedXXGame.players.length;
       this.corporationsWealth = JSON.parse(
@@ -293,13 +130,18 @@ export default {
       this.setupPlayersTotals();
     },
 
-    setupNewGame() {
+    setupNewGame(gameName) {
+      this.selectedGame = gameName;
       this.setupSelectedGameData();
-      this.setupPlayerCountOptions();
 
       this.selectedPlayerCount = this.oldSelectedPlayerCount =
         this.selectedGameData.minPlayer;
-
+      // List player cash
+      this.playersCash = Array(this.selectedPlayerCount)
+        .fill()
+        .map(() => ({
+          value: null,
+        }));
       this.setupMatrixes();
       this.setupPlayersTotals();
       this.updateLocalStorage();
@@ -312,20 +154,6 @@ export default {
 
       this.corporations = this.selectedGameData.corporations;
       this.currency = this.selectedGameData.currency;
-    },
-
-    setupPlayerCountOptions() {
-      var tempPlayerCounts = [];
-
-      for (
-        let index = this.selectedGameData.minPlayer;
-        index <= this.selectedGameData.maxPlayer;
-        index++
-      ) {
-        tempPlayerCounts.push(index);
-      }
-
-      this.playerCounts = tempPlayerCounts;
     },
 
     setupMatrixes() {
@@ -374,13 +202,6 @@ export default {
       // List player stock value
       this.playersStockValue = Array(this.selectedPlayerCount).fill(0);
 
-      // List player cash
-      this.playersCash = Array(this.selectedPlayerCount)
-        .fill()
-        .map(() => ({
-          value: null,
-        }));
-
       this.playerSimulatedIncome = Array(this.selectedPlayerCount).fill(0);
     },
 
@@ -427,22 +248,9 @@ export default {
       this.playerSimulatedIncome = tempStockValue;
     },
 
-    showCorporationTip(index, table) {
-      this[table] = true;
-      this.inputFocusedCorporation = this.corporations[index];
-    },
+    changePlayerCount(event) {
+      this.selectedPlayerCount = parseInt(event.target.value);
 
-    hideCorporationTip(table) {
-      this[table] = false;
-    },
-
-    calulateIfCorpNameOutside(element) {
-      this.$refs[element][0].getBoundingClientRect().x < -220
-        ? (this[element] = true)
-        : (this[element] = false);
-    },
-
-    changePlayerCount() {
       var isPositiv =
         this.selectedPlayerCount - this.oldSelectedPlayerCount > 0;
       var diff = Math.abs(
@@ -488,6 +296,7 @@ export default {
         corporationsWealth: this.corporationsWealth,
         playerCorporationOwnership: this.playerCorporationOwnership,
         simulatedRounds: this.simulatedRounds,
+        STORAGE_VERSION: this.STORAGE_VERSION,
       };
       localStorage.setItem("savedXXGame", JSON.stringify(localStorageCopy));
     },
@@ -521,22 +330,6 @@ export default {
 
       return playersScore;
     },
-
-    bankSummation() {
-      var cash = this.playersCash.reduce((acc, obj, index) => {
-        if (index == 1) {
-          return Number(acc.value) + Number(obj.value);
-        } else {
-          return Number(acc) + Number(obj.value);
-        }
-      });
-
-      return (
-        this.playerSimulatedIncome.reduce((previousValue, currentValue) => {
-          return previousValue + currentValue;
-        }) + cash
-      );
-    },
   },
 
   watch: {
@@ -548,16 +341,20 @@ export default {
       deep: true,
     },
 
-    simulatedRounds() {
-      this.runSimulation();
-      this.updateLocalStorage();
+    playerCash: {
+      handler() {
+        this.updateLocalStorage();
+      },
+      deep: true,
     },
   },
 
   created: function () {
     this.games = gameData.map((game) => game.gameName); // Create select options
     var savedXXGame = JSON.parse(window.localStorage.getItem("savedXXGame"));
-    savedXXGame ? this.setupCachedGame(savedXXGame) : this.setupNewGame();
+    savedXXGame && savedXXGame.STORAGE_VERSION == this.STORAGE_VERSION
+      ? this.setupCachedGame(savedXXGame)
+      : this.setupNewGame("18Chesapeake");
 
     this.runSimulation();
   },

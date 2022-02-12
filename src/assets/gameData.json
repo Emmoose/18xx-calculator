@@ -95,22 +95,22 @@
     ]
   },
   {
-    "id": 6,
+    "id": 7,
     "gameName": "Generic Game",
     "currency": {"sign": "$", "location": "left"},
     "maxPlayer": 10,
     "minPlayer": 2,
     "corporations": [
       {"name": "Company1", "color": "black", "text": "white" },
-      {"name": "Company1", "color": "black", "text": "white" },
-      {"name": "Company1", "color": "black", "text": "white" },
-      {"name": "Company1", "color": "black", "text": "white" },
-      {"name": "Company1", "color": "black", "text": "white" },
-      {"name": "Company1", "color": "black", "text": "white" },
-      {"name": "Company1", "color": "black", "text": "white" },
-      {"name": "Company1", "color": "black", "text": "white" },
-      {"name": "Company1", "color": "black", "text": "white" },
-      {"name": "Company1", "color": "black", "text": "white" },
-      {"name": "Company1", "color": "black", "text": "white" }
+      {"name": "Company2", "color": "black", "text": "white" },
+      {"name": "Company3", "color": "black", "text": "white" },
+      {"name": "Company4", "color": "black", "text": "white" },
+      {"name": "Company5", "color": "black", "text": "white" },
+      {"name": "Company6", "color": "black", "text": "white" },
+      {"name": "Company7", "color": "black", "text": "white" },
+      {"name": "Company8", "color": "black", "text": "white" },
+      {"name": "Company9", "color": "black", "text": "white" },
+      {"name": "Company10", "color": "black", "text": "white" },
+      {"name": "Company11", "color": "black", "text": "white" }
     ]
   }]

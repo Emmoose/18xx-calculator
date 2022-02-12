@@ -1,26 +1,4 @@
-// Variables - spacing
-
-@indent__base: 16px;
-@indent__xs: @indent__base * .25; // 4px
-@indent__s: @indent__base * .5;   // 8px
-@indent__sm: @indent__base * .75; // 12px
-@indent__m: @indent__base * 1.5;  // 24px
-@indent__l: @indent__base * 2;    // 32px
-@indent__xl: @indent__base * 2.5; // 40px
-@indent__xxl: @indent__base * 3;  // 48px
-@indent__xxxl: @indent__base * 3.75; // 60px
-@indent__xxxxl: @indent__base * 4;  // 64px
-@indent__xxxxxl: @indent__base * 5; //80px
-
-
-// Variables - colors
-@color-background: #fff7ed;
-@color-background-secondary: #fff;
-@color-text: #2c3e50;
-@color-border: #000;
-@color-summation-green: #3cb371;
-
-@screen__m:  991px;
+@import "./_variables";
 
 * {
     box-sizing: border-box;
@@ -112,20 +90,7 @@ input:focus {
     background-color: #f6fef6;
 }
 
-.corp-name-mobile {
-    transform: rotate(90deg);
-    display: none;
-    border: 1px solid @color-border;
-    position: fixed;
-    top: 50%;
-    z-index: 1;
-    height: 40px;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    left: -112px;
-    right: 8px;
-}
+
 
 // App
 .app {
@@ -149,28 +114,6 @@ input:focus {
     margin-bottom: @indent__base;
 }
 
-.info-text {
-    text-align: left;
-}
-
-.game-settings {
-    width: 400px;
-    padding: @indent__base;
-    background-color: @color-background-secondary;
-    border: 1px solid @color-border;
-}
-
-.simulate-rounds {
-    display: flex;
-
-    input {
-        border: 1px solid @color-border;
-        width: 80px;
-        height: 40px;
-        margin: 0 @indent__s;
-    }
-}
-
 .companyvalue-matrix { 
     margin-left: @indent__base;
 
@@ -191,10 +134,6 @@ input:focus {
     }
 }
 
-.wealth-table td {
-    background-color: @color-summation-green;
-}
-
 .bank-summation {
     margin-top: @indent__base;
     text-align: left;
@@ -210,9 +149,6 @@ input:focus {
         width: 100%;
     }
 
-    .corp-name-mobile {
-        display: flex;
-    }
     .app {
         margin: 0 @indent__s;
     }  
@@ -226,11 +162,6 @@ input:focus {
 
     .top-row {
         display: block;
-    }
-
-    .game-settings {
-        width: auto;
-        margin: @indent__s;
     }
 
     .companyvalue-matrix,
