@@ -6,7 +6,7 @@
     <table>
       <thead>
         <tr>
-          <th colspan="3">Corporation Wealth</th>
+          <th class="main-header" colspan="3">Corporation Wealth</th>
         </tr>
         <tr>
           <th>Corporations</th>

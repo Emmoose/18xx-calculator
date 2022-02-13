@@ -6,7 +6,9 @@
     <table>
       <thead>
         <tr>
-          <th :colspan="players.length + 1">Corporations Ownership</th>
+          <th class="main-header" :colspan="players.length + 1">
+            Corporations Ownership
+          </th>
         </tr>
         <tr>
           <th>Corporation</th>
@@ -47,6 +49,16 @@
             />
           </td>
         </tr>
+      </tbody>
+
+      <thead>
+        <tr>
+          <th class="main-header" :colspan="players.length + 1">
+            Player Scoring Summary
+          </th>
+        </tr>
+      </thead>
+      <tbody class="scoring-info">
         <tr>
           <td>Stock Value</td>
           <td
@@ -65,6 +77,7 @@
               type="number"
               v-model.number="cash.value"
               placeholder="Cash"
+              v-on:change="$emit('update-local-storage')"
             />
           </td>
         </tr>

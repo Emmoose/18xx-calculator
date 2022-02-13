@@ -81,6 +81,7 @@ export default {
   watch: {
     selectedGame() {
       this.setupPlayerCounts();
+      this.selectedPlayerCountLocal = this.minPlayer;
     },
   },
 

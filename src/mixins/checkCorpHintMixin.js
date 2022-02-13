@@ -1,3 +1,7 @@
+import constants from "@/constants";
+
+console.log(constants);
+
 var checkCorpHint = {
   data() {
     return {
@@ -11,7 +15,8 @@ var checkCorpHint = {
   methods: {
     calulateIfCorpNameOutside(table) {
       this.isCompanyOutside =
-        this.$refs[table][0].getBoundingClientRect().x < -220;
+        this.$refs[table][0].getBoundingClientRect().x <
+        -constants.WIDTH_CORPORATION_NAME_ELEMENT;
 
       this.$emit(
         "toggle-corp-hint",

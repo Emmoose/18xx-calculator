@@ -245,6 +245,7 @@ export default {
       });
 
       this.playerSimulatedIncome = tempStockValue;
+      this.updateLocalStorage();
     },
 
     changePlayerCount(event) {
@@ -288,16 +289,18 @@ export default {
     },
 
     updateLocalStorage() {
-      var localStorageCopy = {
-        players: this.players,
-        playersCash: this.playersCash,
-        selectedGame: this.selectedGame,
-        corporationsWealth: this.corporationsWealth,
-        playerCorporationOwnership: this.playerCorporationOwnership,
-        simulatedRounds: this.simulatedRounds,
-        STORAGE_VERSION: this.STORAGE_VERSION,
-      };
-      localStorage.setItem("savedXXGame", JSON.stringify(localStorageCopy));
+      localStorage.setItem(
+        "savedXXGame",
+        JSON.stringify({
+          players: this.players,
+          playersCash: this.playersCash,
+          selectedGame: this.selectedGame,
+          corporationsWealth: this.corporationsWealth,
+          playerCorporationOwnership: this.playerCorporationOwnership,
+          simulatedRounds: this.simulatedRounds,
+          STORAGE_VERSION: this.STORAGE_VERSION,
+        })
+      );
     },
   },
 
