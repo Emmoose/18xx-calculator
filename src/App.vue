@@ -68,9 +68,10 @@ export default {
   data: function () {
     return {
       STORAGE_VERSION: 1,
+      // Related to game
       games: [],
       initialGameSetup: true,
-      selectedGame: "18Chesapeake",
+      selectedGame: null,
       selectedPlayerCount: null,
       oldSelectedPlayerCount: null,
       selectedGameData: {},
@@ -83,13 +84,13 @@ export default {
       playerSimulatedIncome: [],
       simulatedRounds: 0,
       currency: {
-        sign: "$",
-        location: "left",
+        sign: null,
+        location: null,
       },
 
+      // Related to mobile corporation hint
       showHintWealthTable: false,
       showHintOwnershipTable: false,
-
       inputFocusedCorporation: { information: { color: null, text: null } },
     };
   },

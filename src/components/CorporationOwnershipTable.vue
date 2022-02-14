@@ -158,4 +158,8 @@ export default {
 };
 </script>
 
-<style lang="less" src="../assets/less/_PlayerWealth.less" scoped></style>
+<style
+  lang="less"
+  src="../assets/less/_CorporationOwnershipTable.less"
+  scoped
+></style>

@@ -33,4 +33,4 @@ export default {
 };
 </script>
 
-<style lang="less" src="../assets/less/_CorpHintMobile.less" scoped></style>
+<style lang="less" src="../assets/less/_BankSummary.less" scoped></style>
