@@ -1,14 +1,22 @@
 @import "./_variables";
 
-.info-text {
-    text-align: left;
-}
-
 .game-settings {
     width: 400px;
-    padding: @indent__base;
+    padding-bottom: @indent__base;
     background-color: @color-background-secondary;
     border: 1px solid @color-border;
+
+    h4 {
+        background-color: black;
+        color: white;
+        height: 38px;
+        line-height: 38px;
+        margin: 0 0 @indent__base 0;
+    }
+
+    .flex-column {
+        padding: 0 @indent__base;
+    }
 }
 
 .simulate-rounds {

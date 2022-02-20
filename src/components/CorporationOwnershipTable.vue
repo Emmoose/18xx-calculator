@@ -54,7 +54,7 @@
       <thead>
         <tr>
           <th class="main-header" :colspan="players.length + 1">
-            Player Scoring Summary
+            Players Scoring Summary
           </th>
         </tr>
       </thead>

@@ -1,9 +1,6 @@
 <template>
   <div class="game-settings">
-    <p class="info-text">
-      Simple app for calculating end game scoring and optionally to simulate
-      operating rounds with full payout.
-    </p>
+    <h4>Settings</h4>
     <div class="flex-column">
       <label>Select Game</label>
       <select

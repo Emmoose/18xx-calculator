@@ -2,6 +2,10 @@
   <div id="app" class="app">
     <div class="calculator">
       <h2>Game: {{ selectedGame }}</h2>
+      <p class="info-text">
+        App for calculating end game scoring and optionally to simulate
+        operating rounds with full payout.
+      </p>
       <div class="top-row">
         <GameSettings
           :games="games"
@@ -65,10 +69,11 @@ export default {
     CorporationOwnershipTable,
   },
 
-  data: function () {
+  data() {
     return {
       STORAGE_VERSION: 1,
       // Related to game
+
       games: [],
       initialGameSetup: true,
       selectedGame: null,
@@ -199,13 +204,10 @@ export default {
     },
 
     setupPlayersTotals() {
-      // List player stock value
       this.playersStockValue = Array(this.selectedPlayerCount).fill(0);
-
       this.playerSimulatedIncome = Array(this.selectedPlayerCount).fill(0);
     },
 
-    //BAD IMPLEMENTATION LOOPING THROUGH ALL CAN IT BE DONE WITH COMPUTED OR SIMILAR?
     calculatePlayerStockValue() {
       var tempStockValue = Array(this.selectedPlayerCount).fill(0);
 
