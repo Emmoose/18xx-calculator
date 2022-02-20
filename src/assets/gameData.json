@@ -113,4 +113,32 @@
       {"name": "Company10", "color": "black", "text": "white" },
       {"name": "Company11", "color": "black", "text": "white" }
     ]
+  },
+  {
+    "id": 7,
+    "gameName": "18 Los Angeles",
+    "currency": {"sign": "$", "location": "left"},
+    "maxPlayer": 5,
+    "minPlayer": 2,
+    "corporations": [
+      {"name": "East Los Angeles & San Pedro Railroad", "color": "#FF0000", "text": "#FFFFFF" },
+      {"name": "Los Angeles and Independence Railroad", "color": "#B8FFFF", "text": "#000000" },
+      {"name": "Pacific Electric Railroad", "color": "#FF6A00", "text":"#000000" },
+      {"name": "Southern Pacific Railroad", "color": "#0026FF" , "text":"#FFFFFF"},
+      {"name": "Union Pacific Railroad", "color": "#727272" , "text":"#000000"}
+    ]
+  },
+  {
+    "id": 8,
+    "gameName": "18Svea",
+    "currency": {"sign": "Kr", "location": "left"},
+    "maxPlayer": 3,
+    "minPlayer": 2,
+    "corporations": [
+      {"name": "Göteborg Railway Company", "color": "#FFFFFF", "text": "#000000" },
+      {"name": "Jönköping Railway Company", "color": "#FF0000", "text": "#FFFFFF" },
+      {"name": "Norrköping Railway Company", "color": "#FFE600", "text":"#000000" },
+      {"name": "Stockholm Railway Company", "color": "#002E8A" , "text":"#FFFFFF"},
+      {"name": "Örebro Railway Company", "color": "#000000" , "text":"#FFFFFF"}
+    ]
   }]
