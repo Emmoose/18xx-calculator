@@ -17,7 +17,7 @@
               type="text"
               v-model.number="player.name"
               v-on:focus="player.name = null"
-              v-on:change="$emit('update-local-storage')"
+              @keydown="$emit('calculate-player-stock-value')"
             />
           </th>
         </tr>
@@ -44,6 +44,7 @@
               type="number"
               v-model.number="cell.value"
               v-bind:key="cell.key"
+              @keydown="$emit('calculate-player-stock-value')"
               @focus="setInputFocused(true, index, 'showHintOwnershipTable')"
               @blur="setInputFocused(false, null, 'showHintOwnershipTable')"
             />
@@ -136,7 +137,7 @@ export default {
           Number(this.playersCash[index].value) +
           this.playerSimulatedIncome[index];
 
-        playersScore.push({ totalWealth });
+        playersScore.push({ totalWealth: Math.round(totalWealth) });
       }
 
       for (let index = 0; index < playersScore.length; index++) {

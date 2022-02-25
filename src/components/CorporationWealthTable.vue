@@ -35,7 +35,7 @@
               placeholder="Stock value"
               type="number"
               v-model.number="corporation.stockValue"
-              @change="$emit('calculate-player-stock-value')"
+              @keydown="$emit('calculate-player-stock-value')"
               @focus="setInputFocused(true, index, 'showHintWealthTable')"
               @blur="setInputFocused(false, null, 'showHintWealthTable')"
             />
@@ -46,7 +46,7 @@
               placeholder="Revenue"
               type="number"
               v-model.number="corporation.revenue"
-              @change="$emit('run-simulator')"
+              @keydown="$emit('run-simulator')"
               @focus="setInputFocused(true, index, 'showHintWealthTable')"
               @blur="setInputFocused(false, null, 'showHintWealthTable')"
             />

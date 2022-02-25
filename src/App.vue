@@ -40,7 +40,7 @@
         :players-stock-value="playersStockValue"
         :player-simulated-income="playerSimulatedIncome"
         v-bind:players-cash="playersCash"
-        v-on:update-local-storage="updateLocalStorage"
+        v-on:calculate-player-stock-value="calculatePlayerStockValue"
         v-on:toggle-corp-hint="toggleCorpHint"
       />
       <BankSummary
@@ -71,7 +71,7 @@ export default {
 
   data() {
     return {
-      STORAGE_VERSION: 1,
+      STORAGE_VERSION: 2,
       // Related to game
 
       games: [],
@@ -238,12 +238,13 @@ export default {
           innerIndex < this.playerCorporationOwnership[index].length;
           innerIndex++
         ) {
-          tempStockValue[innerIndex] =
+          tempStockValue[innerIndex] = Math.floor(
             tempStockValue[innerIndex] +
-            ((value.revenue *
-              this.playerCorporationOwnership[index][innerIndex].value) /
-              10) *
-              this.simulatedRounds; // Divide by 10 to get percentage
+              ((value.revenue *
+                this.playerCorporationOwnership[index][innerIndex].value) /
+                10) *
+                this.simulatedRounds
+          ); // Divide by 10 to get percentage
         }
       });
 
