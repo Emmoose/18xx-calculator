@@ -11,8 +11,8 @@
           :games="games"
           :selected-game="selectedGame"
           :selected-player-count="selectedPlayerCount"
-          :max-player="selectedGameData.maxPlayer"
-          :min-player="selectedGameData.minPlayer"
+          :max-player="parseInt(selectedGameData.maxPlayer)"
+          :min-player="parseInt(selectedGameData.minPlayer)"
           v-bind:simulated-rounds="simulatedRounds"
           v-on:change-game="setupNewGame"
           v-on:change-player-count="changePlayerCount"
@@ -117,7 +117,6 @@ export default {
 
     setupCachedGame(savedXXGame) {
       this.selectedGame = savedXXGame.selectedGame;
-
       this.setupSelectedGameData();
 
       this.selectedPlayerCount = this.oldSelectedPlayerCount =

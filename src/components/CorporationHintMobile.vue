@@ -3,8 +3,8 @@
     v-if="showHintOwnershipTable || showHintWealthTable"
     class="corp-name-mobile"
     :style="{
-      'background-color': inputFocusedCorporation.color,
-      color: inputFocusedCorporation.text,
+      'background-color': inputFocusedCorporation.backgroundColor,
+      color: inputFocusedCorporation.textColor,
     }"
   >
     {{ inputFocusedCorporation.name }}

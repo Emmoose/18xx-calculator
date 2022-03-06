@@ -1,144 +1,621 @@
-[{
-    "id": 1,
-    "gameName": "1848 - Australia",
-    "currency": {"sign": "$", "location": "left"},
-    "maxPlayer": 6,
-    "minPlayer": 3,
-    "corporations": [
-      {"name": "Bank Of England", "color": "#ffffff", "text":"black"},
-      {"name": "Queensland Government Railway", "color": "green", "text":"#ffffff" },
-      {"name": "Commonwealth Railways", "color": "#D2B48C", "text": "black" },
-      {"name": "Federal Territory Railway", "color": "#8AB7F8", "text":"black" },
-      {"name": "Victorian Railway", "color": "yellow" , "text":"black"},
-      {"name": "South Australian Railways", "color": "#640064" , "text":"#ffffff"},
-      {"name": "West Australian Railways", "color": "red" , "text":"#ffffff"},
-      {"name": "New South Wales Railways", "color": "#FBBF77" , "text":"black"},
-      {"name": "Central Australian Railways", "color": "black" , "text":"#ffffff"}
-      
-  ]
-  }, {
-    "id": 2,
-    "gameName": "18Chesapeake",
-    "currency": {"sign": "$", "location": "left"},
-    "maxPlayer": 6,
-    "minPlayer": 2,
-    "corporations": [
-        {"name": "Baltimore & Ohio Railroad", "color": "#0189d1", "text":"#ffffff" },
-        {"name": "Camden & Amboy Railroad", "color": "#f48221", "text": "#ffffff" },
-        {"name": "Chesapeake & Ohio Railroad", "color": "#a2dced", "text":"black" },
-        {"name": "Lehigh Valley Railroad", "color": "#fff500" , "text":"black"},
-        {"name": "Norfolk & Western Railway", "color": "#7b352a" , "text":"#ffffff"},
-        {"name": "Pittsburgh and Lake Erie Railroad", "color": "black" , "text":"#ffffff"},
-        {"name": "Pennsylvania Railroad", "color": "#237333" , "text":"#ffffff"},
-        {"name": "Strasburg Rail Road", "color": "#d81e3e" , "text":"#ffffff"}
-    ]
-  }, {
-    "id": 3,
-    "gameName": "1849 - The Game Of Sicilian Railways",
-    "currency": {"sign": "₤", "location": "right"},
-    "maxPlayer": 5,
-    "minPlayer": 3,
-    "corporations": [
-      {"name": "Impresa Ferroviaria Trinacria", "color": "#0189d1", "text": "#ffffff" },
-      {"name": "Società Ferroviaria Akragas", "color": "pink", "text":"black" },
-      {"name": "Azienda Ferroviaria Garibaldi", "color": "#ff0000" , "text":"#ffffff"},
-      {"name": "Azienda Trasporti Archimede", "color": "green" , "text":"#ffffff"},
-      {"name": "Compagnia Trasporti Lilibeo", "color": "#f9b231" , "text":"black"},
-      {"name": "Rete Centrale Sicula", "color": "#f48221" , "text":"#ffffff"}
-    ]
-  },
-  {
-    "id": 4,
-    "gameName": "18MS - The Railroad Comes To Mississippi",
-    "currency": {"sign": "$", "location": "left"},
-    "maxPlayer": 4,
-    "minPlayer": 2,
-    "corporations": [
-      {"name": "Frisco", "color": "#ed1c24", "text": "#ffffff" },
-      {"name": "Gulf, Mobile and Ohio Railroad", "color": "black", "text":"#ffffff" },
-      {"name": "Illinois Central Railroad", "color": "#397641" , "text":"#ffffff"},
-      {"name": "Louisville and Nashville Railroad", "color": "#0d5ba5" , "text":"#ffffff"},
-      {"name": "Western Railway of Alabama", "color": "#c7c4e2" , "text":"black"}
-    ]
-  },
-  {
-    "id": 5,
-    "gameName": "1830 - The Railways and Robber Barons",
-    "currency": {"sign": "$", "location": "left"},
-    "maxPlayer": 7,
-    "minPlayer": 2,
-    "corporations": [
-      {"name": "Boston & Maine Railroad", "color": "#95c054", "text": "#ffffff" },
-      {"name": "Baltimore & Ohio Railroad", "color": "#025aaa", "text":"#ffffff" },
-      {"name": "Chesapeake & Ohio Railroad", "color": "#add8e6" , "text":"black"},
-      {"name": "Canadian Pacific Railroad", "color": "#d1232a" , "text":"#ffffff"},
-      {"name": "Erie Railroad", "color": "#fff500" , "text":"black"},
-      {"name": "New York Central Railroad", "color": "#474548" , "text":"#ffffff"},
-      {"name": "New York, New Haven & Hartford Railroad", "color": "#d88e39" , "text":"#ffffff"},
-      {"name": "Pennsylvania Railroad", "color": "#32763f" , "text":"#ffffff"}
-    ]
-  },
-  {
-    "id": 6,
-    "gameName": "1882 - Assiniboia",
-    "currency": {"sign": "$", "location": "left"},
-    "maxPlayer": 6,
-    "minPlayer": 2,
-    "corporations": [
-      {"name": "Canadian National", "color": "orange", "text": "black" },
-      {"name": "Canadian Northern", "color": "#237333", "text": "#ffffff" },
-      {"name": "Canadian Pacific Railway", "color": "#d81e3e", "text":"#ffffff" },
-      {"name": "Grand Trunk Pacific", "color": "black" , "text":"#ffffff"},
-      {"name": "Hudson Bay Railway", "color": "gold" , "text":"black"},
-      {"name": "Qu'Appelle, Long Lake Railroad Co.", "color": "purple" , "text":"#ffffff"},
-      {"name": "Saskatchewan Central Railroad", "color": "#0189d1" , "text":"#ffffff"}
-    ]
-  },
-  {
-    "id": 7,
-    "gameName": "Generic Game",
-    "currency": {"sign": "$", "location": "left"},
-    "maxPlayer": 10,
-    "minPlayer": 2,
-    "corporations": [
-      {"name": "Company1", "color": "black", "text": "white" },
-      {"name": "Company2", "color": "black", "text": "white" },
-      {"name": "Company3", "color": "black", "text": "white" },
-      {"name": "Company4", "color": "black", "text": "white" },
-      {"name": "Company5", "color": "black", "text": "white" },
-      {"name": "Company6", "color": "black", "text": "white" },
-      {"name": "Company7", "color": "black", "text": "white" },
-      {"name": "Company8", "color": "black", "text": "white" },
-      {"name": "Company9", "color": "black", "text": "white" },
-      {"name": "Company10", "color": "black", "text": "white" },
-      {"name": "Company11", "color": "black", "text": "white" }
-    ]
-  },
-  {
-    "id": 7,
-    "gameName": "18 Los Angeles",
-    "currency": {"sign": "$", "location": "left"},
-    "maxPlayer": 5,
-    "minPlayer": 2,
-    "corporations": [
-      {"name": "East Los Angeles & San Pedro Railroad", "color": "#FF0000", "text": "#FFFFFF" },
-      {"name": "Los Angeles and Independence Railroad", "color": "#B8FFFF", "text": "#000000" },
-      {"name": "Pacific Electric Railroad", "color": "#FF6A00", "text":"#000000" },
-      {"name": "Southern Pacific Railroad", "color": "#0026FF" , "text":"#FFFFFF"},
-      {"name": "Union Pacific Railroad", "color": "#727272" , "text":"#000000"}
-    ]
-  },
-  {
-    "id": 8,
-    "gameName": "18Svea",
-    "currency": {"sign": "Kr", "location": "left"},
-    "maxPlayer": 3,
-    "minPlayer": 2,
-    "corporations": [
-      {"name": "Göteborg Railway Company", "color": "#FFFFFF", "text": "#000000" },
-      {"name": "Jönköping Railway Company", "color": "#FF0000", "text": "#FFFFFF" },
-      {"name": "Norrköping Railway Company", "color": "#FFE600", "text":"#000000" },
-      {"name": "Stockholm Railway Company", "color": "#002E8A" , "text":"#FFFFFF"},
-      {"name": "Örebro Railway Company", "color": "#000000" , "text":"#FFFFFF"}
-    ]
-  }]
+[
+    {
+        "gameName": "18FL",
+        "currency": {
+            "sign": "$",
+            "location": "left"
+        },
+        "maxPlayer": 4,
+        "minPlayer": 2,
+        "corporations": [
+            {
+                "name": "Louisville and Nashville Railroad",
+                "backgroundColor": "darkblue",
+                "textColor": "white"
+            },
+            {
+                "name": "The Plant System",
+                "backgroundColor": "deepskyblue",
+                "textColor": "black"
+            },
+            {
+                "name": "Southern Railway",
+                "backgroundColor": "#76a042",
+                "textColor": "white"
+            },
+            {
+                "name": "Seaboard Air Line",
+                "backgroundColor": "#f48221",
+                "textColor": "white"
+            },
+            {
+                "name": "Atlantic Coast Line",
+                "backgroundColor": "purple",
+                "textColor": "white"
+            },
+            {
+                "name": "Florida East Coast Railway",
+                "backgroundColor": "#d81e3e",
+                "textColor": "white"
+            }
+        ]
+    },
+    {
+        "gameName": "1846 - The Race for the Midwest",
+        "currency": {
+            "sign": "$",
+            "location": "left"
+        },
+        "maxPlayer": 5,
+        "minPlayer": 2,
+        "corporations": [
+            {
+                "name": "Pennsylvania Railroad",
+                "backgroundColor": "#FF0000",
+                "textColor": "white"
+            },
+            {
+                "name": "New York Central Railroad",
+                "backgroundColor": "#110a0c",
+                "textColor": "white"
+            },
+            {
+                "name": "Baltimore & Ohio Railroad",
+                "backgroundColor": "#025aaa",
+                "textColor": "white"
+            },
+            {
+                "name": "Chesapeake & Ohio Railroad",
+                "backgroundColor": ":#ADD8E6",
+                "textColor": "black"
+            },
+            {
+                "name": "Erie Railroad",
+                "backgroundColor": ":#FFF500",
+                "textColor": "black"
+            },
+            {
+                "name": "Grand Trunk Railway",
+                "backgroundColor": "#f58121",
+                "textColor": "white"
+            },
+            {
+                "name": "Illinois Central Railroad",
+                "backgroundColor": "#32763f",
+                "textColor": "white"
+            }
+        ]
+    },
+    {
+        "gameName": "18Chesapeake",
+        "currency": {
+            "sign": "$",
+            "location": "left"
+        },
+        "maxPlayer": 6,
+        "minPlayer": 2,
+        "corporations": [
+            {
+                "name": "Pennsylvania Railroad",
+                "backgroundColor": "#237333",
+                "textColor": "white"
+            },
+            {
+                "name": "Pittsburgh and Lake Erie Railroad",
+                "backgroundColor": "black",
+                "textColor": "white"
+            },
+            {
+                "name": "Strasburg Rail Road",
+                "backgroundColor": "#d81e3e",
+                "textColor": "white"
+            },
+            {
+                "name": "Baltimore & Ohio Railroad",
+                "backgroundColor": "#0189d1",
+                "textColor": "white"
+            },
+            {
+                "name": "Chesapeake & Ohio Railroad",
+                "backgroundColor": "#a2dced",
+                "textColor": "black"
+            },
+            {
+                "name": "Lehigh Valley Railroad",
+                "backgroundColor": "#FFF500",
+                "textColor": "black"
+            },
+            {
+                "name": "Camden & Amboy Railroad",
+                "backgroundColor": "#f48221",
+                "textColor": "white"
+            },
+            {
+                "name": "Norfolk & Western Railway",
+                "backgroundColor": "#7b352a",
+                "textColor": "white"
+            }
+        ]
+    },
+    {
+        "gameName": "1848",
+        "currency": {
+            "sign": "$",
+            "location": "left"
+        },
+        "maxPlayer": 6,
+        "minPlayer": 3,
+        "corporations": [
+            {
+                "name": "Bank of England",
+                "backgroundColor": "antiqueWhite",
+                "textColor": "black"
+            },
+            {
+                "name": "Central Australian Railway",
+                "backgroundColor": "#232b2b",
+                "textColor": "white"
+            },
+            {
+                "name": "Victorian Railways",
+                "backgroundColor": "gold",
+                "textColor": "black"
+            },
+            {
+                "name": "New South Wales Railways",
+                "backgroundColor": "orange",
+                "textColor": "black"
+            },
+            {
+                "name": "South Australian Railway",
+                "backgroundColor": "darkMagenta",
+                "textColor": "white"
+            },
+            {
+                "name": "Commonwealth Railways",
+                "backgroundColor": "dimGray",
+                "textColor": "white"
+            },
+            {
+                "name": "Federal Territory Railway",
+                "backgroundColor": "mediumBlue",
+                "textColor": "white"
+            },
+            {
+                "name": "West Australian Railway",
+                "backgroundColor": "maroon",
+                "textColor": "white"
+            },
+            {
+                "name": "Queensland Govt Railway",
+                "backgroundColor": "darkGreen",
+                "textColor": "white"
+            }
+        ]
+    },
+    {
+        "gameName": "1849",
+        "currency": {
+            "sign": "L",
+            "location": "right"
+        },
+        "maxPlayer": 5,
+        "minPlayer": 3,
+        "corporations": [
+            {
+                "name": "Azienda Ferroviaria Garibaldi",
+                "backgroundColor": "#ff0000",
+                "textColor": "white"
+            },
+            {
+                "name": "Azienda Trasporti Archimede",
+                "backgroundColor": ":green",
+                "textColor": "white"
+            },
+            {
+                "name": "Compagnia Trasporti Lilibeo",
+                "backgroundColor": "#f9b231",
+                "textColor": "black"
+            },
+            {
+                "name": "Impresa Ferroviaria Trinacria",
+                "backgroundColor": "#0189d1",
+                "textColor": "white"
+            },
+            {
+                "name": "Rete Centrale Sicula",
+                "backgroundColor": "#f48221",
+                "textColor": "white"
+            },
+            {
+                "name": "Societ Ferroviaria Akragas",
+                "backgroundColor": ":pink",
+                "textColor": "black"
+            }
+        ]
+    },
+    {
+        "gameName": "1889",
+        "currency": {
+            "sign": "\u00a5",
+            "location": "right"
+        },
+        "maxPlayer": 6,
+        "minPlayer": 2,
+        "corporations": [
+            {
+                "name": "Awa Railroad",
+                "backgroundColor": "#37383a",
+                "textColor": "white"
+            },
+            {
+                "name": "Iyo Railway",
+                "backgroundColor": "#f48221",
+                "textColor": "white"
+            },
+            {
+                "name": "Sanuki Railway",
+                "backgroundColor": "#76a042",
+                "textColor": "white"
+            },
+            {
+                "name": "Takamatsu & Kotohira Electric Railway",
+                "backgroundColor": "#d81e3e",
+                "textColor": "white"
+            },
+            {
+                "name": "Tosa Electric Railway",
+                "backgroundColor": "#00a993",
+                "textColor": "white"
+            },
+            {
+                "name": "Tosa Kuroshio Railway",
+                "backgroundColor": "#0189d1",
+                "textColor": "white"
+            },
+            {
+                "name": "Uwajima Railway",
+                "backgroundColor": "#7b352a",
+                "textColor": "white"
+            }
+        ]
+    },
+    {
+        "gameName": "18SJ",
+        "currency": {
+            "sign": "kr",
+            "location": "kr"
+        },
+        "maxPlayer": 6,
+        "minPlayer": 2,
+        "corporations": [
+            {
+                "name": "Bergslagernas j\u00e4rnv\u00e4gar AB",
+                "backgroundColor": "#7b352a",
+                "textColor": "white"
+            },
+            {
+                "name": "Kil-Fryksdalens J\u00e4rnv\u00e4g",
+                "backgroundColor": "pink",
+                "textColor": "black"
+            },
+            {
+                "name": "Malm\u00f6-Ystads j\u00e4rnv\u00e4g",
+                "backgroundColor": "#FFF500",
+                "textColor": "black"
+            },
+            {
+                "name": "Mellersta \u00d6terg\u00f6tlands J\u00e4rnv\u00e4gar",
+                "backgroundColor": "turquoise",
+                "textColor": "black"
+            },
+            {
+                "name": "The Swedish-Norwegian Railroad Company ltd",
+                "backgroundColor": "blue",
+                "textColor": "white"
+            },
+            {
+                "name": "Sundsvall-Torphammars j\u00e4rnv\u00e4g",
+                "backgroundColor": "#0a0a0a",
+                "textColor": "white"
+            },
+            {
+                "name": "Stockholm-V\u00e4ster\u00e5s-Bergslagens J\u00e4rnv\u00e4gar",
+                "backgroundColor": "#237333",
+                "textColor": "white"
+            },
+            {
+                "name": "Trafikaktiebolaget Gr\u00e4ngesberg-Oxel\u00f6sunds j\u00e4rnv\u00e4gar",
+                "backgroundColor": "#f48221",
+                "textColor": "white"
+            },
+            {
+                "name": "Uppsala-G\u00e4vle j\u00e4rnv\u00e4g",
+                "backgroundColor": "lime",
+                "textColor": "black"
+            },
+            {
+                "name": "\u00d6rebro-K\u00f6pings j\u00e4rnv\u00e4gsaktiebolag",
+                "backgroundColor": "purple",
+                "textColor": "white"
+            },
+            {
+                "name": "\u00d6tra Sk\u00e5nes J\u00e4rnv\u00e4gsaktiebolag",
+                "backgroundColor": "#d81e3e",
+                "textColor": "white"
+            }
+        ]
+    },
+    {
+        "gameName": "1830",
+        "currency": {
+            "sign": "$",
+            "location": "left"
+        },
+        "maxPlayer": 6,
+        "minPlayer": 2,
+        "corporations": [
+            {
+                "name": "Pennsylvania Railroad",
+                "backgroundColor": "#32763f",
+                "textColor": "white"
+            },
+            {
+                "name": "New York Central Railroad",
+                "backgroundColor": "#474548",
+                "textColor": "white"
+            },
+            {
+                "name": "Canadian Pacific Railroad",
+                "backgroundColor": "#d1232a",
+                "textColor": "white"
+            },
+            {
+                "name": "Baltimore & Ohio Railroad",
+                "backgroundColor": "#025aaa",
+                "textColor": "white"
+            },
+            {
+                "name": "Chesapeake & Ohio Railroad",
+                "backgroundColor": "#ADD8E6",
+                "textColor": "black"
+            },
+            {
+                "name": "Erie Railroad",
+                "backgroundColor": "#FFF500",
+                "textColor": "black"
+            },
+            {
+                "name": "New York New Haven & Hartford Railroad",
+                "backgroundColor": "#d88e39",
+                "textColor": "white"
+            },
+            {
+                "name": "Boston & Maine Railroad",
+                "backgroundColor": "#95c054",
+                "textColor": "white"
+            }
+        ]
+    },
+    {
+        "id": 8,
+        "gameName": "18Svea",
+        "currency": {
+            "sign": "Kr",
+            "location": "left"
+        },
+        "maxPlayer": 3,
+        "minPlayer": 2,
+        "corporations": [
+            {
+                "name": "G\u00f6teborg Railway Company",
+                "backgroundColor": "#FFFFFF",
+                "textColor": "#000000"
+            },
+            {
+                "name": "J\u00f6nk\u00f6ping Railway Company",
+                "backgroundColor": "#FF0000",
+                "textColor": "#FFFFFF"
+            },
+            {
+                "name": "Norrk\u00f6ping Railway Company",
+                "backgroundColor": "#FFE600",
+                "textColor": "#000000"
+            },
+            {
+                "name": "Stockholm Railway Company",
+                "backgroundColor": "#002E8A",
+                "textColor": "#FFFFFF"
+            },
+            {
+                "name": "\u00d6rebro Railway Company",
+                "backgroundColor": "#000000",
+                "textColor": "#FFFFFF"
+            }
+        ]
+    },
+    {
+        "gameName": "1860",
+        "currency": {
+            "sign": "\u00a3",
+            "location": "right"
+        },
+        "maxPlayer": 4,
+        "minPlayer": 2,
+        "corporations": [
+            {
+                "name": "Cowes & Newport",
+                "backgroundColor": "deepskyblue",
+                "textColor": "black"
+            },
+            {
+                "name": "Isle of Wight",
+                "backgroundColor": "#ff0000",
+                "textColor": "white"
+            },
+            {
+                "name": "Isle of Wight Newport Junction",
+                "backgroundColor": "#000000",
+                "textColor": "white"
+            },
+            {
+                "name": "Freshwater Yarmouth & Newport",
+                "backgroundColor": "green",
+                "textColor": "white"
+            },
+            {
+                "name": "Newport Godshill & St. Lawrence",
+                "backgroundColor": "yellow",
+                "textColor": "black"
+            },
+            {
+                "name": "Brading Harbour Improvement & Railway",
+                "backgroundColor": "darkmagenta",
+                "textColor": "white"
+            },
+            {
+                "name": "Shanklin & Chale",
+                "backgroundColor": "darkblue",
+                "textColor": "white"
+            },
+            {
+                "name": "Ventor Yarmouth & South Coast",
+                "backgroundColor": "yellowgreen",
+                "textColor": "black"
+            }
+        ]
+    },
+    {
+        "gameName": "18MS",
+        "currency": {
+            "sign": "$",
+            "location": "TO_ADD"
+        },
+        "maxPlayer": 4,
+        "minPlayer": 2,
+        "corporations": [
+            {
+                "name": "Gulf Mobile and Ohio Railroad",
+                "backgroundColor": "black",
+                "textColor": "white"
+            },
+            {
+                "name": "Illinois Central Railroad",
+                "backgroundColor": "#397641",
+                "textColor": "white"
+            },
+            {
+                "name": "Louisville and Nashville Railroad",
+                "backgroundColor": "#0d5ba5",
+                "textColor": "white"
+            },
+            {
+                "name": "Frisco",
+                "backgroundColor": "#ed1c24",
+                "textColor": "white"
+            },
+            {
+                "name": "Western Railway of Alabama",
+                "backgroundColor": "#c7c4e2",
+                "textColor": "black"
+            }
+        ]
+    },
+    {
+        "gameName": "1882",
+        "currency": {
+            "sign": "$",
+            "location": "left"
+        },
+        "maxPlayer": 6,
+        "minPlayer": 2,
+        "corporations": [
+            {
+                "name": "Canadian National",
+                "backgroundColor": "orange",
+                "textColor": "black"
+            },
+            {
+                "name": "Canadian Northern",
+                "backgroundColor": "#237333",
+                "textColor": "white"
+            },
+            {
+                "name": "Hudson Bay Railway",
+                "backgroundColor": ":gold",
+                "textColor": "black"
+            },
+            {
+                "name": "Canadian Pacific Railway",
+                "backgroundColor": "#d81e3e",
+                "textColor": "white"
+            },
+            {
+                "name": "Grand Trunk Pacific",
+                "backgroundColor": "black",
+                "textColor": "white"
+            },
+            {
+                "name": "Saskatchewan Central Railroad",
+                "backgroundColor": "#0189d1",
+                "textColor": "white"
+            },
+            {
+                "name": "QuAppelle Long Lake Railroad Co.",
+                "backgroundColor": "purple",
+                "textColor": "white"
+            }
+        ]
+    },
+    {
+        "gameName": "18Mex",
+        "currency": {
+            "sign": "$",
+            "location": "left"
+        },
+        "maxPlayer": 5,
+        "minPlayer": 3,
+        "corporations": [
+            {
+                "name": "Chihuahua Pacific Railway",
+                "backgroundColor": "#FF4136",
+                "textColor": "white"
+            },
+            {
+                "name": "National Railways of Mexico",
+                "backgroundColor": "#00AC00",
+                "textColor": "white"
+            },
+            {
+                "name": "Mexican Central Railway",
+                "backgroundColor": "#232b2b",
+                "textColor": "white"
+            },
+            {
+                "name": "Pacific Railroad",
+                "backgroundColor": "#FFF128",
+                "textColor": "black"
+            },
+            {
+                "name": "Texas-Mexican Railway",
+                "backgroundColor": "#FFC502",
+                "textColor": "black"
+            },
+            {
+                "name": "Mexican Railway",
+                "backgroundColor": "darkGray",
+                "textColor": "black"
+            },
+            {
+                "name": "Southern Pacific Railroad of Mexico",
+                "backgroundColor": "#0080FF",
+                "textColor": "white"
+            },
+            {
+                "name": "United Railways of Yucatan",
+                "backgroundColor": "darkMagenta",
+                "textColor": "white"
+            }
+        ]
+    }
+]

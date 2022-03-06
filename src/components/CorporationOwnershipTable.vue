@@ -31,8 +31,8 @@
             ref="showHintOwnershipTable"
             class="td-corporation"
             :style="{
-              'background-color': corporations[index].color,
-              color: corporations[index].text,
+              'background-color': corporations[index].backgroundColor,
+              color: corporations[index].textColor,
             }"
           >
             {{ corporations[index].name }}
