@@ -71,7 +71,7 @@ export default {
 
   data() {
     return {
-      STORAGE_VERSION: 2,
+      STORAGE_VERSION: 3,
       // Related to game
 
       games: [],

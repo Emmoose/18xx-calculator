@@ -138,7 +138,7 @@
         ]
     },
     {
-        "gameName": "1848",
+        "gameName": "1848 - Australia",
         "currency": {
             "sign": "$",
             "location": "left"
@@ -194,7 +194,7 @@
         ]
     },
     {
-        "gameName": "1849",
+        "gameName": "1849 - The Game Of Sicilian Railways",
         "currency": {
             "sign": "L",
             "location": "right"
@@ -235,7 +235,7 @@
         ]
     },
     {
-        "gameName": "1889",
+        "gameName": "1889 - Shikoku",
         "currency": {
             "sign": "\u00a5",
             "location": "right"
@@ -281,7 +281,7 @@
         ]
     },
     {
-        "gameName": "18SJ",
+        "gameName": "18SJ - Let there be Rail",
         "currency": {
             "sign": "kr",
             "location": "kr"
@@ -347,7 +347,7 @@
         ]
     },
     {
-        "gameName": "1830",
+        "gameName": "1830 - Railways And Robber Barons",
         "currency": {
             "sign": "$",
             "location": "left"
@@ -402,7 +402,7 @@
         "gameName": "18Svea",
         "currency": {
             "sign": "Kr",
-            "location": "left"
+            "location": "right"
         },
         "maxPlayer": 3,
         "minPlayer": 2,
@@ -435,7 +435,7 @@
         ]
     },
     {
-        "gameName": "1860",
+        "gameName": "1860 - Railways On the Isle Of Wight",
         "currency": {
             "sign": "\u00a3",
             "location": "right"
@@ -486,10 +486,10 @@
         ]
     },
     {
-        "gameName": "18MS",
+        "gameName": "18MS - The Railroad Come To Mississippi",
         "currency": {
             "sign": "$",
-            "location": "TO_ADD"
+            "location": "left"
         },
         "maxPlayer": 4,
         "minPlayer": 2,
@@ -522,7 +522,7 @@
         ]
     },
     {
-        "gameName": "1882",
+        "gameName": "1882 - Assiniboia",
         "currency": {
             "sign": "$",
             "location": "left"
