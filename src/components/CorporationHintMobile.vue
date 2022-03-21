@@ -1,24 +1,25 @@
 <template>
   <div
-    v-if="showHintOwnershipTable || showHintWealthTable"
+    v-if="showCorpHeaderMobile"
     class="corp-name-mobile"
     :style="{
-      'background-color': inputFocusedCorporation.backgroundColor,
-      color: inputFocusedCorporation.textColor,
+      'background-color': focusedCorporation.backgroundColor,
+      color: focusedCorporation.textColor,
     }"
   >
-    {{ inputFocusedCorporation.name }}
+    {{ focusedCorporation.name }}
   </div>
 </template>
 
 <script>
+import { mapState, mapGetters } from "vuex";
+
 export default {
   name: "CorpHintMobile",
 
-  props: {
-    showHintWealthTable: Boolean,
-    showHintOwnershipTable: Boolean,
-    inputFocusedCorporation: Object,
+  computed: {
+    ...mapState(["showCorpHeaderMobile"]),
+    ...mapGetters(["focusedCorporation"]),
   },
 };
 </script>

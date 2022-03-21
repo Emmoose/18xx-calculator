@@ -194,6 +194,47 @@
         ]
     },
     {
+        "gameName": "18AL",
+        "currency": {
+            "sign": "$",
+            "location": "left"
+        },
+        "maxPlayer": 5,
+        "minPlayer": 3,
+        "corporations": [
+            {
+                "name": "Louisville & Nashville Railroad",
+                "backgroundColor": "blue",
+                "textColor": "white"
+            },
+            {
+                "name": "Mobile & Ohio Railroad",
+                "backgroundColor": "orange",
+                "textColor": "white"
+            },
+            {
+                "name": "Western Railway of Alabama",
+                "backgroundColor": "red",
+                "textColor": "white"
+            },
+            {
+                "name": "Alabama Tennessee & Northern Railroad",
+                "backgroundColor": "black",
+                "textColor": "white"
+            },
+            {
+                "name": "Atlanta Birmingham & Coast Railroad",
+                "backgroundColor": "green",
+                "textColor": "white"
+            },
+            {
+                "name": "Tennessee Alabama & Georgia Railway",
+                "backgroundColor": "yellow",
+                "textColor": "black"
+            }
+        ]
+    },
+    {
         "gameName": "1849 - The Game Of Sicilian Railways",
         "currency": {
             "sign": "L",

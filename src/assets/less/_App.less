@@ -1,163 +1,177 @@
 @import "./_variables";
 
 * {
-    box-sizing: border-box;
-    font-size: 16px;
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
 body {
-    margin: 0px;
+  margin: 0px;
 }
 
 input {
-    border: none;
-    height: 34px;
+  border: none;
+  height: 34px;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
     margin: 0;
-    text-align: center;
-    width: 100%;
+  }
 
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
+  /* Firefox */
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
 
-      /* Firefox */
-    &[type=number] {
-        -moz-appearance: textfield;
-    }
+  &:focus {
+    outline: none;
+    background-color: #f6fef6;
+  }
+}
 
-    &:focus {
-        outline: none;
-        background-color: #f6fef6;
-    }
+.vs__dropdown-toggle {
+  border-radius: 0;
 }
 
 button {
-    background-color: @color-background-secondary;
-    border: 1px solid @color-border;
-    font-weight: 500;
-    height: 40px;
-    width: 40px;
+  background-color: @color-background-secondary;
+  border: 1px solid @color-border;
+  font-weight: 500;
+  height: 40px;
+  width: 40px;
 }
 
 select {
-    width: 300px;
-    height: 32px;
-    margin-bottom: @indent__base;
+  width: 300px;
+  height: 32px;
+  margin-bottom: @indent__base;
 }
 
 label {
-    text-align: left;
+  text-align: left;
 }
 
+table,
+th,
+td {
+  border: 1px solid @color-border;
+  border-collapse: collapse;
+  padding: 0;
+}
 
-table, th, td {
-    border: 1px solid @color-border;
-    border-collapse: collapse;
-    padding: 0;
+thead tr th {
+  padding: 0;
 }
 
 th {
-    
-    height: 34px;
-    background-color: @color-background-secondary;
-    padding: @indent__s;
+  height: 34px;
+  background-color: @color-background-secondary;
+  padding: @indent__s;
 
-    &.main-header {
-        background-color: black;
-        color: white;
-    }
+  &.main-header {
+    background-color: black;
+    color: white;
+  }
 }
 
 td {
-    background-color: @color-background-secondary;
-    height: 34px;
-    min-width: 160px;
-    position: relative;
+  background-color: @color-background-secondary;
+  height: 34px;
+  // min-width: 160px;
+  min-width: 260px; //For testing
+  position: relative;
 }
 
 h2 {
-    font-size: 24px;
-    margin: 0;
-    text-align: left;
+  font-size: 24px;
+  margin: 0;
+  text-align: left;
 }
 
 // General classes
 
 .td-corporation {
-    height: 100%;
-    line-height: 34px;
-    padding: 0 8px;
-    white-space: nowrap;
-    font-weight: 500;
+  height: 100%;
+  line-height: 34px;
+  padding: 0 8px;
+  white-space: nowrap;
+  font-weight: 500;
 }
 
 .flex-column {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-percentage {
-    position: absolute;
-    right: 20px;
-    top: 8px;
+  position: absolute;
+  right: 20px;
+  top: 8px;
 }
 
 .app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: @color-text;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: @color-text;
 }
 
 .calculator {
-    display: inline-block;
-    background-color: @color-background;
-    padding: @indent__m;
-    border: 1px solid @color-border;
-    margin: @indent__m;
+  display: inline-block;
+  background-color: @color-background;
+  padding: @indent__m;
+  border: 1px solid @color-border;
+  margin: @indent__m;
 }
 
 .top-row {
-    display: flex;
-    margin-bottom: @indent__base;
+  display: flex;
+  margin-bottom: @indent__base;
 }
 
 .info-text {
-    text-align: left;
+  text-align: left;
+}
+
+.wealth-table td {
+  background-color: @color-summation-green;
+  color: white;
+  font-weight: 700;
 }
 
 // Media query mobile screen sizes
 @media only screen and (max-width: @screen__m) {
-    h2 {
-        margin: @indent__s;
-    }
+  h2 {
+    margin: @indent__s;
+  }
 
-    table {
-        width: 100%;
-        overflow-y: scroll;
-    }
+  table {
+    width: 100%;
+    overflow-y: scroll;
+  }
 
-    .app {
-        margin: 0 @indent__s;
-    }  
+  .app {
+    margin: 0 @indent__s;
+  }
 
-    .calculator {
-        display: block;
-        padding: 0;
-        border: 1px solid @color-border;
-        margin: 0;
-    }
+  .calculator {
+    display: block;
+    padding: 0;
+    border: 1px solid @color-border;
+    margin: 0;
+  }
 
-    .top-row {
-        display: block;
-    }
+  .top-row {
+    display: block;
+  }
 
-    .companyvalue-matrix,
-    .corporation-ownership-matrix {
-        margin-left: @indent__s;
-        overflow-y: scroll;
-    }
+  .matrix {
+    margin-left: @indent__s;
+    overflow-y: scroll;
+  }
 }

@@ -1,39 +1,40 @@
 @import "./_variables";
 
 .game-settings {
-    width: 400px;
-    padding-bottom: @indent__base;
-    background-color: @color-background-secondary;
-    border: 1px solid @color-border;
+  width: 400px;
+  padding-bottom: @indent__base;
+  background-color: @color-background-secondary;
+  border: 1px solid @color-border;
+  margin-right: @indent__base;
 
-    h4 {
-        background-color: black;
-        color: white;
-        height: 38px;
-        line-height: 38px;
-        margin: 0 0 @indent__base 0;
-    }
+  h4 {
+    background-color: black;
+    color: white;
+    height: 38px;
+    line-height: 38px;
+    margin: 0 0 @indent__base 0;
+  }
 
-    .flex-column {
-        padding: 0 @indent__base;
-    }
+  .flex-column {
+    padding: 0 @indent__base;
+  }
 }
 
 .simulate-rounds {
-    display: flex;
+  display: flex;
 
-    input {
-        border: 1px solid @color-border;
-        width: 80px;
-        height: 40px;
-        margin: 0 @indent__s;
-    }
+  input {
+    border: 1px solid @color-border;
+    width: 80px;
+    height: 40px;
+    margin: 0 @indent__s;
+  }
 }
 
 // Media query mobile screen sizes
 @media only screen and (max-width: @screen__m) {
-    .game-settings {
-        width: auto;
-        margin: @indent__s;
-    }
+  .game-settings {
+    width: auto;
+    margin: @indent__s;
+  }
 }
