@@ -1,5 +1,4 @@
 import helpers from "@/assets/helpers";
-import { version } from "../../package";
 
 export default {
   currency(state) {
@@ -59,20 +58,5 @@ export default {
     )
       .fill()
       .map((d, i) => i + state.selectedGameData.minPlayer);
-  },
-
-  updateLocalStorage(state) {
-    localStorage.setItem(
-      "savedXXGame",
-      JSON.stringify({
-        players: state.players,
-        playersCash: state.playersCash,
-        selectedGame: state.selectedGame,
-        corporationsWealth: state.corporationsWealth,
-        playerCorporationOwnership: state.playerCorporationOwnership,
-        simulatedRounds: state.simulatedRounds,
-        version: version,
-      })
-    );
   },
 };

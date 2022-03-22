@@ -9,6 +9,10 @@ body {
   margin: 0px;
 }
 
+label {
+  text-align: left;
+}
+
 input {
   border: none;
   height: 34px;
@@ -33,10 +37,6 @@ input {
   }
 }
 
-.vs__dropdown-toggle {
-  border-radius: 0;
-}
-
 button {
   background-color: @color-background-secondary;
   border: 1px solid @color-border;
@@ -51,26 +51,24 @@ select {
   margin-bottom: @indent__base;
 }
 
-label {
-  text-align: left;
+table {
+  border-collapse: collapse;
 }
 
 table,
 th,
 td {
   border: 1px solid @color-border;
-  border-collapse: collapse;
-  padding: 0;
 }
 
-thead tr th {
-  padding: 0;
-}
-
-th {
+th,
+td {
   height: 34px;
+  line-height: 34px;
   background-color: @color-background-secondary;
-  padding: @indent__s;
+  padding: 0;
+  min-width: 200px;
+  position: relative;
 
   &.main-header {
     background-color: black;
@@ -79,11 +77,17 @@ th {
 }
 
 td {
-  background-color: @color-background-secondary;
-  height: 34px;
-  // min-width: 160px;
-  min-width: 260px; //For testing
-  position: relative;
+  font-weight: 500;
+
+  &.td-corporation {
+    padding: 0 @indent__s;
+  }
+}
+
+.wealth-table td {
+  background-color: @color-summation-green;
+  color: white;
+  font-weight: 700;
 }
 
 h2 {
@@ -93,13 +97,12 @@ h2 {
 }
 
 // General classes
-
-.td-corporation {
-  height: 100%;
-  line-height: 34px;
-  padding: 0 8px;
-  white-space: nowrap;
-  font-weight: 500;
+.app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: @color-text;
 }
 
 .flex-column {
@@ -107,18 +110,17 @@ h2 {
   flex-direction: column;
 }
 
-.input-percentage {
+.input-sign {
   position: absolute;
-  right: 20px;
-  top: 8px;
-}
+  top: 0px;
 
-.app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: @color-text;
+  &.right {
+    right: 20px;
+  }
+
+  &.left {
+    left: 20px;
+  }
 }
 
 .calculator {
@@ -138,10 +140,24 @@ h2 {
   text-align: left;
 }
 
-.wealth-table td {
-  background-color: @color-summation-green;
-  color: white;
-  font-weight: 700;
+.corp-name-mobile {
+  transform: rotate(90deg);
+  display: none;
+  border: 1px solid @color-border;
+  position: fixed;
+  top: 50%;
+  z-index: 1;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  left: -112px;
+  right: 8px;
+}
+
+.bank-summation {
+  margin-top: @indent__base;
+  text-align: left;
 }
 
 // Media query mobile screen sizes
@@ -173,5 +189,9 @@ h2 {
   .matrix {
     margin-left: @indent__s;
     overflow-y: scroll;
+  }
+
+  .corp-name-mobile {
+    display: flex;
   }
 }

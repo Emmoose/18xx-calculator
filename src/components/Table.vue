@@ -20,7 +20,7 @@
             v-bind:cell-value="cell"
             v-bind:row-index="index"
             v-bind:cell-index="innerIndex"
-            v-bind:placeholder="'Stock value'"
+            v-bind:placeholder="tdPlaceholder[innerIndex]"
             v-bind:action="updateAction"
             v-on:input-focused="checkMobileHint"
           >
@@ -46,6 +46,7 @@ export default {
   props: {
     tableData: Array,
     updateAction: String,
+    tdPlaceholder: Array,
   },
   data() {
     return {
@@ -79,9 +80,3 @@ export default {
   },
 };
 </script>
-
-<style
-  lang="less"
-  src="../assets/less/_CorporationWealthTable.less"
-  scoped
-></style>

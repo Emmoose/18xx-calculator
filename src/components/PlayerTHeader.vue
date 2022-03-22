@@ -36,5 +36,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less" src="../assets/less/_CurrencySign.less" scoped></style>

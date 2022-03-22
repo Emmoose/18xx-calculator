@@ -1,6 +1,6 @@
 <template>
   <span
-    class="currency-on-input"
+    class="input-sign"
     v-bind:class="{
       left: currency.location == 'left',
       right: currency.location == 'right',
@@ -19,5 +19,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less" src="../assets/less/_CurrencySign.less" scoped></style>

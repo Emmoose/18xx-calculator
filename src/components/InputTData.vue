@@ -50,5 +50,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less" src="../assets/less/_InputTData.less" scoped></style>

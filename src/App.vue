@@ -12,6 +12,7 @@
         <Table
           :table-data="corporationsWealth"
           :update-action="'updateCorporationWealth'"
+          :td-placeholder="[' Stock value', 'Revenue']"
         >
           <template v-slot:table-header>
             <CorpWealthTableHeader />
@@ -22,12 +23,13 @@
       <Table
         :table-data="playerCorporationOwnership"
         :update-action="'updateCorporationOwnership'"
+        :td-placeholder="new Array(selectedPlayerCount).fill('Share')"
       >
         <template v-slot:table-header>
           <HoldingsTableHeader />
         </template>
         <template v-slot:input-sign>
-          <span class="input-percentage">%</span>
+          <span class="input-sign right">%</span>
         </template>
         <template v-slot:additional-rows>
           <thead>

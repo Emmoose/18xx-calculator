@@ -16,5 +16,3 @@ export default {
   name: "CorpWealthTableHeader",
 };
 </script>
-
-<style lang="less" src="../assets/less/_CurrencySign.less" scoped></style>

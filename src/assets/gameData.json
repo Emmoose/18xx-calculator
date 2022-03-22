@@ -66,12 +66,12 @@
             },
             {
                 "name": "Chesapeake & Ohio Railroad",
-                "backgroundColor": ":#ADD8E6",
+                "backgroundColor": "#ADD8E6",
                 "textColor": "black"
             },
             {
                 "name": "Erie Railroad",
-                "backgroundColor": ":#FFF500",
+                "backgroundColor": "#FFF500",
                 "textColor": "black"
             },
             {
@@ -134,6 +134,97 @@
                 "name": "Norfolk & Western Railway",
                 "backgroundColor": "#7b352a",
                 "textColor": "white"
+            }
+        ]
+    },
+    {
+        "gameName": "Generic Game",
+        "currency": {
+            "sign": "$",
+            "location": "left"
+        },
+        "maxPlayer": 10,
+        "minPlayer": 2,
+        "corporations": [
+            {
+                "name": "Corporation1",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation2",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation3",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation4",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation5",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation6",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation7",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation8",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation1",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation9",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation10",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation11",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation12",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation13",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation14",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Corporation15",
+                "backgroundColor": "white",
+                "textColor": "black"
             }
         ]
     },
@@ -250,7 +341,7 @@
             },
             {
                 "name": "Azienda Trasporti Archimede",
-                "backgroundColor": ":green",
+                "backgroundColor": "green",
                 "textColor": "white"
             },
             {
@@ -270,8 +361,261 @@
             },
             {
                 "name": "Societ Ferroviaria Akragas",
-                "backgroundColor": ":pink",
+                "backgroundColor": "pink",
                 "textColor": "black"
+            }
+        ]
+    },
+    {
+        "gameName": "18GA",
+        "currency": {
+            "sign": "$",
+            "location": "left"
+        },
+        "maxPlayer": 5,
+        "minPlayer": 3,
+        "corporations": [
+            {
+                "name": "Atlantic Coast Line",
+                "backgroundColor": "black",
+                "textColor": "white"
+            },
+            {
+                "name": "Central of Georgia Railroad",
+                "backgroundColor": "red",
+                "textColor": "white"
+            },
+            {
+                "name": "Georgia and Florida Railroad",
+                "backgroundColor": "deepskyblue",
+                "textColor": "black"
+            },
+            {
+                "name": "Georgia Railroad",
+                "backgroundColor": "green",
+                "textColor": "white"
+            },
+            {
+                "name": "Western and Atlantic Railroad",
+                "backgroundColor": "purple",
+                "textColor": "white"
+            },
+            {
+                "name": "Seaboard Air Line",
+                "backgroundColor": "gold",
+                "textColor": "black"
+            }
+        ]
+    },
+    {
+        "gameName": "18CZ",
+        "currency": {
+            "sign": "K",
+            "location": "right"
+        },
+        "maxPlayer": 6,
+        "minPlayer": 2,
+        "corporations": [
+            {
+                "name": "S\u00e4chsische Eisenbahn",
+                "backgroundColor": "#e31e24",
+                "textColor": "white"
+            },
+            {
+                "name": "Preu\u00dfische Eisenbahn",
+                "backgroundColor": "#2b2a29",
+                "textColor": "white"
+            },
+            {
+                "name": "Bayrische Staatsbahn",
+                "backgroundColor": "#0971b7",
+                "textColor": "white"
+            },
+            {
+                "name": "kk Staatsbahn",
+                "backgroundColor": "#cc6f3c",
+                "textColor": "white"
+            },
+            {
+                "name": "Ungarische Staatsbahn",
+                "backgroundColor": "#ae4a84",
+                "textColor": "white"
+            },
+            {
+                "name": "B\u00f6hmische Nordbahn",
+                "backgroundColor": "darkGrey",
+                "textColor": "black"
+            },
+            {
+                "name": "\u00d6sterreichische Nordwestbahn",
+                "backgroundColor": "#e1af33",
+                "textColor": "black"
+            },
+            {
+                "name": "Aussig-Teplitzer Eisenbahn",
+                "backgroundColor": "gold",
+                "textColor": "black"
+            },
+            {
+                "name": "Buschtehrader Eisenbahn",
+                "backgroundColor": "#dbe285",
+                "textColor": "black"
+            },
+            {
+                "name": "Kaiser Ferdinands Nordbahn",
+                "backgroundColor": "#a2d9f7",
+                "textColor": "black"
+            },
+            {
+                "name": "Eisenbahn Karlsbad Johanngeorgenstadt",
+                "backgroundColor": "antiqueWhite",
+                "textColor": "black"
+            },
+            {
+                "name": "Ostrau-Friedlander Eisenbahn",
+                "backgroundColor": "#F3B1B3",
+                "textColor": "black"
+            },
+            {
+                "name": "B\u00f6hmische Commercialbahn",
+                "backgroundColor": "#fabc48",
+                "textColor": "black"
+            },
+            {
+                "name": "M\u00e4hrische Westbahn",
+                "backgroundColor": "#B1CEC7",
+                "textColor": "black"
+            },
+            {
+                "name": "Vereinigte B\u00f6hmerwaldbahnen",
+                "backgroundColor": "#009846",
+                "textColor": "white"
+            }
+        ]
+    },
+    {
+        "gameName": "18NewEngland",
+        "currency": {
+            "location": "left",
+            "sign": "$"
+        },
+        "minPlayer": 3,
+        "maxPlayer": 5,
+        "corporations": [
+            {
+                "textColor": "white",
+                "name": "Boston and Albany Railroad",
+                "backgroundColor": "#ec1c24"
+            },
+            {
+                "textColor": "black",
+                "name": "Boston and Maine Railroad",
+                "backgroundColor": "#84c77a"
+            },
+            {
+                "textColor": "black",
+                "name": "Canadian National Railroad",
+                "backgroundColor": "#ffd900"
+            },
+            {
+                "textColor": "white",
+                "name": "Central Vermont Railroad",
+                "backgroundColor": "#b43e95"
+            },
+            {
+                "textColor": "white",
+                "name": "Delaware and Hudson Railroad",
+                "backgroundColor": "#0d7bb5"
+            },
+            {
+                "textColor": "white",
+                "name": "New York Central Railroad",
+                "backgroundColor": "#231f20"
+            },
+            {
+                "textColor": "white",
+                "name": "New York New Haven and Hartford Railroad",
+                "backgroundColor": "#f68e1e"
+            },
+            {
+                "textColor": "white",
+                "name": "Providence and Worcester Railroad",
+                "backgroundColor": "#833000"
+            },
+            {
+                "textColor": "white",
+                "name": "Albany and West Stockbridge Railroad",
+                "backgroundColor": "#f05f72"
+            },
+            {
+                "textColor": "black",
+                "name": "Boston and Lowell Railroad",
+                "backgroundColor": "#fbb116"
+            },
+            {
+                "textColor": "black",
+                "name": "Boston & Providence",
+                "backgroundColor": "#bdaf32"
+            },
+            {
+                "textColor": "white",
+                "name": "Connecticut River",
+                "backgroundColor": "#584232"
+            },
+            {
+                "textColor": "black",
+                "name": "Connecticut Valley",
+                "backgroundColor": "#e5df17"
+            },
+            {
+                "textColor": "white",
+                "name": "Eastern Railroad",
+                "backgroundColor": "#b43e95"
+            },
+            {
+                "textColor": "white",
+                "name": "Fitchburg Railroad",
+                "backgroundColor": "#2ab24b"
+            },
+            {
+                "textColor": "white",
+                "name": "Granite Railway",
+                "backgroundColor": "#09743b"
+            },
+            {
+                "textColor": "white",
+                "name": "Hartford and New Haven",
+                "backgroundColor": "#ec2785"
+            },
+            {
+                "textColor": "white",
+                "name": "Hudson Railroad",
+                "backgroundColor": "#3b60ab"
+            },
+            {
+                "textColor": "black",
+                "name": "New London Northern Railroad",
+                "backgroundColor": "#6dcef5"
+            },
+            {
+                "textColor": "white",
+                "name": "New York New Haven Railroad",
+                "backgroundColor": "#cf6d28"
+            },
+            {
+                "textColor": "white",
+                "name": "New York Westchester Boston",
+                "backgroundColor": "#ec1e29"
+            },
+            {
+                "textColor": "white",
+                "name": "Poughkeepsie and Eastern Railway",
+                "backgroundColor": "#b94e27"
+            },
+            {
+                "textColor": "white",
+                "name": "Worcester Nashua and Rochester Railroad",
+                "backgroundColor": "#231f20"
             }
         ]
     },
@@ -322,10 +666,81 @@
         ]
     },
     {
+        "gameName": "18GB",
+        "currency": {
+            "sign": "\u00a3",
+            "location": "right"
+        },
+        "maxPlayer": 6,
+        "minPlayer": 2,
+        "corporations": [
+            {
+                "name": "Caledonian Railway",
+                "backgroundColor": "#0a70b3",
+                "textColor": "white"
+            },
+            {
+                "name": "Great Eastern Railway",
+                "backgroundColor": "#37b2e2",
+                "textColor": "white"
+            },
+            {
+                "name": "Glasgow and South Western Railway",
+                "backgroundColor": "#ec767c",
+                "textColor": "white"
+            },
+            {
+                "name": "Great Western Railway",
+                "backgroundColor": "#008f4f",
+                "textColor": "white"
+            },
+            {
+                "name": "London and North Western Railway",
+                "backgroundColor": "#0a0a0a",
+                "textColor": "#ffffff"
+            },
+            {
+                "name": "London and South Western Railway",
+                "backgroundColor": "#fcea18",
+                "textColor": "white"
+            },
+            {
+                "name": "Lancashire and Yorkshire Railway",
+                "backgroundColor": "#baa4cb",
+                "textColor": "white"
+            },
+            {
+                "name": "Midland Railway",
+                "backgroundColor": "#dd0030",
+                "textColor": "white"
+            },
+            {
+                "name": "Manchester Sheffield and Lincolnshire Railway",
+                "backgroundColor": "#881a1e",
+                "textColor": "white"
+            },
+            {
+                "name": "North British Railway",
+                "backgroundColor": "#eb6f0e",
+                "textColor": "white"
+            },
+            {
+                "name": "North Eastern Railway",
+                "backgroundColor": "#7bb137",
+                "textColor": "white"
+            },
+            {
+                "name": "South Wales Railway",
+                "backgroundColor": "#9a9a9d",
+                "textColor": "white"
+            }
+        ]
+    },
+    {
         "gameName": "18SJ - Let there be Rail",
         "currency": {
             "sign": "kr",
-            "location": "kr"
+            "location": "left"
         },
         "maxPlayer": 6,
         "minPlayer": 2,
@@ -439,7 +854,6 @@
         ]
     },
     {
-        "id": 8,
         "gameName": "18Svea",
         "currency": {
             "sign": "Kr",
@@ -563,6 +977,52 @@
         ]
     },
     {
+        "gameName": "18 Los Angeles",
+        "minPlayer": 2,
+        "maxPlayer": 5,
+        "currency": {
+            "sign": "$",
+            "location": "left"
+        },
+        "corporations": [
+            {
+                "name": "East Los Angeles & San Pedro Railroad",
+                "backgroundColor": "#ff0000",
+                "textColor": "white"
+            },
+            {
+                "name": "Los Angeles Railway",
+                "backgroundColor": "#00830e",
+                "textColor": "white"
+            },
+            {
+                "name": "Los Angeles and Independence Railroad",
+                "backgroundColor": "#b8ffff",
+                "textColor": "black"
+            },
+            {
+                "name": "Pacific Electric Railroad",
+                "backgroundColor": "#ff6a00",
+                "textColor": "black"
+            },
+            {
+                "name": "Santa Fe Railroad",
+                "backgroundColor": "#ff7fed",
+                "textColor": "black"
+            },
+            {
+                "name": "Southern Pacific Railroad",
+                "backgroundColor": "#0026ff",
+                "textColor": "white"
+            },
+            {
+                "name": "Union Pacific Railroad",
+                "backgroundColor": "#727272",
+                "textColor": "white"
+            }
+        ]
+    },
+    {
         "gameName": "1882 - Assiniboia",
         "currency": {
             "sign": "$",
@@ -583,7 +1043,7 @@
             },
             {
                 "name": "Hudson Bay Railway",
-                "backgroundColor": ":gold",
+                "backgroundColor": "gold",
                 "textColor": "black"
             },
             {
@@ -605,6 +1065,173 @@
                 "name": "QuAppelle Long Lake Railroad Co.",
                 "backgroundColor": "purple",
                 "textColor": "white"
+            }
+        ]
+    },
+    {
+        "gameName": "18Ireland",
+        "currency": {
+            "sign": "\u00a3",
+            "location": "right"
+        },
+        "maxPlayer": 6,
+        "minPlayer": 3,
+        "corporations": [
+            {
+                "name": "Great Southern & Western Railway",
+                "backgroundColor": "red",
+                "textColor": "white"
+            },
+            {
+                "name": "Great Northern Railway (Ireland)",
+                "backgroundColor": "#3DAAD6",
+                "textColor": "white"
+            },
+            {
+                "name": "Dublin & South Eastern Railway",
+                "backgroundColor": "black",
+                "textColor": "white"
+            },
+            {
+                "name": "Midland Great Western Railway",
+                "backgroundColor": "green",
+                "textColor": "white"
+            },
+            {
+                "name": "Midland Railway North Counties Committee",
+                "backgroundColor": "#DB7093",
+                "textColor": "white"
+            },
+            {
+                "name": "Waterford Limerick & Western Railway",
+                "backgroundColor": "yellow",
+                "textColor": "black"
+            },
+            {
+                "name": "Cork Bandon & South Coast Railway",
+                "backgroundColor": "brown",
+                "textColor": "white"
+            },
+            {
+                "name": "Londonderry & Enniskillen",
+                "backgroundColor": "#8B4513",
+                "textColor": "white"
+            },
+            {
+                "name": "Cork Blackrock & Passage Railway",
+                "backgroundColor": "black",
+                "textColor": "white"
+            },
+            {
+                "name": "Enniskillen Bundoran & Sligo Railway",
+                "backgroundColor": "#F5DEB3",
+                "textColor": "black"
+            },
+            {
+                "name": "Sligo Leitrim & Northern Counties Railway",
+                "backgroundColor": "gray",
+                "textColor": "white"
+            },
+            {
+                "name": "Dublin & Drogheda Railway",
+                "backgroundColor": "#98FB98",
+                "textColor": "black"
+            },
+            {
+                "name": "Dublin & Kingstown Railway",
+                "backgroundColor": "purple",
+                "textColor": "white"
+            },
+            {
+                "name": "Grand Junction Railway",
+                "backgroundColor": "white",
+                "textColor": "black"
+            },
+            {
+                "name": "Ulster Railway",
+                "backgroundColor": "coral",
+                "textColor": "black"
+            },
+            {
+                "name": "Dundalk & Enniskillen Railway",
+                "backgroundColor": "pink",
+                "textColor": "black"
+            },
+            {
+                "name": "Great Northern & Western Railway",
+                "backgroundColor": "#9370DB",
+                "textColor": "white"
+            },
+            {
+                "name": "Waterford & Kilkenny Railway",
+                "backgroundColor": "lightblue",
+                "textColor": "black"
+            },
+            {
+                "name": "Central Ireland Railway",
+                "backgroundColor": "#556B2F",
+                "textColor": "white"
+            },
+            {
+                "name": "Kilkenny Junction Railway",
+                "backgroundColor": "#DDA0DD",
+                "textColor": "black"
+            },
+            {
+                "name": "Waterford & Limerick Railway",
+                "backgroundColor": "red",
+                "textColor": "white"
+            }
+        ]
+    },
+    {
+        "gameName": "18Neb",
+        "currency": {
+            "location": "left",
+            "sign": "$"
+        },
+        "minPlayer": 2,
+        "maxPlayer": 4,
+        "corporations": [
+            {
+                "textColor": "white",
+                "name": "Union Pacific",
+                "backgroundColor": "#376FFF"
+            },
+            {
+                "textColor": "white",
+                "name": "Chicago Burlington & Quincy",
+                "backgroundColor": "#666666"
+            },
+            {
+                "textColor": "white",
+                "name": "Chicago & Northwestern",
+                "backgroundColor": "#2C9846"
+            },
+            {
+                "textColor": "black",
+                "name": "Denver & Rio Grande",
+                "backgroundColor": "#D4AF37"
+            },
+            {
+                "textColor": "white",
+                "name": "Missouri Pacific",
+                "backgroundColor": "#874301"
+            },
+            {
+                "textColor": "white",
+                "name": "Colorado & Southern",
+                "backgroundColor": "#AE4A84"
+            },
+            {
+                "textColor": "white",
+                "name": "Omaha Lincoln & Beatrice",
+                "backgroundColor": "#F40003"
+            },
+            {
+                "textColor": "white",
+                "name": "NebKota",
+                "backgroundColor": "#000000"
             }
         ]
     },

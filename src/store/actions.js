@@ -12,9 +12,10 @@ export default {
   setupCachedGame({ commit }, savedXXGame) {
     commit("SET_GAME", savedXXGame.selectedGame);
 
-    const selectedGameData = gameData.filter(
-      (game) => game.gameName == savedXXGame.selectedGame
-    )[0];
+    const selectedGameData = helpers.findSelectedGameData(
+      gameData,
+      savedXXGame.selectedGame
+    );
 
     commit("SET_GAME_DATA", selectedGameData);
     commit("SET_PLAYER_COUNT", savedXXGame.players.length);
@@ -34,17 +35,19 @@ export default {
     );
   },
 
-  setupNewGame({ commit, dispatch }, gameName) {
+  setupNewGame({ commit, dispatch, state }, gameName) {
     commit("SET_GAME", gameName);
     commit("SET_SIMULATED_ROUNDS", 0);
     dispatch("setupSelectedGameData");
     dispatch("setupMatrixes");
+    helpers.updateLocalStorage(state);
   },
 
   setupSelectedGameData({ commit, state }) {
-    const selectedGameData = gameData.filter(
-      (game) => game.gameName == state.selectedGame
-    )[0];
+    const selectedGameData = helpers.findSelectedGameData(
+      gameData,
+      state.selectedGame
+    );
 
     commit("SET_GAME_DATA", selectedGameData);
     commit("SET_PLAYER_COUNT", selectedGameData.minPlayer);
@@ -83,6 +86,7 @@ export default {
     );
 
     this.commit("SET_CORPORATIONS_WEALTH", tempMatrix);
+    helpers.updateLocalStorage(state);
   },
 
   updateCorporationOwnership({ state }, payload) {
@@ -92,6 +96,7 @@ export default {
       payload
     );
     this.commit("SET_PLAYERS_CORPORATION_OWNERSHIP", tempMatrix);
+    helpers.updateLocalStorage(state);
   },
 
   updatePlayerCash({ state, commit }, payload) {
@@ -99,6 +104,7 @@ export default {
     cash[payload.index] = payload.value ? payload.value : null;
 
     commit("SET_PLAYERS_CASH", cash);
+    helpers.updateLocalStorage(state);
   },
 
   updatePlayerName({ state, commit }, payload) {
@@ -106,6 +112,7 @@ export default {
     players[payload.index] = payload.value;
 
     commit("SET_PLAYERS", players);
+    helpers.updateLocalStorage(state);
   },
 
   changePlayerCount({ state, commit }, payload) {
@@ -145,5 +152,11 @@ export default {
     }
 
     commit("SET_PLAYER_COUNT", payload);
+    helpers.updateLocalStorage(state);
+  },
+
+  setSimulatedRounds({ commit, state }, payload) {
+    commit("SET_SIMULATED_ROUNDS", payload);
+    helpers.updateLocalStorage(state);
   },
 };

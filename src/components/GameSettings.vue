@@ -3,22 +3,19 @@
     <h4>Settings</h4>
     <div class="flex-column">
       <label>Select Game</label>
-      <v-select
-        placeholder="Välj lista"
-        :clearable="false"
-        :options="games"
-        v-model="selectedGame"
-      ></v-select>
+      <select v-model="selectedGame">
+        <option v-for="(game, index) in games" v-bind:key="index">
+          {{ game }}
+        </option>
+      </select>
     </div>
     <div class="flex-column">
       <label>Select Player number</label>
-
-      <v-select
-        placeholder="Välj lista"
-        :clearable="false"
-        :options="playerCounts"
-        v-model="selectedPlayerCount"
-      ></v-select>
+      <select v-model="selectedPlayerCount">
+        <option v-for="(playerCount, index) in playerCounts" v-bind:key="index">
+          {{ playerCount }}
+        </option>
+      </select>
 
       <label>Simulated Rounds</label>
       <div class="simulate-rounds">
@@ -43,13 +40,12 @@
 
 <script>
 import { mapGetters, mapState } from "vuex";
-import "vue-select/dist/vue-select.css";
 
 export default {
   name: "GameSettings",
   methods: {
     changeSimulatedRounds(value) {
-      this.$store.commit("SET_SIMULATED_ROUNDS", value);
+      this.$store.dispatch("setSimulatedRounds", value);
     },
   },
   computed: {
