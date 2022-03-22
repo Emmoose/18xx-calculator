@@ -5,7 +5,7 @@
       <p class="info-text">
         Web app for calculating end game scoring and optionally to simulate
         operating rounds with full payout.<br />
-        Thoughts, ideas, comments etc, please contact me
+        Thoughts, ideas, comments etc, please contact me:
         <a href="mailto: emil.mossberg@gmail.com">emil.mossberg@gmail.com</a>.
       </p>
       <div class="top-row">
