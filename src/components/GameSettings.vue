@@ -20,6 +20,7 @@
       <label>Simulated Rounds</label>
       <div class="simulate-rounds">
         <button
+          class="sim-button"
           :disabled="simulatedRounds < 1"
           v-on:click="changeSimulatedRounds(simulatedRounds - 1)"
         >
@@ -30,7 +31,10 @@
           :value="simulatedRounds"
           @change="changeSimulatedRounds($event.target.value)"
         />
-        <button v-on:click="changeSimulatedRounds(simulatedRounds + 1)">
+        <button
+          class="sim-button"
+          v-on:click="changeSimulatedRounds(simulatedRounds + 1)"
+        >
           +1
         </button>
       </div>

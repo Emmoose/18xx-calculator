@@ -156,7 +156,7 @@ export default {
   },
 
   setSimulatedRounds({ commit, state }, payload) {
-    commit("SET_SIMULATED_ROUNDS", payload);
+    commit("SET_SIMULATED_ROUNDS", payload ? payload : 0);
     helpers.updateLocalStorage(state);
   },
 };

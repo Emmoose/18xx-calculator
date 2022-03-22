@@ -3,8 +3,10 @@
     <div class="calculator">
       <h2>Game: {{ selectedGame }}</h2>
       <p class="info-text">
-        App for calculating end game scoring and optionally to simulate
-        operating rounds with full payout.
+        Web app for calculating end game scoring and optionally to simulate
+        operating rounds with full payout.<br />
+        Thoughts, ideas, comments etc, please contact me
+        <a href="mailto: emil.mossberg@gmail.com">emil.mossberg@gmail.com</a>.
       </p>
       <div class="top-row">
         <GameSettings />
@@ -87,7 +89,7 @@ export default {
     ...mapGetters(["PlaceholderValuesHoldings"]),
   },
 
-  created: function () {
+  created() {
     this.$store.dispatch("setupGameOptions");
 
     const savedXXGame = JSON.parse(window.localStorage.getItem("savedXXGame"));
