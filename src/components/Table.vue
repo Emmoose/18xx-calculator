@@ -36,7 +36,7 @@
 <script>
 import { mapGetters } from "vuex";
 import InputTData from "@/components/InputTData";
-import constants from "@/constants";
+import config from "@/config";
 export default {
   name: "Table",
   components: {
@@ -58,7 +58,7 @@ export default {
     calulateIfCorpNameOutside() {
       this.isCorpNameOutside =
         this.$refs.corpColumn[0].getBoundingClientRect().x <
-        -constants.WIDTH_CORPORATION_NAME_ELEMENT;
+        -config.WIDTH_CORPORATION_NAME_ELEMENT;
 
       this.updateVisibilityCorpHint();
     },

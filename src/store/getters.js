@@ -21,24 +21,26 @@ export default {
     return helpers.sumMatrix(state, 1, state.simulatedRounds);
   },
 
+  PlaceholderValuesHoldings(state) {
+    return new Array(+state.selectedPlayerCount).fill("Share");
+  },
+
   playerScore(state, getter) {
-    const playersScore = getter.playerStockValue.map(
+    return getter.playerStockValue.map(
       (val, idx) =>
         val + state.playersCash[idx] + getter.playerSimulatedIncome[idx]
     );
-
-    return playersScore;
   },
 
   playerRanking(state, getters) {
     return getters.playerScore.map(
-      (x, y, z) => z.filter((w) => w > x).length + 1
+      (x, idx, z) => z.filter((w) => w > x).length + 1
     );
   },
 
   bankSummation(state, getter) {
-    const cash = state.playersCash.reduce((acc, obj, index) => {
-      if (index == 1) {
+    const cash = state.playersCash.reduce((acc, obj, idx) => {
+      if (idx == 1) {
         return Number(acc) + Number(obj);
       } else {
         return Number(acc) + Number(obj);
@@ -57,6 +59,6 @@ export default {
       state.selectedGameData.maxPlayer - state.selectedGameData.minPlayer + 1
     )
       .fill()
-      .map((d, i) => i + state.selectedGameData.minPlayer);
+      .map((d, idx) => idx + state.selectedGameData.minPlayer);
   },
 };

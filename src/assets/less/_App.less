@@ -81,6 +81,7 @@ td {
 
   &.td-corporation {
     padding: 0 @indent__s;
+    white-space: nowrap;
   }
 }
 
@@ -177,7 +178,7 @@ h2 {
 
   .calculator {
     display: block;
-    padding: 0;
+    padding: @indent__xs;
     border: 1px solid @color-border;
     margin: 0;
   }
@@ -187,11 +188,14 @@ h2 {
   }
 
   .matrix {
-    margin-left: @indent__s;
     overflow-y: scroll;
   }
 
   .corp-name-mobile {
     display: flex;
+  }
+
+  .bank-summation {
+    margin-left: @indent__s;
   }
 }

@@ -11,7 +11,7 @@
     </tr>
     <tr>
       <td>Cash</td>
-      <CashCell
+      <CashTData
         v-for="(cash, index) in playersCash"
         v-bind:key="index"
         v-bind:index="index"
@@ -48,13 +48,13 @@
 
 <script>
 import { mapGetters, mapState } from "vuex";
-import CashCell from "@/components/CashCell";
+import CashTData from "@/components/CashTData";
 import ScoringTData from "@/components/ScoringTData";
 
 export default {
   name: "ScoringRows",
   components: {
-    CashCell,
+    CashTData,
     ScoringTData,
   },
   computed: {

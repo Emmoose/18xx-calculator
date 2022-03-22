@@ -8,14 +8,14 @@
       </p>
       <div class="top-row">
         <GameSettings />
-        <CorporationHintMobile />
+        <CorpHintMobile />
         <Table
           :table-data="corporationsWealth"
           :update-action="'updateCorporationWealth'"
           :td-placeholder="[' Stock value', 'Revenue']"
         >
           <template v-slot:table-header>
-            <CorpWealthTableHeader />
+            <CorpWealthTHeader />
           </template>
           <template v-slot:input-sign> </template>
         </Table>
@@ -23,10 +23,10 @@
       <Table
         :table-data="playerCorporationOwnership"
         :update-action="'updateCorporationOwnership'"
-        :td-placeholder="new Array(selectedPlayerCount).fill('Share')"
+        :td-placeholder="PlaceholderValuesHoldings"
       >
         <template v-slot:table-header>
-          <HoldingsTableHeader />
+          <HoldingsTHeader />
         </template>
         <template v-slot:input-sign>
           <span class="input-sign right">%</span>
@@ -48,26 +48,26 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 import { version } from "../package";
-import constants from "@/constants.js";
+import config from "@/config.js";
 import GameSettings from "./components/GameSettings";
 import BankSummary from "./components/BankSummary";
 import ScoringRows from "@/components/ScoringRows";
-import CorporationHintMobile from "./components/CorporationHintMobile";
-import CorpWealthTableHeader from "./components/CorpWealthTableHeader";
+import CorpHintMobile from "./components/CorpHintMobile";
+import CorpWealthTHeader from "./components/CorpWealthTHeader";
 import Table from "./components/Table";
-import HoldingsTableHeader from "./components/HoldingsTableHeader";
+import HoldingsTHeader from "./components/HoldingsTHeader";
 
 export default {
   name: "App",
   components: {
     BankSummary,
-    CorporationHintMobile,
+    CorpHintMobile,
     Table,
-    CorpWealthTableHeader,
+    CorpWealthTHeader,
     GameSettings,
-    HoldingsTableHeader,
+    HoldingsTHeader,
     ScoringRows,
   },
 
@@ -84,6 +84,7 @@ export default {
       "selectedGame",
       "selectedPlayerCount",
     ]),
+    ...mapGetters(["PlaceholderValuesHoldings"]),
   },
 
   created: function () {
@@ -93,7 +94,7 @@ export default {
 
     savedXXGame && savedXXGame.version === version
       ? this.$store.dispatch("setupCachedGame", savedXXGame)
-      : this.$store.dispatch("setupNewGame", constants.DEFAULT_GAME);
+      : this.$store.dispatch("setupNewGame", config.DEFAULT_GAME);
   },
 };
 </script>
