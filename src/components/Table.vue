@@ -35,8 +35,10 @@
 
 <script>
 import { mapGetters } from "vuex";
+
 import InputTData from "@/components/InputTData";
 import config from "@/config";
+
 export default {
   name: "Table",
   components: {

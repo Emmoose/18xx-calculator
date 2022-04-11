@@ -48,6 +48,7 @@
 
 <script>
 import { mapGetters, mapState } from "vuex";
+
 import CashTData from "@/components/CashTData";
 import ScoringTData from "@/components/ScoringTData";
 

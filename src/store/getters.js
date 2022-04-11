@@ -46,12 +46,17 @@ export default {
         return Number(acc) + Number(obj);
       }
     });
-
-    return (
-      getter.playerSimulatedIncome.reduce((previousValue, currentValue) => {
+    const simulatedIncome = getter.playerSimulatedIncome.reduce(
+      (previousValue, currentValue) => {
         return previousValue + currentValue;
-      }) + cash
+      }
     );
+
+    return {
+      simulatedIncome,
+      cash,
+      total: cash + simulatedIncome,
+    };
   },
 
   playerCounts(state) {

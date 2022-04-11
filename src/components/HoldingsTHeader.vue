@@ -19,6 +19,7 @@
 
 <script>
 import { mapState } from "vuex";
+
 import PlayerTHeader from "@/components/PlayerTHeader";
 
 export default {

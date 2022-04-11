@@ -7,6 +7,7 @@
 
 <script>
 import CurrencySign from "@/components/CurrencySign";
+
 export default {
   name: "ScoringTData",
   components: {
