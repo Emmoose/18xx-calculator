@@ -11,7 +11,7 @@
       <div class="top-row">
         <GameSettings />
         <CorpHintMobile />
-        <Table
+        <GameTable
           :table-data="corporationsWealth"
           :update-action="'updateCorporationWealth'"
           :td-placeholder="[' Stock value', 'Revenue']"
@@ -20,9 +20,9 @@
             <CorpWealthTHeader />
           </template>
           <template v-slot:input-sign> </template>
-        </Table>
+        </GameTable>
       </div>
-      <Table
+      <GameTable
         :table-data="playerCorporationOwnership"
         :update-action="'updateCorporationOwnership'"
         :td-placeholder="PlaceholderValuesHoldings"
@@ -43,7 +43,7 @@
           </thead>
           <ScoringRows />
         </template>
-      </Table>
+      </GameTable>
       <BankSummary />
     </div>
   </div>
@@ -58,7 +58,7 @@ import BankSummary from "./components/BankSummary";
 import ScoringRows from "@/components/ScoringRows";
 import CorpHintMobile from "./components/CorpHintMobile";
 import CorpWealthTHeader from "./components/CorpWealthTHeader";
-import Table from "./components/Table";
+import GameTable from "./components/GameTable";
 import HoldingsTHeader from "./components/HoldingsTHeader";
 
 export default {
@@ -66,7 +66,7 @@ export default {
   components: {
     BankSummary,
     CorpHintMobile,
-    Table,
+    GameTable,
     CorpWealthTHeader,
     GameSettings,
     HoldingsTHeader,
