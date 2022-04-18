@@ -1,7 +1,7 @@
 <template>
   <thead>
     <tr>
-      <th class="main-header" colspan="3">Corporation Wealth</th>
+      <th class="main-header" colspan="3">Corporation Wealth Table</th>
     </tr>
     <tr>
       <th>Corporations</th>

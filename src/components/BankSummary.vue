@@ -1,24 +1,24 @@
 <template>
   <div class="bank-summation">
-    <table>
-      <thead>
-        <tr>
-          <th class="main-header" colspan="3">Bank Estimate</th>
-        </tr>
-        <tr>
-          <th>Total Cash</th>
-          <th>Simulated Income</th>
-          <th>Summation</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ bankSummation.cash }}</td>
-          <td>{{ bankSummation.simulatedIncome }}</td>
-          <td>{{ bankSummation.total }}</td>
-        </tr>
-      </tbody>
-    </table>
+    <span class="bank-summation__value">Bank estimate: </span>
+    <span v-if="currency.location === 'left'">{{ currency.sign }} </span>
+    <span class="bank-summation__value">{{ bankSummation.cash }}</span
+    ><span v-if="currency.location === 'right'">{{ currency.sign }} </span
+    ><span class="bank-summation__name"> (Player total cash) </span>
+    <span class="bank-summation__value"> + </span>
+    <span v-if="currency.location === 'left'">{{ currency.sign }} </span
+    ><span class="bank-summation__value">{{
+      bankSummation.simulatedIncome
+    }}</span
+    ><span v-if="currency.location === 'right'">{{ currency.sign }} </span
+    ><span class="bank-summation__name">
+      (Player total simulated revenue)
+    </span>
+    <span class="bank-summation__value"> = </span>
+    <span v-if="currency.location === 'left'">{{ currency.sign }} </span>
+    <span class="bank-summation__value"> {{ bankSummation.total }} </span>
+    <span v-if="currency.location === 'right'">{{ currency.sign }} </span>
+    <span class="bank-summation__name"> (Player total value) </span>
   </div>
 </template>
 
@@ -29,7 +29,7 @@ export default {
   name: "BankSummary",
 
   computed: {
-    ...mapGetters(["bankSummation"]),
+    ...mapGetters(["bankSummation", "currency"]),
   },
 };
 </script>

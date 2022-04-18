@@ -2,7 +2,7 @@
   <thead>
     <tr>
       <th class="main-header" :colspan="selectedPlayerCount + 1">
-        Players Holdings
+        Players Holdings Table
       </th>
     </tr>
     <tr>

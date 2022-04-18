@@ -9,6 +9,19 @@ body {
   margin: 0px;
 }
 
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  text-align: left;
+  height: 38px;
+  line-height: 38px;
+  font-size: 16px;
+  text-align: center;
+  margin: 0 0 @indent__base 0;
+}
+
 label {
   text-align: left;
 }
@@ -49,6 +62,10 @@ select {
   width: 300px;
   height: 32px;
   margin-bottom: @indent__base;
+}
+
+button, input, select {
+  cursor: pointer;
 }
 
 table {
@@ -92,12 +109,6 @@ td {
   font-weight: 700;
 }
 
-h2 {
-  font-size: 24px;
-  margin: 0;
-  text-align: left;
-}
-
 // General classes
 .app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -139,6 +150,7 @@ h2 {
 }
 
 .info-text {
+  max-width: 800px;
   text-align: left;
 }
 
@@ -159,6 +171,15 @@ h2 {
 
 .bank-summation {
   margin-top: @indent__base;
+  text-align: left;
+
+  &__value {
+    font-weight: 500;
+  }
+
+  &__name {
+    opacity: 0.6;
+  }
   
 }
 

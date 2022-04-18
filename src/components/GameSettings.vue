@@ -1,6 +1,6 @@
 <template>
   <div class="game-settings">
-    <h4>Settings</h4>
+    <h2>Settings</h2>
     <div class="flex-column">
       <label>Select Game</label>
       <select v-model="selectedGame">

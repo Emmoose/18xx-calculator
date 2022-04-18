@@ -1,10 +1,13 @@
 <template>
   <div id="app" class="app">
     <div class="calculator">
-      <h2>Game: {{ selectedGame }}</h2>
+      <h1>18xx calculator</h1>
       <p class="info-text">
-        Web app for calculating end game scoring and optionally to simulate
-        operating rounds with full payout.<br />
+        A simple tool for scoring results in 18xx games. It can calculate end
+        stock value and operating rounds with full payout. A wide array of 18xx
+        titles are available.
+      </p>
+      <p class="info-text">
         Thoughts, ideas, comments etc, please contact me:
         <a href="mailto: emil.mossberg@gmail.com">emil.mossberg@gmail.com</a>.
       </p>
@@ -37,7 +40,7 @@
           <thead>
             <tr>
               <th class="main-header" :colspan="selectedPlayerCount + 1">
-                Players Scoring Summary
+                Players Scoring Summary Table
               </th>
             </tr>
           </thead>
@@ -83,7 +86,6 @@ export default {
     ...mapState([
       "corporationsWealth",
       "playerCorporationOwnership",
-      "selectedGame",
       "selectedPlayerCount",
     ]),
     ...mapGetters(["PlaceholderValuesHoldings"]),
@@ -101,4 +103,4 @@ export default {
 };
 </script>
 
-<style lang="less" src="./assets/less/_App.less" />
+<style lang="less" src="./assets/less/_App.less" global />
