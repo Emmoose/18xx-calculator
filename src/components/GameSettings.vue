@@ -20,7 +20,7 @@
       <label>Simulated Rounds</label>
       <div class="simulate-rounds">
         <button
-          class="sim-button"
+          class="sim-button sim-button--left"
           :disabled="simulatedRounds < 1"
           v-on:click="changeSimulatedRounds(simulatedRounds - 1)"
         >
@@ -32,7 +32,7 @@
           @change="changeSimulatedRounds($event.target.value)"
         />
         <button
-          class="sim-button"
+          class="sim-button sim-button--right"
           v-on:click="changeSimulatedRounds(simulatedRounds + 1)"
         >
           +1
@@ -49,7 +49,7 @@ export default {
   name: "GameSettings",
   methods: {
     changeSimulatedRounds(value) {
-      this.$store.dispatch("setSimulatedRounds", value);
+      this.$store.dispatch("setSimulatedRounds", parseInt(value));
     },
   },
   computed: {
