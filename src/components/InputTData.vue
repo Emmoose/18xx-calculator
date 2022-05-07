@@ -1,5 +1,5 @@
 <template>
-  <td>
+  <td class="input-td">
     <slot><CurrencySign /></slot>
     <input
       type="number"

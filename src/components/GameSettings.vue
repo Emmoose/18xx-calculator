@@ -16,11 +16,10 @@
           {{ playerCount }}
         </option>
       </select>
-
       <label>Simulated Rounds</label>
       <div class="simulate-rounds">
         <button
-          class="sim-button sim-button--left"
+          class="sim-button"
           :disabled="simulatedRounds < 1"
           v-on:click="changeSimulatedRounds(simulatedRounds - 1)"
         >
@@ -32,7 +31,7 @@
           @change="changeSimulatedRounds($event.target.value)"
         />
         <button
-          class="sim-button sim-button--right"
+          class="sim-button"
           v-on:click="changeSimulatedRounds(simulatedRounds + 1)"
         >
           +1
