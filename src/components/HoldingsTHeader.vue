@@ -1,7 +1,7 @@
 <template>
   <thead>
     <tr>
-      <th class="main-header" :colspan="selectedPlayerCount + 1">
+      <th class="mainHeader" :colspan="selectedPlayerCount + 1">
         Players Holdings Table
       </th>
     </tr>

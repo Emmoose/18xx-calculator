@@ -1,17 +1,17 @@
 <template>
   <td>
-    <CurrencySign />
+    <inputSign />
     <input type="number" v-model.number="cashComputed" placeholder="Cash" />
   </td>
 </template>
 
 <script>
-import CurrencySign from "@/components/CurrencySign";
+import inputSign from "@/components/inputSign";
 
 export default {
   name: "CashTData",
   components: {
-    CurrencySign,
+    inputSign,
   },
   props: {
     index: Number,
@@ -22,6 +22,7 @@ export default {
       get() {
         return this.cash;
       },
+
       set(value) {
         this.$store.dispatch("updatePlayerCash", {
           index: this.index,

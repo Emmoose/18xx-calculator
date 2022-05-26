@@ -1,7 +1,8 @@
 <template>
-  <td class="input-td">
-    <slot><CurrencySign /></slot>
+  <td>
+    <slot><inputSign :disabled="disabled && cellIndex !== 0" /></slot>
     <input
+      :disabled="disabled && cellIndex !== 0"
       type="number"
       v-model.number="cellValueComputed"
       :placeholder="placeholder"
@@ -12,7 +13,7 @@
 </template>
 
 <script>
-import CurrencySign from "@/components/CurrencySign";
+import inputSign from "@/components/inputSign";
 
 export default {
   name: "InputTData",
@@ -22,9 +23,10 @@ export default {
     rowIndex: Number,
     cellIndex: Number,
     action: String, // IMPROVE HERE
+    disabled: Boolean,
   },
   components: {
-    CurrencySign,
+    inputSign,
   },
 
   methods: {

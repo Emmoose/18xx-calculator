@@ -18,10 +18,28 @@ export default {
   },
 
   playerSimulatedIncome(state) {
-    return helpers.sumMatrix(state, 1, state.simulatedRounds);
+    return state.advancedSimulation
+      ? helpers.sumMatrixAdvancedSimulation(state, state.simulatedRounds, 0.1)
+      : helpers.sumMatrix(state, 1, state.simulatedRounds, 0.1);
   },
 
-  PlaceholderValuesHoldings(state) {
+  placeholderValuesWealth(state) {
+    let data;
+    if (state.advancedSimulation) {
+      data = Array.from(
+        new Array(state.simulatedRounds ? state.simulatedRounds : 1),
+        (val, idx) => "OR " + (idx + 1)
+      );
+
+      data.unshift("Stock");
+    } else {
+      data = [" Stock", "Revenue"];
+    }
+
+    return data;
+  },
+
+  placeholderValuesHoldings(state) {
     return new Array(+state.selectedPlayerCount).fill("Share");
   },
 

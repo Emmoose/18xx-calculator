@@ -6,7 +6,7 @@
         <tr v-for="(row, index) in tableData" v-bind:key="index">
           <td
             ref="corpColumn"
-            class="td-corporation"
+            class="tdCorporation"
             :style="{
               'background-color': corporations[index].backgroundColor,
               color: corporations[index].textColor,
@@ -14,6 +14,7 @@
           >
             {{ corporations[index].name }}
           </td>
+          <slot name="additional-cell" :index="index"> </slot>
           <InputTData
             v-for="(cell, innerIndex) in row"
             v-bind:key="`${index}#${innerIndex}`"
@@ -22,6 +23,7 @@
             v-bind:cell-index="innerIndex"
             v-bind:placeholder="tdPlaceholder[innerIndex]"
             v-bind:action="updateAction"
+            v-bind:disabled="disabled"
             v-on:input-focused="checkMobileHint"
           >
             <slot name="input-sign"></slot>
@@ -49,7 +51,9 @@ export default {
     tableData: Array,
     updateAction: String,
     tdPlaceholder: Array,
+    disabled: Boolean,
   },
+
   data() {
     return {
       isCorpNameOutside: false,

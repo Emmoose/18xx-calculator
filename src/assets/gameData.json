@@ -5,8 +5,12 @@
             "sign": "$",
             "location": "left"
         },
-        "maxPlayer": 2,
+        "maxPlayer": 7,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": true,
+            "shareVersions": [10,5,2]
+        },
         "corporations": [
             {
                 "name": "Alton & Southern Railway",
@@ -118,6 +122,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },
         "corporations": [
             {
                 "name": "B\u00f6hmische Kommerzbahn",
@@ -167,8 +174,12 @@
             "sign": "$",
             "location": "left"
         },
+    
         "maxPlayer": 5,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },
         "corporations": [
             {
                 "name": "Boston & Maine",
@@ -260,6 +271,9 @@
         },
         "maxPlayer": 9,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "London & North Western",
@@ -321,6 +335,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Pennsylvania Railroad",
@@ -372,6 +389,9 @@
         },
         "maxPlayer": 7,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Atlantic Coast Line Railroad",
@@ -433,6 +453,9 @@
         },
         "maxPlayer": 7,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Bayrische Eisenbahn",
@@ -484,6 +507,9 @@
         },
         "maxPlayer": 4,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "\"Chemins de Fer de L\u00c9tat Belge\"",
@@ -525,6 +551,9 @@
         },
         "maxPlayer": 4,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "\"Chemins de Fer de L\u00c9tat Belge\"",
@@ -571,6 +600,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Wiener Tramway Gesellschaft",
@@ -632,6 +664,9 @@
         },
         "maxPlayer": 5,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Pennsylvania Railroad",
@@ -678,6 +713,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Bank of England",
@@ -734,6 +772,9 @@
         },
         "maxPlayer": 5,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Azienda Ferroviaria Garibaldi",
@@ -775,6 +816,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Chicago Burlington & Quincy Railroad",
@@ -831,6 +875,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Buffalo Brantford & Goderich Railway",
@@ -902,6 +949,9 @@
         },
         "maxPlayer": 4,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Cowes & Newport",
@@ -953,6 +1003,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "North Western Railway",
@@ -1089,6 +1142,9 @@
         },
         "maxPlayer": 8,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Ely & Huntingdon",
@@ -1200,6 +1256,9 @@
         },
         "maxPlayer": 7,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Great Britain National",
@@ -1416,6 +1475,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Canadian Northern Railway",
@@ -1552,6 +1614,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Santa Fe",
@@ -1613,6 +1678,9 @@
         },
         "maxPlayer": 7,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Ferroviario de Barquisimento y Puerto Caballo",
@@ -1684,6 +1752,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "AB Stockholms Sp\u00e5rv\u00e4gar",
@@ -1755,6 +1826,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Canadian National",
@@ -1801,6 +1875,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Jingha Railway",
@@ -1852,6 +1929,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Awa Railroad",
@@ -1898,6 +1978,9 @@
         },
         "maxPlayer": 4,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "D\u00fcrener Eisenbahn",
@@ -1934,6 +2017,9 @@
         },
         "maxPlayer": 4,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Chemins de fer de l\\Ouest",
@@ -2000,6 +2086,9 @@
         },
         "maxPlayer": 5,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Louisville & Nashville Railroad",
@@ -2041,6 +2130,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Kansas Pacific Railway",
@@ -2107,6 +2199,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "S\u00e4chsische Eisenbahn",
@@ -2193,6 +2288,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "North Carolina Railroad",
@@ -2244,6 +2342,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Pennsylvania Railroad",
@@ -2295,6 +2396,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Atlantic Coast Line",
@@ -2346,6 +2450,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Belgian National Railways",
@@ -2397,6 +2504,10 @@
         },
         "maxPlayer": 4,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": true,
+            "shareVersions": [10,5]
+        },
         "corporations": [
             {
                 "name": "Louisville and Nashville Railroad",
@@ -2438,6 +2549,9 @@
         },
         "maxPlayer": 5,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Atlantic Coast Line",
@@ -2479,6 +2593,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Caledonian Railway",
@@ -2550,6 +2667,10 @@
         },
         "maxPlayer": 6,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": true,
+            "shareVersions": [10,5]
+        }, 
         "corporations": [
             {
                 "name": "Great Southern & Western Railway",
@@ -2666,6 +2787,9 @@
         },
         "maxPlayer": 7,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Tobu Railway",
@@ -2732,6 +2856,9 @@
             "sign": "$",
             "location": "left"
         },
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "East Los Angeles & San Pedro Railroad",
@@ -2774,10 +2901,13 @@
         "gameName": "18MO",
         "currency": {
             "sign": "$",
-            "location": "TO_ADD"
+            "location": "left"
         },
         "maxPlayer": 5,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Northern Pacific",
@@ -2834,6 +2964,9 @@
         },
         "maxPlayer": 4,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Gulf Mobile and Ohio Railroad",
@@ -2870,6 +3003,9 @@
         },
         "maxPlayer": 5,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Northern Pacific",
@@ -2926,6 +3062,9 @@
         },
         "maxPlayer": 5,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Chihuahua Pacific Railway",
@@ -2977,6 +3116,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Mohawk and Hudson Railroad",
@@ -3083,6 +3225,9 @@
         },
         "minPlayer": 2,
         "maxPlayer": 4,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "textColor": "white",
@@ -3134,6 +3279,9 @@
         },
         "minPlayer": 3,
         "maxPlayer": 5,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "textColor": "white",
@@ -3260,6 +3408,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Aachen-D\u00fcsseldorf-Ruhrorter E.",
@@ -3311,6 +3462,9 @@
         },
         "maxPlayer": 4,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Danske Statsbaner",
@@ -3347,6 +3501,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Bergslagernas j\u00e4rnv\u00e4gar AB",
@@ -3413,6 +3570,9 @@
         },
         "maxPlayer": 3,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "G\u00f6teborg Railway Company",
@@ -3449,6 +3609,9 @@
         },
         "maxPlayer": 5,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Texas and Pacific Railway",
@@ -3490,6 +3653,9 @@
         },
         "maxPlayer": 5,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Southern Railway",
@@ -3531,6 +3697,9 @@
         },
         "maxPlayer": 4,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Yokohama-Shinbashi Line",
@@ -3577,6 +3746,9 @@
         },
         "maxPlayer": 7,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Atchison Topeka and Santa Fe",
@@ -3688,6 +3860,10 @@
         },
         "maxPlayer": 5,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": true,
+            "shareVersions": [10,4]
+        },
         "corporations": [
             {
                 "name": "Baltimore & Ohio Railroad",
@@ -3734,6 +3910,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Union Pacific Railroad",
@@ -3825,6 +4004,9 @@
         },
         "maxPlayer": 6,
         "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Trans-Space Incorporated",
@@ -3876,6 +4058,9 @@
         },
         "maxPlayer": 5,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Moon Venture Corporation",
@@ -3922,6 +4107,9 @@
         },
         "maxPlayer": 10,
         "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
         "corporations": [
             {
                 "name": "Corporation1",

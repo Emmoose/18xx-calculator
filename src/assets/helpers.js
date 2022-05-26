@@ -10,14 +10,42 @@ export default {
     return tempMatrix;
   },
 
-  sumMatrix: function (state, rowIndex, simulatedRounds = 1) {
+  sumMatrix: function (state, rowIndex, simulatedRounds = 1, fraction = 1) {
+    const summaryMatrix = state.playerCorporationOwnership.map(
+      (corpOwningList, idx) => {
+        let numberShare = 10;
+
+        if (state.multipleShare && rowIndex === 0) {
+          numberShare = state.multipleShareSelected[idx];
+        }
+
+        return corpOwningList.map(
+          (corpOwning) =>
+            ((corpOwning * fraction * state.corporationsWealth[idx][rowIndex]) /
+              100) *
+            numberShare * // 100 is to make it into %
+            simulatedRounds
+        );
+      }
+    );
+
+    return summaryMatrix[0].map((x, idx) =>
+      summaryMatrix.reduce((sum, curr) => sum + curr[idx], 0)
+    );
+  },
+
+  sumMatrixAdvancedSimulation: function (state, simulatedRounds, fraction = 1) {
     const summaryMatrix = state.playerCorporationOwnership.map(
       (corpOwningList, idx) =>
-        corpOwningList.map(
-          (corpOwning) =>
-            ((corpOwning * state.corporationsWealth[idx][rowIndex]) / 10) *
-            simulatedRounds
-        )
+        corpOwningList.map((corpOwning) => {
+          let value = 0;
+          for (let index = 1; index <= simulatedRounds; index++) {
+            value +=
+              (corpOwning * fraction * state.corporationsWealth[idx][index]) /
+              10;
+          }
+          return value;
+        })
     );
 
     return summaryMatrix[0].map((x, idx) =>
@@ -39,6 +67,9 @@ export default {
         corporationsWealth: state.corporationsWealth,
         playerCorporationOwnership: state.playerCorporationOwnership,
         simulatedRounds: state.simulatedRounds,
+        advancedSimulation: state.advancedSimulation,
+        shareStructure: state.selectedGameData.shareStructure,
+        multipleShareSelected: state.multipleShareSelected,
         version: version,
       })
     );

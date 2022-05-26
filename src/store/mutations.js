@@ -35,11 +35,27 @@ export default {
     state.simulatedRounds = val;
   },
 
+  TOGGLE_ADVANCED_SIMULATION(state, val) {
+    state.advancedSimulation = val;
+  },
+
+  TOGGLE_MULTIPLE_SHARE(state, val) {
+    state.multipleShare = val;
+  },
+
+  SET_MULTIPLE_SHARE_SELECTED(state, val) {
+    state.multipleShareSelected = val;
+  },
+
   SET_FOCUSED_CORP_INDEX(state, val) {
     state.focusedCorpIndex = val;
   },
 
   SET_SHOW_CORP_HEADER_MOBILE(state, val) {
     state.showCorpHeaderMobile = val;
+  },
+
+  SET_ABOVE_100_PERCENTAGE(state, val) {
+    state.checkAbove100Percentage = val;
   },
 };

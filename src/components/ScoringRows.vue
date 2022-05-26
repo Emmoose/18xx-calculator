@@ -1,6 +1,6 @@
 <template>
   <tbody class="scoring-info">
-    <tr class="wealth-table">
+    <tr class="wealthRow">
       <td>Stock Value</td>
       <ScoringTData
         v-for="(value, index) in playerStockValue"
@@ -18,7 +18,7 @@
         v-bind:cash="cash"
       />
     </tr>
-    <tr class="wealth-table">
+    <tr class="wealthRow">
       <td>Simulated OR's Value</td>
       <ScoringTData
         v-for="(value, index) in playerSimulatedIncome"
@@ -26,7 +26,7 @@
         v-bind:cell-value="value"
       ></ScoringTData>
     </tr>
-    <tr class="wealth-table">
+    <tr class="wealthRow">
       <td>Total Wealth</td>
       <ScoringTData
         v-for="(value, index) in playerScore"
@@ -35,7 +35,7 @@
       >
       </ScoringTData>
     </tr>
-    <tr class="wealth-table">
+    <tr class="wealthRow">
       <td>Ranking</td>
       <ScoringTData
         v-for="(value, index) in playerRanking"

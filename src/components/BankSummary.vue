@@ -1,24 +1,26 @@
 <template>
-  <div class="bank-summation">
-    <span class="bank-summation__value">Bank estimate: </span>
-    <span v-if="currency.location === 'left'">{{ currency.sign }} </span>
-    <span class="bank-summation__value">{{ bankSummation.cash }}</span
-    ><span v-if="currency.location === 'right'">{{ currency.sign }} </span
-    ><span class="bank-summation__name"> (Player total cash) </span>
-    <span class="bank-summation__value"> + </span>
-    <span v-if="currency.location === 'left'">{{ currency.sign }} </span
-    ><span class="bank-summation__value">{{
-      bankSummation.simulatedIncome
-    }}</span
-    ><span v-if="currency.location === 'right'">{{ currency.sign }} </span
-    ><span class="bank-summation__name">
-      (Player total simulated revenue)
-    </span>
-    <span class="bank-summation__value"> = </span>
-    <span v-if="currency.location === 'left'">{{ currency.sign }} </span>
-    <span class="bank-summation__value"> {{ bankSummation.total }} </span>
-    <span v-if="currency.location === 'right'">{{ currency.sign }} </span>
-    <span class="bank-summation__name"> (Player total value) </span>
+  <div class="bankSummation">
+    <h2 class="gameSectionHeader">Bank estimate</h2>
+    <div class="bankSummation__body">
+      <span v-if="currency.location === 'left'">{{ currency.sign }} </span>
+      <span class="bankSummation__value">{{ bankSummation.cash }} </span
+      ><span v-if="currency.location === 'right'">{{ currency.sign }} </span
+      ><span class="bankSummation__name"> (Player total cash) </span>
+      <span class="bankSummation__value"> + </span>
+      <span v-if="currency.location === 'left'">{{ currency.sign }} </span
+      ><span class="bankSummation__value">{{
+        bankSummation.simulatedIncome
+      }}</span
+      ><span v-if="currency.location === 'right'"> {{ currency.sign }} </span
+      ><span class="bankSummation__name">
+        (Player total simulated revenue)
+      </span>
+      <span class="bankSummation__value"> = </span>
+      <span v-if="currency.location === 'left'">{{ currency.sign }} </span>
+      <span class="bankSummation__value"> {{ bankSummation.total }} </span>
+      <span v-if="currency.location === 'right'">{{ currency.sign }} </span>
+      <span class="bankSummation__name"> (Player total value) </span>
+    </div>
   </div>
 </template>
 

@@ -1,41 +1,81 @@
 @import "./_variables";
 
-.game-settings {
-  width: 400px;
-  padding-bottom: @indent__base;
-  background-color: @color-background-secondary;
-  border: 1px solid @color-border;
+.gameSettings {
+  background-color: @color__background_secondary;
+  border: 1px solid @color__app_main;
+  border-radius: 8px;
+  margin-bottom: @indent__base;
   margin-right: @indent__base;
-  max-height: 280px;
+  flex-grow: 1;
+  overflow: hidden;
 
-  .flex-column {
-    padding: 0 @indent__base;
+  &__body {
+    padding: @indent__base;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
-}
 
-.simulate-rounds {
-  display: flex;
+  &__label {
+    margin-bottom: @indent__xs;
+  }
 
-  input {
-    border-top: 4px solid @color-border;
-    border-bottom: 4px solid @color-border;
+  &__select {
+    border-radius: @border-radius-default;
+    height: 36px;
+    padding: @indent__s;
+    margin-bottom: @indent__base;
+  }
+
+  &__input {
+    margin-bottom: @indent__base;
+  }
+
+  &__simulationOptions {
+    display: flex;
+    margin-bottom: @indent__base;
+  }
+
+  &__simulationOption {
+    margin-right: @indent__xs;
+  }
+
+  &__simulationLabel {
+    margin-right: @indent__base;
+  }
+
+  &__simulateRounds {
+    display: flex;
+  }
+
+  &__simInput {
+    border-top: 4px solid @color__app_main;
+    border-bottom: 4px solid @color__app_main;
     width: 60px;
-    height: 44px;
+    height: 36px;
   }
 
-  .sim-button {
-    background-color: @color-border;
-    height: 44px;
+  &__simButton {
+    background-color: @color__app_main;
+    height: 36px;
     width: 60px;
     color: white;
     font-weight: 700;
+    &--right {
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    &--left {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
   }
 }
 
 // Media query mobile screen sizes
 @media only screen and (max-width: @screen__m) {
-  .game-settings {
-    width: auto;
-    margin: 0 0 @indent__s 0;
+  .gameSettings {
+    margin: 0 0 @indent__m 0;
   }
 }

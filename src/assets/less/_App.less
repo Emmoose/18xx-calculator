@@ -9,21 +9,26 @@ body {
   margin: 0px;
 }
 
+h1, h2 {
+  color: @color__text_secondary;
+}
+
 h1 {
   font-size: 28px;
 }
 
 h2 {
-  text-align: left;
-  height: 38px;
-  line-height: 38px;
   font-size: 16px;
-  text-align: center;
-  margin: 0 0 @indent__base 0;
 }
 
 label {
   text-align: left;
+}
+
+button, 
+input, 
+select {
+  cursor: pointer;
 }
 
 input {
@@ -44,85 +49,167 @@ input {
     -moz-appearance: textfield;
   }
 
+  &[type="radio"] {
+    height: 20px;
+    width: auto;
+  }
+
   &:focus {
-    outline: none;
-    background-color: #f6fef6;
+    outline : none;
+  }
+
+  &:disabled {
+    opacity: 0.6;
   }
 }
 
 button {
-  background-color: @color-background-secondary;
-  border: 1px solid @color-border;
+  background-color: @color__background_secondary;
+  border: 1px solid @color__app_main;
   font-weight: 500;
   height: 40px;
   width: 40px;
-}
 
-select {
-  height: 32px;
-  margin-bottom: @indent__base;
-}
+  &:hover {
+    opacity: 0.8;
+  }
 
-button, input, select {
-  cursor: pointer;
+  &.copyColumn {
+    height: 30px;
+    font-size: 10px;
+    width: 76px;
+    margin: 1px;
+    background-color: @color__app_main;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+  }
 }
 
 table {
   border-collapse: collapse;
+  border-radius: 10px;
 }
 
-table,
-th,
-td {
-  border: 1px solid @color-border;
+.corpWealthHeader th {
+  background-color: @color__app_main;
+  color: @color__text_secondary;
+}
+
+tr {
+  &:nth-child(even) {background: @color__background_secondary}
+  &:nth-child(odd) {background: #f7f2ee}
+
+  & td:first-child,
+  & th:first-child {
+      border-left: none;
+  }
+
+  &:last-child td {
+    border-bottom: none;
+  }
+
+  & td:last-child,
+  & th:last-child {
+    border-right: none;
+  }
 }
 
 th,
 td {
   height: 34px;
   line-height: 34px;
-  background-color: @color-background-secondary;
   background-clip: padding-box; // Fix firefox
+  border: 1px solid @color__app_main;
   padding: 0;
-  min-width: 200px;
+  min-width: 160px;
   position: relative;
 
-  &.main-header {
-    background-color: black;
-    color: white;
+  input {
+    background-color: transparent;
   }
+}
+
+th.mainHeader {
+  background: @color__app_main;
+  color: @color__text_secondary ;
 }
 
 td {
   font-weight: 500;
 
-  &.td-corporation {
+  &.tdCorporation {
     padding: 0 @indent__s;
     white-space: nowrap;
   }
 }
 
-.wealth-table td {
-  background-color: @color-summation-green;
-  color: white;
+.wealthRow td {
+  background-color: @color__success;
+  color: @color__text_secondary;
   font-weight: 700;
 }
 
-// General classes
 .app {
+  border: 1px solid @color__app_main;
+  background-color: @color__background_primary;
+  max-width: 1240px;
+  margin: @indent__m auto;
+  border-radius: 10px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: @color-text;
+  color: @color__text_primary;
+  overflow: hidden;
 }
 
-.flex-column {
+.appHeader {
+  margin: 0;
+  padding: @indent__base;
+  border-bottom: 1px solid @color__app_main;
+  background: @color__app_main;
+}
+
+.gameSectionHeader {
+  margin: 0;
+  background-color: @color__app_main;
+  padding: @indent__s;
+  width: 100%;
+}
+
+.calculator {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  padding: @indent__m;
 }
 
-.input-sign {
+.topRow {
+  display: flex;
+  align-items:flex-start;
+  overflow: hidden;
+  margin-bottom: @indent__base;
+}
+
+.bottomRow {
+  overflow: hidden;
+  position: relative;
+}
+
+.infoText {
+  max-width: 800px;
+  text-align: left;
+  margin: 0 0 @indent__base 0;
+}
+
+.matrix {
+  border: 1px solid @color__app_main;
+  margin-bottom: @indent__m;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+
+.inputSign {
   position: absolute;
   top: 0px;
 
@@ -133,30 +220,23 @@ td {
   &.left {
     left: 20px;
   }
+
+  &.disabled {
+    opacity: 0.4;
+  }
 }
 
-.calculator {
-  display: inline-block;
-  background-color: @color-background;
-  padding: @indent__m;
-  border: 1px solid @color-border;
-  margin: @indent__m;
+.matrixSelect {
+  min-width: 140px;
+  height: 26px;
+  border-radius: 5px;
 }
 
-.top-row {
-  display: flex;
-  margin-bottom: @indent__base;
-}
-
-.info-text {
-  max-width: 800px;
-  text-align: left;
-}
-
-.corp-name-mobile {
+.corpNameMobile {
   transform: rotate(90deg);
   display: none;
-  border: 1px solid @color-border;
+  border: 1px solid @color__app_main;
+  border-radius: 10px;
   position: fixed;
   top: 50%;
   z-index: 1;
@@ -164,13 +244,21 @@ td {
   align-items: center;
   justify-content: center;
   width: 300px;
-  left: -112px;
+  left: -125px;
   right: 8px;
 }
 
-.bank-summation {
-  margin-top: @indent__base;
-  text-align: left;
+.bankSummation {
+  overflow: hidden;
+  background-color: @color__background_secondary;
+  margin-right: 16px;
+  border-radius: 10px;
+  border: 1px solid @color__app_main;
+  max-width: 500px;
+
+  &__body {
+    padding: @indent__base;
+  }
 
   &__value {
     font-weight: 500;
@@ -179,48 +267,53 @@ td {
   &__name {
     opacity: 0.6;
   }
-  
+}
+
+.holdingErrorMessage {
+  background-color: @color__error; 
+  padding: @indent__s;
+  border-radius: 8px;
+  color: @color__text_secondary;
+  font-weight: 700;
+  margin-bottom: @indent__s;
+  max-width: fit-content;
+  min-width: 100%;
 }
 
 // Media query mobile screen sizes
 @media only screen and (max-width: @screen__m) {
-  h2 {
-    margin: @indent__s;
+
+  .app {
+    margin: 0;
+  }
+
+  .calculator {
+    padding: 4px;
+  }
+
+  .topRow {
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+
+  .leftColumn {
+    overflow-x: auto;
   }
 
   table {
     width: 100%;
-    overflow-y: scroll;
   }
 
-  .app {
-    margin: 0 @indent__s;
-  }
-
-  .info-text {
+  .infoText {
     margin: @indent__base;
   }
 
-  .calculator {
-    display: block;
-    padding: @indent__xs;
-    border: 1px solid @color-border;
-    margin: 0;
-  }
-
-  .top-row {
-    display: block;
-  }
-
-  .matrix {
-    overflow-y: scroll;
-  }
-
-  .corp-name-mobile {
+  .corpNameMobile {
     display: flex;
   }
 
-  .bank-summation {
-    margin: @indent__base;
+  .bankSummation {
+    margin-right: 0;
+    margin-bottom: @indent__m;
   }
 }

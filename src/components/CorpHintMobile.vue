@@ -1,7 +1,7 @@
 <template>
   <div
     v-if="showCorpHeaderMobile"
-    class="corp-name-mobile"
+    class="corpNameMobile"
     :style="{
       'background-color': focusedCorporation.backgroundColor,
       color: focusedCorporation.textColor,

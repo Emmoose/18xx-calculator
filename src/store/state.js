@@ -1,5 +1,4 @@
 export default {
-  // Game Calculator
   games: [],
   selectedGame: null,
   selectedGameData: {},
@@ -9,8 +8,10 @@ export default {
   corporationsWealth: [],
   playerCorporationOwnership: [],
   simulatedRounds: 0,
-
-  // Mobile Corp Header
+  advancedSimulation: false,
+  checkAbove100Percentage: [],
+  multipleShare: false,
+  multipleShareSelected: [],
   showCorpHeaderMobile: false,
   focusedCorpIndex: 0,
 };

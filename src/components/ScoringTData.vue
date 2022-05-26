@@ -1,17 +1,17 @@
 <template>
   <td>
-    <slot><CurrencySign /></slot>
+    <slot><inputSign /></slot>
     {{ Math.ceil(cellValue) }}
   </td>
 </template>
 
 <script>
-import CurrencySign from "@/components/CurrencySign";
+import inputSign from "@/components/inputSign";
 
 export default {
   name: "ScoringTData",
   components: {
-    CurrencySign,
+    inputSign,
   },
 
   props: {
