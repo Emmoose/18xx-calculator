@@ -40,7 +40,9 @@
           >Diff revenue</label
         >
       </div>
-      <label class="gameSettings__label">Simulated Rounds</label>
+      <label for="sim-input" class="gameSettings__label"
+        >Simulated Rounds</label
+      >
       <div class="gameSettings__simulateRounds">
         <button
           class="gameSettings__simButton gameSettings__simButton--left"
@@ -56,7 +58,6 @@
           :value="simulatedRounds"
           @change="changeSimulatedRounds($event.target.value)"
         />
-        <label for="sim-input">simulation Input</label>
         <button
           class="gameSettings__simButton gameSettings__simButton--right"
           v-on:click="changeSimulatedRounds(simulatedRounds + 1)"
