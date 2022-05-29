@@ -68,16 +68,17 @@
 
 <script>
 import { mapGetters, mapState } from "vuex";
+import googleAnalyticsMixin from "../mixins/googleAnalyticsMixin";
 
 export default {
   name: "GameSettings",
+
+  mixins: [googleAnalyticsMixin],
+
   methods: {
     changeSimulatedRounds(value) {
       this.$store.dispatch("setSimulatedRounds", parseInt(value));
-    },
-
-    sliderTest(e) {
-      console.log(typeof e);
+      this.gaEventSimulation(value);
     },
   },
   computed: {
@@ -89,6 +90,7 @@ export default {
       },
       set(value) {
         this.$store.dispatch("setupNewGame", value);
+        this.gaEventChangeGame(value);
       },
     },
 
@@ -98,6 +100,7 @@ export default {
       },
       set(value) {
         this.$store.dispatch("changePlayerCount", value);
+        this.gaEventChangePlayerCount(value);
       },
     },
 

@@ -4,6 +4,7 @@ node_modules
 .firebase/
 .firebaserc
 firebase.json
+deploy.py
 
 # local env files
 .env.local
