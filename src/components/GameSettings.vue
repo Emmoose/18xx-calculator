@@ -25,9 +25,9 @@
           type="radio"
           :value="false"
           v-model="setAdvancedSimulation"
-          name="eq-revenue"
+          id="eq-revenue"
         />
-        <label class="gameSettings__simulationLabel" name="eq-revenue"
+        <label class="gameSettings__simulationLabel" for="eq-revenue"
           >Eq revenue</label
         >
         <input
@@ -35,7 +35,7 @@
           type="radio"
           :value="true"
           v-model="setAdvancedSimulation"
-          name="different-revenue"
+          id="different-revenue"
         /><label class="gameSettings__simulationLabel" for="different-revenue"
           >Diff revenue</label
         >
@@ -52,9 +52,11 @@
         <input
           class="gameSettings__simInput"
           type="number"
+          id="sim-input"
           :value="simulatedRounds"
           @change="changeSimulatedRounds($event.target.value)"
         />
+        <label for="sim-input">simulation Input</label>
         <button
           class="gameSettings__simButton gameSettings__simButton--right"
           v-on:click="changeSimulatedRounds(simulatedRounds + 1)"
