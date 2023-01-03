@@ -4100,6 +4100,31 @@
         ]
     },
     {
+        "gameName": "1822CA",
+        "currency": {"sign": "$", "location": "left"},
+        "maxPlayer": 7,
+        "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
+        "corporations": [
+          {"name": "Canadian Northern Railway", "backgroundColor": "green", "textColor":"black" },
+          {"name": "Canadian Pacific Railway", "backgroundColor": "red", "textColor": "white" },
+          {"name": "Great North West Railway", "backgroundColor": "blue", "textColor":"black" },
+          {"name": "Grand Trunk Railway", "backgroundColor": "black" , "textColor":"white"},
+          {"name": "Grand Trunk Pacific Railway", "backgroundColor": "orange" , "textColor":"white"},
+          {"name": "Great Western Railway", "backgroundColor": "blue" , "textColor":"white"},
+          {"name": "Intercolonial Railway", "backgroundColor": "yellow" , "textColor":"black"},
+          {"name": "National Transcontinental Railway", "backgroundColor": "brown" , "textColor":"white"},
+          {"name": "Pacific Great Eastern Railway", "backgroundColor": "green" , "textColor":"white"},
+          {"name": "Quebec, Montreal, Ottawa and Occidental Railway", "backgroundColor": "purple" , "textColor":"white"},
+          {"name": "Minor A", "backgroundColor": "black" , "textColor":"white"},
+          {"name": "Minor B", "backgroundColor": "black" , "textColor":"white"},
+          {"name": "Minor C", "backgroundColor": "black" , "textColor":"white"}
+        ]
+    } ,
+    
+    {
         "gameName": "Generic Game",
         "currency": {
             "sign": "$",

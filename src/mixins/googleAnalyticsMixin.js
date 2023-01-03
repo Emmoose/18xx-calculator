@@ -8,8 +8,6 @@ var googleAnalyticsMixin = {
   methods: {
     gaEventSimulation: function (value) {
       if (!this.hasGaEventSimulation) {
-        console.log("testing sim mixin function");
-
         this.$gtag.event("used-simulation-rounds", {
           "event-category": "18xx-simulator-events",
           value: value,
