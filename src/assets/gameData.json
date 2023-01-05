@@ -4217,5 +4217,54 @@
                 "textColor": "black"
             }
         ]
+    },
+    {
+        "id": 1,
+        "gameName": "1822",
+        "currency": {"sign": "£", "location": "left"},
+        "maxPlayer": 7,
+        "minPlayer": 2,
+        "shareStructure": {
+            "multipleShare": false
+        },  
+        "corporations": [
+          {"name": "London and North West Railway", "backgroundColor": "black", "textColor":"white" },
+          {"name": "Great Western Railway", "backgroundColor": "dark green", "textColor": "white" },
+          {"name": "London, Brighton and South Coast Railway", "backgroundColor": "yellow", "textColor":"black" },
+          {"name": "South Eastern & Chatham Railway", "backgroundColor": "orange" , "textColor":"white"},
+          {"name": "Caledonian Railway", "backgroundColor": "blue" , "textColor":"white"},
+          {"name": "Midland Railway", "backgroundColor": "red" , "textColor":"white"},
+          {"name": "Lancashire & Yorkshire Railway", "backgroundColor": "purple" , "textColor":"white"},
+          {"name": "North British Railway", "backgroundColor": "brown" , "textColor":"white"},
+          {"name": "South Wales Railway", "backgroundColor": "grey" , "textColor":"white"},
+          {"name": "North Eastern Railway", "backgroundColor": "light green" , "textColor":"white"},
+          {"name": "Minor A", "backgroundColor": "black" , "textColor":"white"},
+          {"name": "Minor B", "backgroundColor": "black" , "textColor":"white"},
+          {"name": "Minor C", "backgroundColor": "black" , "textColor":"white"},
+          {"name": "Minor D", "backgroundColor": "black" , "textColor":"white"}
+      ]
+    }, {
+        "gameName": "1822MX",
+        "currency": {"sign": "$", "location": "left"},
+        "maxPlayer": 5,
+        "minPlayer": 3,
+        "shareStructure": {
+            "multipleShare": false
+        },  
+        "corporations": [
+          {"name": "Chihuahua-Pacific Railway", "backgroundColor": "pink", "textColor":"black" },
+          {"name": "Ferrocarril Mexicano", "backgroundColor": "red", "textColor": "white" },
+          {"name": "Mexican Central Railway", "backgroundColor": "black" , "textColor":"white"},
+          {"name": "Mexican International Railroad", "backgroundColor": "orange" , "textColor":"white"},
+          {"name": "Interoceanic Railway of Mexico", "backgroundColor": "darkBlue" , "textColor":"white"},
+          {"name": "Ferrocarril del Pacífico", "backgroundColor": "yellow" , "textColor":"black"},
+          {"name": "Ferrocarriles Nacionales de México", "backgroundColor": "darkGreen" , "textColor":"white"},
+          {"name": "Minor A", "backgroundColor": "black" , "textColor":"white"},
+          {"name": "Minor B", "backgroundColor": "black" , "textColor":"white"},
+          {"name": "Minor C", "backgroundColor": "black" , "textColor":"white"},
+          {"name": "Minor D", "backgroundColor": "black" , "textColor":"white"}
+      ]
     }
+    
+    
 ]
