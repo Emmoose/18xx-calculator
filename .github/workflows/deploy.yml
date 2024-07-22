@@ -6,25 +6,21 @@ on:
       - master
 
 jobs:
-  deploy:
+  firebase-deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20' 
-
+      - name: Fetch repo
+        uses: actions/checkout@master
+      - name: Install node
+        uses: actions/setup-node@master
       - name: Install dependencies
         run: npm install --force
-
-      - name: Build project
-        run: npm run build 
-
-      - name: Deploy to Firebase
+      - name: Build
+        run: npm run build
+      - name: Deploy with Firebase
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
         env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: npx firebase deploy --token $FIREBASE_TOKEN
+          # see via cmd: firebase login:ci
+          FIREBASE_TOKEN: ${{ secrets.$FIREBASE_TOKEN }}
