@@ -2,7 +2,7 @@
   <div id="app" class="app">
     <h1 class="appHeader">18xx calculator</h1>
     <div class="calculator">
-      <div>TESTING2</div>
+      <div>TESTING3 Dev version</div>
       <p class="infoText">
         A simple tool for scoring results in 18xx games. It can calculate end
         stock value and simulate operating rounds revenue. Operating rounds
