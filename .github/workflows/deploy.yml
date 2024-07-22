@@ -20,7 +20,7 @@ jobs:
       - name: Deploy with Firebase
         uses: w9jds/firebase-action@master
         with:
-          args: deploy --only hosting
+          args: deploy --only hosting -P develop
         env:
           # see via cmd: firebase login:ci
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
