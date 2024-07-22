@@ -3,7 +3,7 @@ name: Deploy with Firebase
 on:
   push:
     branches:
-      - master
+      - develop
 
 jobs:
   firebase-deploy:
@@ -22,5 +22,4 @@ jobs:
         with:
           args: deploy --only hosting -P develop
         env:
-          # see via cmd: firebase login:ci
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
