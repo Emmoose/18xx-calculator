@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "xx-calculator",
+    "develop": "xx-calculator-develop"
+  }
+}
